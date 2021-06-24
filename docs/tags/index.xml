@@ -2,179 +2,179 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Shawn T. O&#39;Neil</title>
-    <link>/tags/</link>
+    <link>/home/tags/</link>
     <description>Recent content in Tags on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/home/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>programming</title>
-      <link>/tags/programming/</link>
+      <link>/home/tags/programming/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/programming/</guid>
+      <guid>/home/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>r</title>
-      <link>/tags/r/</link>
+      <link>/home/tags/r/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>/home/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Art</title>
-      <link>/tags/art/</link>
+      <link>/home/tags/art/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/art/</guid>
+      <guid>/home/tags/art/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Photography</title>
-      <link>/tags/photography/</link>
+      <link>/home/tags/photography/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/photography/</guid>
+      <guid>/home/tags/photography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DIY</title>
-      <link>/tags/diy/</link>
+      <link>/home/tags/diy/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/diy/</guid>
+      <guid>/home/tags/diy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>infrastructure</title>
-      <link>/tags/infrastructure/</link>
+      <link>/home/tags/infrastructure/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/infrastructure/</guid>
+      <guid>/home/tags/infrastructure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>theory</title>
-      <link>/tags/theory/</link>
+      <link>/home/tags/theory/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/theory/</guid>
+      <guid>/home/tags/theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>machine learning</title>
-      <link>/tags/machine-learning/</link>
+      <link>/home/tags/machine-learning/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/machine-learning/</guid>
+      <guid>/home/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>deep learning</title>
-      <link>/tags/deep-learning/</link>
+      <link>/home/tags/deep-learning/</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/deep-learning/</guid>
+      <guid>/home/tags/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Adventures</title>
-      <link>/tags/adventures/</link>
+      <link>/home/tags/adventures/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/adventures/</guid>
+      <guid>/home/tags/adventures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>/tags/writing/</link>
+      <link>/home/tags/writing/</link>
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/writing/</guid>
+      <guid>/home/tags/writing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Research</title>
-      <link>/tags/research/</link>
+      <link>/home/tags/research/</link>
       <pubDate>Sun, 12 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/research/</guid>
+      <guid>/home/tags/research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Glass</title>
-      <link>/tags/glass/</link>
+      <link>/home/tags/glass/</link>
       <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/glass/</guid>
+      <guid>/home/tags/glass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hiking</title>
-      <link>/tags/hiking/</link>
+      <link>/home/tags/hiking/</link>
       <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hiking/</guid>
+      <guid>/home/tags/hiking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data</title>
-      <link>/tags/data/</link>
+      <link>/home/tags/data/</link>
       <pubDate>Mon, 06 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>/tags/data/</guid>
+      <guid>/home/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nerf</title>
-      <link>/tags/nerf/</link>
+      <link>/home/tags/nerf/</link>
       <pubDate>Mon, 06 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nerf/</guid>
+      <guid>/home/tags/nerf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Class</title>
-      <link>/tags/class/</link>
+      <link>/home/tags/class/</link>
       <pubDate>Thu, 17 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>/tags/class/</guid>
+      <guid>/home/tags/class/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Philosophy</title>
-      <link>/tags/philosophy/</link>
+      <link>/home/tags/philosophy/</link>
       <pubDate>Sat, 19 Mar 2005 00:00:00 +0000</pubDate>
       
-      <guid>/tags/philosophy/</guid>
+      <guid>/home/tags/philosophy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Audio</title>
-      <link>/tags/audio/</link>
+      <link>/home/tags/audio/</link>
       <pubDate>Wed, 18 Jun 2003 00:00:00 +0000</pubDate>
       
-      <guid>/tags/audio/</guid>
+      <guid>/home/tags/audio/</guid>
       <description></description>
     </item>
     

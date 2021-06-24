@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>infrastructure on Shawn T. O&#39;Neil</title>
-    <link>/tags/infrastructure/</link>
+    <link>/home/tags/infrastructure/</link>
     <description>Recent content in infrastructure on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="/home/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Homelab</title>
-      <link>/homelab/</link>
+      <link>/home/homelab/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/homelab/</guid>
+      <guid>/home/homelab/</guid>
       <description>Sometimes you just get tired of paying AWS &amp;amp; Digital Ocean. A quick sketch of my homelab, inspired by the good folks at r/homelab.
 The main goal of the project was to enable the quick creation of Virtual Machines (or containers), accessible by subdomain such as project1.mydomain.net, project2.mydomain.net, etc., all under a single dynamic IP address. I managed to make it work pretty well, with a little help from NGINX for reverse proxying, pfsense for local DNS and routing, ddclient for dynamic DNS, Proxmox for hypervisor management, and freeNAS for shared storage.</description>
     </item>

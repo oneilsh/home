@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Class on Shawn T. O&#39;Neil</title>
-    <link>/tags/class/</link>
+    <link>/home/tags/class/</link>
     <description>Recent content in Class on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="/home/tags/class/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSE60416 System Interface Design, Microsoft Surface</title>
-      <link>/cse60416-system-interface-design-microsoft-surface/</link>
+      <link>/home/cse60416-system-interface-design-microsoft-surface/</link>
       <pubDate>Thu, 17 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>/cse60416-system-interface-design-microsoft-surface/</guid>
+      <guid>/home/cse60416-system-interface-design-microsoft-surface/</guid>
       <description>I did this project with Mike Olson, a Notre Dame graduate student. (He&amp;rsquo;s narrating the video.)
 We studied the proper design of user interfaces in this class. Although we mostly focused on graphical interfaces, we also learned how to interface with motion-based systems such as the Nintendo Wii remote and Balance Board.
 For our final project, we wanted to design an interactive browser for the Microsoft Surface, a multitouch based coffeetable like device.</description>
@@ -20,114 +20,114 @@ For our final project, we wanted to design an interactive browser for the Micros
     
     <item>
       <title>CSE60317 Online Algorithms For Computational Finance</title>
-      <link>/cse60317-online-algorithms-for-computational-finance/</link>
+      <link>/home/cse60317-online-algorithms-for-computational-finance/</link>
       <pubDate>Sun, 16 Nov 2008 00:00:00 +0000</pubDate>
       
-      <guid>/cse60317-online-algorithms-for-computational-finance/</guid>
+      <guid>/home/cse60317-online-algorithms-for-computational-finance/</guid>
       <description>This class was very interesting; we studied some of the basics of online algorithms as well as some applications to computational finance. Perhaps the most intriguing parts (for someone already familiar with online algorithms) were what we learned about classic computational finance, such as Black-Scholes-Merton.
 This &amp;ldquo;project&amp;rdquo; is a review of the main result of an interesting paper, entitled &amp;ldquo;Making Decisions in the Face of Uncertainty: How to Pick a Winner Almost Every Time,&amp;rdquo; by Awerbuch et al.</description>
     </item>
     
     <item>
       <title>CSE60647 Data Mining, Predicting on Slashdot</title>
-      <link>/cse60647-data-mining-predicting-on-slashdot/</link>
+      <link>/home/cse60647-data-mining-predicting-on-slashdot/</link>
       <pubDate>Sat, 05 Apr 2008 00:00:00 +0000</pubDate>
       
-      <guid>/cse60647-data-mining-predicting-on-slashdot/</guid>
+      <guid>/home/cse60647-data-mining-predicting-on-slashdot/</guid>
       <description>Much of the research I performed during my Master&amp;rsquo;s was on the newsvendor problem, which deals with attempting to guess the demand for short-lived products so as to maximize profits. Unfortunately, data about newspaper sales is tough to come by. So, why not use an online equivalent? This project aims at predicting the number of comments a Slashdot story will generate given text which appears in the summary.
 However, since we are interested in looking at the number of comments as a demand for a product to be sold, we don&amp;rsquo;t stop there.</description>
     </item>
     
     <item>
       <title>CSE60622 Cryptography. BobCash</title>
-      <link>/cse60622-cryptography.-bobcash/</link>
+      <link>/home/cse60622-cryptography.-bobcash/</link>
       <pubDate>Sat, 20 Oct 2007 00:00:00 +0000</pubDate>
       
-      <guid>/cse60622-cryptography.-bobcash/</guid>
+      <guid>/home/cse60622-cryptography.-bobcash/</guid>
       <description>This was a project I did for Cryptography, which implemented a digital cash scheme as a web service. The idea behind digital cash is that, well, it&amp;rsquo;s digital cash. Which means, it&amp;rsquo;s a digital object which has value and can be traded/spent, but is also anonymous. This is accomplished via digital signatures. Alice, who has money in the bank, sends the bank an string of random letters and an amount to withdraw.</description>
     </item>
     
     <item>
       <title>CCSE60171 Artificial Intelligence, Learning to Play Games</title>
-      <link>/ccse60171-artificial-intelligence-learning-to-play-games/</link>
+      <link>/home/ccse60171-artificial-intelligence-learning-to-play-games/</link>
       <pubDate>Fri, 06 Oct 2006 00:00:00 +0000</pubDate>
       
-      <guid>/ccse60171-artificial-intelligence-learning-to-play-games/</guid>
+      <guid>/home/ccse60171-artificial-intelligence-learning-to-play-games/</guid>
       <description>I did this project with Allison Regier. It&amp;rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
 We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function.</description>
     </item>
     
     <item>
       <title>Formal Logic</title>
-      <link>/formal-logic/</link>
+      <link>/home/formal-logic/</link>
       <pubDate>Sat, 19 Mar 2005 00:00:00 +0000</pubDate>
       
-      <guid>/formal-logic/</guid>
+      <guid>/home/formal-logic/</guid>
       <description>I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
  Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  </description>
     </item>
     
     <item>
       <title>CS446, Computer Graphics</title>
-      <link>/cs446-computer-graphics/</link>
+      <link>/home/cs446-computer-graphics/</link>
       <pubDate>Fri, 18 Mar 2005 00:00:00 +0000</pubDate>
       
-      <guid>/cs446-computer-graphics/</guid>
+      <guid>/home/cs446-computer-graphics/</guid>
       <description>&lt;p&gt;Some code from a very cool computer graphics class, mostly in Java.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CS422, Algorithms</title>
-      <link>/cs422-algorithms/</link>
+      <link>/home/cs422-algorithms/</link>
       <pubDate>Tue, 23 Nov 2004 00:00:00 +0000</pubDate>
       
-      <guid>/cs422-algorithms/</guid>
+      <guid>/home/cs422-algorithms/</guid>
       <description>&lt;p&gt;Just a few things from my undergrad algs class.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CS322, Principles of Programming Languages</title>
-      <link>/cs322-principles-of-programming-languages/</link>
+      <link>/home/cs322-principles-of-programming-languages/</link>
       <pubDate>Thu, 23 Sep 2004 00:00:00 +0000</pubDate>
       
-      <guid>/cs322-principles-of-programming-languages/</guid>
+      <guid>/home/cs322-principles-of-programming-languages/</guid>
       <description>&lt;p&gt;I really enjoyed the survey of programming topics and paradigms this class offered.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Epistemology</title>
-      <link>/epistemology/</link>
+      <link>/home/epistemology/</link>
       <pubDate>Fri, 20 Aug 2004 00:00:00 +0000</pubDate>
       
-      <guid>/epistemology/</guid>
+      <guid>/home/epistemology/</guid>
       <description>I took a Theory of Knowledge class as an undergraduate, and thoroughly enjoyed it. To this day I&amp;rsquo;m surprised how much epistemology is to be found at the intersection of science and engineering.
  Three Principles of Cartesian Epistemology Gettier&amp;rsquo;s Second Counterexample The Nature of Sense Data Unger&amp;rsquo;s Defense of Scepticism Goldman&amp;rsquo;s Causal Chains Dretske&amp;rsquo;s Epistemic Operators Quine&amp;rsquo;s Naturalization and Kim&amp;rsquo;s Response  </description>
     </item>
     
     <item>
       <title>CS228, Network Programming</title>
-      <link>/cs228-network-programming/</link>
+      <link>/home/cs228-network-programming/</link>
       <pubDate>Sun, 05 Oct 2003 00:00:00 +0000</pubDate>
       
-      <guid>/cs228-network-programming/</guid>
+      <guid>/home/cs228-network-programming/</guid>
       <description>&lt;p&gt;Once upon a time, I knew how to use Unix sockets.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CS222, Data Structures</title>
-      <link>/cs222-data-structures/</link>
+      <link>/home/cs222-data-structures/</link>
       <pubDate>Sat, 17 May 2003 00:00:00 +0000</pubDate>
       
-      <guid>/cs222-data-structures/</guid>
+      <guid>/home/cs222-data-structures/</guid>
       <description>&lt;p&gt;Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CS122</title>
-      <link>/cs122/</link>
+      <link>/home/cs122/</link>
       <pubDate>Thu, 24 Oct 2002 00:00:00 +0000</pubDate>
       
-      <guid>/cs122/</guid>
+      <guid>/home/cs122/</guid>
       <description>&lt;p&gt;A few old code files from my undergraduate CS122 class; these are all written as Java applets (as was the fashion at the time), so I&amp;rsquo;m just making the code available. They do still run though (thanks Java!)&lt;/p&gt;</description>
     </item>
     

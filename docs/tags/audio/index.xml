@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Audio on Shawn T. O&#39;Neil</title>
-    <link>/tags/audio/</link>
+    <link>/home/tags/audio/</link>
     <description>Recent content in Audio on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jun 2003 00:00:00 +0000</lastBuildDate><atom:link href="/tags/audio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jun 2003 00:00:00 +0000</lastBuildDate><atom:link href="/home/tags/audio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gainclone Amplifier</title>
-      <link>/gainclone-amplifier/</link>
+      <link>/home/gainclone-amplifier/</link>
       <pubDate>Wed, 18 Jun 2003 00:00:00 +0000</pubDate>
       
-      <guid>/gainclone-amplifier/</guid>
+      <guid>/home/gainclone-amplifier/</guid>
       <description>This one was a long time in the making. The case is cherry, the face plate and knobs are copper. The left knob is input select, center volume, and the right knob is a rotary dimmer switch for the (incandescent) backlight on the volume knob. Sounds absolutely beautiful, looks just as good, with more coats of polyurethane than I kept track of! Thanks to all of the people at diyaudio.com, especially BrianGT, who made the PCB boards I used, and to my then landlord Steve who let me use his shop.</description>
     </item>
     
     <item>
       <title>Headphone Amp</title>
-      <link>/headphone-amp/</link>
+      <link>/home/headphone-amp/</link>
       <pubDate>Tue, 07 Jan 2003 00:00:00 +0000</pubDate>
       
-      <guid>/headphone-amp/</guid>
+      <guid>/home/headphone-amp/</guid>
       <description>The second iteration of the headphone amp was the same internal design, packed into a slightly smaller, sleeker container. This one has a much more solid feel to it. It&amp;rsquo;s based on Chu Moy&amp;rsquo;s design; I checked the first iteration using a scope and it checks out nice, no clipping and the input/output resistances are good (100k in, theoretical 0 out.)
        </description>
     </item>
