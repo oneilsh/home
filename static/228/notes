@@ -1,0 +1,7 @@
+Network Type			Quiet Latency			Busy Lat.		Quiet Band		Busy Band		
+
+Aloha						Good, 1					bad				100%				bad
+
+Slotted					n/2						n/2				1/n				1/n
+
+Reservation				1 res period			n/2+res			100%-res			1/n-res

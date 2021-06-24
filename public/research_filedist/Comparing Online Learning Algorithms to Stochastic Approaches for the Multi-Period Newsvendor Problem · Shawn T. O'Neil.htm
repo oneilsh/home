@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)http://localhost:1313/comparing-online-learning-algorithms-to-stochastic-approaches-for-the-multi-period-newsvendor-problem/ -->
+<html lang="en-us" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O'Neil</title>
+    <meta name="generator" content="Hugo 0.37.1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="Creations, excursions, pictures, words, and colors.">
+    
+    
+    <link rel="canonical" href="http://localhost:1313/comparing-online-learning-algorithms-to-stochastic-approaches-for-the-multi-period-newsvendor-problem/">
+    <link rel="icon" href="http://localhost:1313/favicon.ico">
+    <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+    <link rel="stylesheet" href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/style.css">
+    <link rel="stylesheet" href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/monokai.css">
+    <link rel="stylesheet" href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/jquery.fancybox.css">
+    
+    <link href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/css" rel="stylesheet" type="text/css">
+    <link href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/css(1)" rel="stylesheet" type="text/css">
+    <meta property="og:title" content="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem">
+<meta property="og:description" content="Machine learning methods and inventory management were a focus in my Master’s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
+Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases (as in the figure above, where demand shocks change mean demand per unit time toward or away from 650).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/comparing-online-learning-algorithms-to-stochastic-approaches-for-the-multi-period-newsvendor-problem/">
+
+
+
+<meta property="article:published_time" content="2008-01-19T00:00:00+00:00">
+
+<meta property="article:modified_time" content="2008-01-19T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem">
+<meta itemprop="description" content="Machine learning methods and inventory management were a focus in my Master’s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
+Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases (as in the figure above, where demand shocks change mean demand per unit time toward or away from 650).">
+
+
+<meta itemprop="datePublished" content="2008-01-19T00:00:00+00:00">
+<meta itemprop="dateModified" content="2008-01-19T00:00:00+00:00">
+<meta itemprop="wordCount" content="176">
+
+
+
+<meta itemprop="keywords" content="Research,Theory,">
+
+    <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem">
+<meta name="twitter:description" content="Machine learning methods and inventory management were a focus in my Master’s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
+Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases (as in the figure above, where demand shocks change mean demand per unit time toward or away from 650).">
+<meta name="twitter:site" content="@shawntoneil">
+
+    
+
+    
+
+    
+    <script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/jquery.min.js"></script>
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <link rel="stylesheet" href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://localhost:1313/" id="logo">
+          
+          <i class="logo" style="background-image: url(&#39;http://localhost:1313/css/images/logo.png&#39;)"></i>
+          
+          <span class="site-title">Shawn T. O'Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="http://localhost:1313/">Home</a>
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="http://localhost:1313/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="http://google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://localhost:1313/">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="http://localhost:1313/">Home</a></td>
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="http://localhost:1313/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="http://google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://localhost:1313/">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/avatar.png">
+      
+      <h2 id="name">Shawn T. O'Neil</h2>
+      
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        26
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          13
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tbody><tr>
+          
+<td><a href="http://github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="http://flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="http://vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="http://linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="http://facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="http://twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="http://localhost:1313/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/banner.png" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="http://localhost:1313/comparing-online-learning-algorithms-to-stochastic-approaches-for-the-multi-period-newsvendor-problem/">
+    <h1 class="article-title" itemprop="name">
+        Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2008-01-19 00:00:00 +0000 UTC" itemprop="datePublished">2008-01-19</time>
+            ·
+            176
+            words
+            ·
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://localhost:1313/tags/research">Research</a>
+                ·
+                
+                
+                <a class="article-category-link" href="http://localhost:1313/tags/theory">Theory</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Machine learning methods and inventory management were a focus in my Master’s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.</p>
+
+<p>Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases (as in the figure above, where demand shocks change mean demand per unit time toward or away from 650). We were also able to prove lower bounds on the loss for our method:</p>
+
+
+<figure>
+    
+        <a href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/regret_bound.png" title=" " class="fancybox" rel="article0"><img src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/regret_bound.png" alt=" " width="50%"></a><span class="caption"> </span>
+    
+    
+</figure>
+
+
+<p>This was my very first research presentation, at ALENEX 2008. One of the highlights of the conference for me was seeing Donald Knuth give the keynote lecture!</p>
+
+<p><a href="http://epubs.siam.org/doi/abs/10.1137/1.9781611972887.5">Paper</a>.</p>
+
+<p>We later published a more complete version of this research in the journal
+Decision Sciences, where we more thoroughly explored the robustness of our machine-learning approach WMNS in volatile markets:</p>
+
+
+<figure>
+    
+        <a href="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/decision_science.png" title=" " class="fancybox" rel="article0"><img src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/decision_science.png" alt=" " width="100%"></a><span class="caption"> </span>
+    
+    
+</figure>
+
+
+<p><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/deci.12187">Paper</a>.</p>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://localhost:1313/comparing-online-learning-algorithms-to-stochastic-approaches-for-the-multi-period-newsvendor-problem/" data-id="ae0e0a355dfd273a51247f434c2407b5" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://localhost:1313/cse60622-cryptography.-bobcash/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">CSE60622 Cryptography. BobCash</div>
+    </a>
+    
+
+    
+    <a href="http://localhost:1313/cse60647-data-mining-predicting-on-slashdot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CSE60647 Data Mining, Predicting on Slashdot</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://localhost:1313/stained-glass/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://localhost:1313/stained-glass/candleholder_web.jpg)" alt="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="http://localhost:1313/stained-glass/" class="title">Stained Glass</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-20 00:00:00 +0000 UTC" itemprop="datePublished">2015-05-20</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://localhost:1313/megan-and-saul-engagement-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://localhost:1313/asula_engagement/0007.jpg)" alt="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="http://localhost:1313/megan-and-saul-engagement-photos/" class="title">Megan and Saul Engagement Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-11-20 00:00:00 +0000 UTC" itemprop="datePublished">2014-11-20</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://localhost:1313/hiking-south-sister-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://localhost:1313/hiking_south_sister/0008.jpg)" alt="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="http://localhost:1313/hiking-south-sister-photos/" class="title">Hiking South Sister Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-08-25 00:00:00 +0000 UTC" itemprop="datePublished">2014-08-25</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://localhost:1313/marble-making-timelapse/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://localhost:1313/marble/marble2_web.JPG)" alt="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="http://localhost:1313/marble-making-timelapse/" class="title">Marble Making Timelapse</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-03-20 00:00:00 +0000 UTC" itemprop="datePublished">2014-03-20</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://localhost:1313/the-topology-aware-file-distribution-problem/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://localhost:1313/research_filedist/banner.png)" alt="Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="http://localhost:1313/the-topology-aware-file-distribution-problem/" class="title">The topology aware file distribution problem</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-25 00:00:00 +0000 UTC" itemprop="datePublished">2013-11-25</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="http://localhost:1313/tags/analysis" style="font-size: 12px;">analysis</a>
+        
+        
+        <a href="http://localhost:1313/tags/arts" style="font-size: 12px;">arts</a>
+        
+        
+        <a href="http://localhost:1313/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="http://localhost:1313/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="http://localhost:1313/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="http://localhost:1313/tags/electronics" style="font-size: 12px;">electronics</a>
+        
+        
+        <a href="http://localhost:1313/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="http://localhost:1313/tags/maker" style="font-size: 12px;">maker</a>
+        
+        
+        <a href="http://localhost:1313/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="http://localhost:1313/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="http://localhost:1313/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="http://localhost:1313/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="http://localhost:1313/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="http://localhost:1313/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="http://localhost:1313/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up" style="display: block; left: 1085.45px;"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      © 2018
+      Copyright Shawn T. O’Neil 2018. Powered by <a href="http://gohugo.io/">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/jquery.fancybox.pack.js"></script>
+<script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/script.js"></script>
+<script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/MathJax.js"></script>
+
+
+
+
+<script data-no-instant="">document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script><script src="./Comparing Online Learning Algorithms to Stochastic Approaches for the Multi-Period Newsvendor Problem · Shawn T. O&#39;Neil_files/livereload.js"></script>
+</div></body></html>

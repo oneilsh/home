@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arts on Shawn T. O&#39;Neil</title>
+    <link>http://shawntoneil.com/tags/arts/</link>
+    <description>Recent content in Arts on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shawntoneil.com/tags/arts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stained Glass</title>
+      <link>http://shawntoneil.com/2015-05-20-stained-glass/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://shawntoneil.com/2015-05-20-stained-glass/</guid>
+      <description>These were made between 2012 and 2015, some at a studio in Marquette, MI, and some at the Notre Dame Glass Club.
+                 </description>
+    </item>
+    
+    <item>
+      <title>Marble Making Timelapse</title>
+      <link>http://shawntoneil.com/2014-03-20-marble-making-timelapse/</link>
+      <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shawntoneil.com/2014-03-20-marble-making-timelapse/</guid>
+      <description>A timelapse video of me making a marble at the Oregon State University Craft Center. Fun fact: the title logo in the video is the result of a custom processing.org program, though I&amp;rsquo;m not sure where that code lives now&amp;hellip;
+  </description>
+    </item>
+    
+    <item>
+      <title>Glass Beads</title>
+      <link>http://shawntoneil.com/2013-05-17-glass-beads/</link>
+      <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://shawntoneil.com/2013-05-17-glass-beads/</guid>
+      <description>Work in borosilicate glass, mostly done between 2011 and 2013 at the University of Notre Dame Glass Club.
+                   </description>
+    </item>
+    
+  </channel>
+</rss>

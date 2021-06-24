@@ -1,0 +1,4 @@
+#!/bin/bash
+#rm results.txt
+#rm savedboard.txt
+java PanelApplication

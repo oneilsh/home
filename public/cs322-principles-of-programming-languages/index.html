@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CS322, Principles of Programming Languages &middot; Shawn T. O&#39;Neil</title>
+    <meta name="generator" content="Hugo 0.84.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="/cs322-principles-of-programming-languages/"/>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/current_highlight.css"> 
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CS322, Principles of Programming Languages" />
+<meta property="og:description" content="I really enjoyed the survey of programming topics and paradigms this class offered." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs322-principles-of-programming-languages/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2004-09-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2004-09-23T00:00:00&#43;00:00" />
+
+
+    
+    <meta itemprop="name" content="CS322, Principles of Programming Languages">
+<meta itemprop="description" content="I really enjoyed the survey of programming topics and paradigms this class offered."><meta itemprop="datePublished" content="2004-09-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2004-09-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2165">
+<meta itemprop="keywords" content="Programming,Class," />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CS322, Principles of Programming Languages"/>
+<meta name="twitter:description" content="I really enjoyed the survey of programming topics and paradigms this class offered."/>
+<meta name="twitter:site" content="@shawntoneil"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo">
+          
+          <i class="logo" style="background-image: url('/css/images/logo.png')"></i>
+          
+          <span class="site-title">Shawn T. O&#39;Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/bio/about/">Bio/About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/bio/about/">Bio/About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="/css/images/avatar.png">
+      
+      <h2 id="name">Shawn T. O&#39;Neil</h2>
+      <h3 id="title">Creations, excursions, pictures, words, and colors.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        44
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          19
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="//vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="/322/lisp_banner.png" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="/cs322-principles-of-programming-languages/">
+    <h1 class="article-title" itemprop="name">
+        CS322, Principles of Programming Languages
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/programming">Programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/class">Class</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>I really enjoyed the survey of programming topics and paradigms this class offered.</p>
+<h3 id="emulation-of-multidimensional-arrays-in-c">Emulation of multidimensional arrays in C</h3>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	mdarray.c
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mdarray.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+
+mdarray <span style="color:#a6e22e">newmdarray</span>(<span style="color:#66d9ef">int</span> dimct, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>dim)
+	{
+	mdarray m;
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">int</span> elements <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	
+
+	m.dimct <span style="color:#f92672">=</span> dimct;
+	m.dim <span style="color:#f92672">=</span> malloc(dimct <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> dimct; i<span style="color:#f92672">++</span>)
+		{
+		m.dim[i] <span style="color:#f92672">=</span> dim[i];
+		elements <span style="color:#f92672">=</span> elements <span style="color:#f92672">*</span> dim[i];
+		}
+	m.val <span style="color:#f92672">=</span> malloc(elements <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">double</span>));
+
+	<span style="color:#66d9ef">return</span> m;
+	}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delmdarray</span>(mdarray m)
+	{
+	free (m.dim);
+	free (m.val);
+	}
+
+<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getEl</span>(mdarray m, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>posn)
+	{
+	<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> mult <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> i;
+	
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> m.dimct<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>)
+		{
+		count <span style="color:#f92672">+=</span> mult<span style="color:#f92672">*</span>posn[i];
+		mult <span style="color:#f92672">=</span> mult<span style="color:#f92672">*</span>m.dim[i];
+		}
+
+	<span style="color:#66d9ef">return</span> m.val[count];	
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEl</span>(mdarray m, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>posn, <span style="color:#66d9ef">double</span> d)
+	{
+	<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> mult <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> i;
+	
+	<span style="color:#75715e">/*hey this is easier...*/</span>
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> m.dimct<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">--</span>)
+		{
+		count <span style="color:#f92672">+=</span> mult<span style="color:#f92672">*</span>posn[i];
+		mult <span style="color:#f92672">=</span> mult<span style="color:#f92672">*</span>m.dim[i];
+		}
+
+	<span style="color:#75715e">/*for(i = 2; i &lt;= m.dimct; i++)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		mult = posn[m.dimct - i];
+</span><span style="color:#75715e">		for(j = 1; j &lt; i; j++)
+</span><span style="color:#75715e">			{
+</span><span style="color:#75715e">				mult = mult*m.dim[m.dimct-j];
+</span><span style="color:#75715e">		
+</span><span style="color:#75715e">			}
+</span><span style="color:#75715e">			count += mult;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	count += posn[m.dimct-1];
+</span><span style="color:#75715e">	m.val[count] = d;*/</span>
+	m.val[count] <span style="color:#f92672">=</span> d;
+	}</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	mdarray.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> mdarray
+	{
+	<span style="color:#66d9ef">int</span> dimct;
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>dim;
+	<span style="color:#66d9ef">double</span> <span style="color:#f92672">*</span>val;
+	} mdarray;</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	testmain.c
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mdarray.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>	
+<span style="color:#66d9ef">extern</span> mdarray <span style="color:#a6e22e">newmdarray</span>(<span style="color:#66d9ef">int</span> dimct, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>dim);
+<span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delmdarray</span>(mdarray m);
+<span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getEl</span>(mdarray m, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>posn);
+<span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEl</span>(mdarray m, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>posn, <span style="color:#66d9ef">double</span> d);
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+	mdarray y;
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>dim <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>posn <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	<span style="color:#66d9ef">double</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	
+	dim[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>;
+	dim[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>;
+	dim[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;
+	dim[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>;
+	dim[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>;
+	posn[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;
+	posn[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;
+	posn[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+	posn[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>;
+	posn[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>;
+	y <span style="color:#f92672">=</span> newmdarray(<span style="color:#ae81ff">5</span>, dim);
+	setEl(y, posn, <span style="color:#ae81ff">3.14159</span>);
+	answer <span style="color:#f92672">=</span> getEl(y, posn);
+	printf(<span style="color:#e6db74">&#34;Got and retrieved the value %f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, answer);
+	delmdarray(y);
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+	}</code></pre></div>
+
+    </div>
+</div>
+<h3 id="quicksort-in-c">Quicksort in C</h3>
+<p>Emulating recursion using only <code>if</code> and <code>goto</code> for control, an incredibly fast sorting method.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	quicksort.c
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*Shawn O&#39;Neil
+</span><span style="color:#75715e">Quicksort using only goto
+</span><span style="color:#75715e">Everything works, should be no compiler warnings (other than no reference to main)*/</span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">QuickSort</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>T, <span style="color:#66d9ef">int</span> sz);
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> MyStack
+	{
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>T, bct, act, ect;
+	} MyStack;
+	
+<span style="color:#75715e">/*void printStack(MyStack *thestack, int howmany)
+</span><span style="color:#75715e">	{
+</span><span style="color:#75715e">	int i;
+</span><span style="color:#75715e">	printf(&#34;stack: &#34;);
+</span><span style="color:#75715e">	for(i = 0; i &lt; howmany; i++)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		printf(&#34;%d, &#34;, thestack[i]);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	printf(&#34;\n&#34;);
+</span><span style="color:#75715e">	}*/</span>
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">QuickSort</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>T, <span style="color:#66d9ef">int</span> sz)
+	{
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>bef, <span style="color:#f92672">*</span>aft, <span style="color:#f92672">*</span>eq, stacksize;
+	<span style="color:#66d9ef">int</span> bct, act, ect, i, piv;
+	MyStack <span style="color:#f92672">*</span>stack;
+	
+	stack <span style="color:#f92672">=</span> malloc(sz<span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(MyStack));
+	stacksize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	
+	Beginning: 
+	
+	<span style="color:#75715e">/*printStack(stack, stacksize);*/</span>
+	bef <span style="color:#f92672">=</span> malloc(sz <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	aft <span style="color:#f92672">=</span> malloc(sz <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	eq <span style="color:#f92672">=</span> malloc(sz <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	bct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; act <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; ect <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+	
+	<span style="color:#66d9ef">if</span>(sz <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">goto</span> Done;
+		piv <span style="color:#f92672">=</span> rand()<span style="color:#f92672">%</span>sz;
+		
+		<span style="color:#75715e">/*for(i = 0; i &lt; sz; i++)
+</span><span style="color:#75715e">			{
+</span><span style="color:#75715e">			if (T[i] &lt; T[piv]) bef[bct++] = T[i];
+</span><span style="color:#75715e">			else if (T[i] == T[piv]) eq[ect++] = T[i];
+</span><span style="color:#75715e">			else	aft[act++] = T[i];
+</span><span style="color:#75715e">			}
+</span><span style="color:#75715e">		*/</span>
+
+		i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		ForLoop1:
+		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> sz) <span style="color:#66d9ef">goto</span> OutLoop1;
+			<span style="color:#66d9ef">if</span> (T[i] <span style="color:#f92672">&lt;</span> T[piv]) <span style="color:#66d9ef">goto</span> PutInBefore;
+			<span style="color:#66d9ef">if</span> (T[i] <span style="color:#f92672">==</span> T[piv]) <span style="color:#66d9ef">goto</span> PutInEqual;
+			<span style="color:#66d9ef">if</span> (T[i] <span style="color:#f92672">&gt;</span> T[piv]) <span style="color:#66d9ef">goto</span> PutInAfter;
+			AfterPutIn:
+			i<span style="color:#f92672">++</span>;
+		<span style="color:#66d9ef">goto</span> ForLoop1;
+		OutLoop1:
+
+
+		<span style="color:#75715e">/*for(i = 0; i &lt; bct; i++) T[i] = bef[i];*/</span>
+		i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		ForLoop2:
+		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> bct) <span style="color:#66d9ef">goto</span> OutLoop2;
+			T[i] <span style="color:#f92672">=</span> bef[i];
+			i<span style="color:#f92672">++</span>;
+		<span style="color:#66d9ef">goto</span> ForLoop2;
+		OutLoop2:
+	
+		<span style="color:#75715e">/*for(i = 0; i &lt; ect; i++) T[bct+i] = eq[i];*/</span>
+		i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		ForLoop3:
+		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> ect) <span style="color:#66d9ef">goto</span> OutLoop3;
+			T[bct<span style="color:#f92672">+</span>i] <span style="color:#f92672">=</span> eq[i];
+			i<span style="color:#f92672">++</span>;
+		<span style="color:#66d9ef">goto</span> ForLoop3;
+		OutLoop3:
+		
+		<span style="color:#75715e">/*for(i = 0; i &lt; act; i++) T[bct+ect+i] = aft[i];*/</span>
+		i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		ForLoop4:
+		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> act) <span style="color:#66d9ef">goto</span> OutLoop4;
+			T[bct<span style="color:#f92672">+</span>ect<span style="color:#f92672">+</span>i] <span style="color:#f92672">=</span> aft[i];
+			i<span style="color:#f92672">++</span>;
+		<span style="color:#66d9ef">goto</span> ForLoop4;
+		OutLoop4:
+		
+		free(bef);
+		free(aft);
+		free(eq);
+		
+		<span style="color:#75715e">/*QuickSort(T, bct);*/</span>
+		sz <span style="color:#f92672">=</span> bct;
+		stack[stacksize].T <span style="color:#f92672">=</span> T;
+		stack[stacksize].bct <span style="color:#f92672">=</span> bct;
+		stack[stacksize].ect <span style="color:#f92672">=</span> ect;
+		stack[stacksize<span style="color:#f92672">++</span>].act <span style="color:#f92672">=</span> act;
+		<span style="color:#66d9ef">goto</span> Beginning;
+	
+		<span style="color:#75715e">/*QuickSort(&amp;T[bct + ect], act);*/</span>
+		TailRecursion:
+		T <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>T[bct <span style="color:#f92672">+</span> ect];
+		sz <span style="color:#f92672">=</span> act;
+		<span style="color:#66d9ef">goto</span> Beginning;
+		
+		<span style="color:#66d9ef">goto</span> EndMethod;
+		
+		PutInBefore:
+		bef[bct<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> T[i];
+		<span style="color:#66d9ef">goto</span> AfterPutIn;
+		
+		PutInEqual:
+		eq[ect<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> T[i];
+		<span style="color:#66d9ef">goto</span> AfterPutIn;
+		
+		PutInAfter:
+		aft[act<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> T[i];
+		<span style="color:#66d9ef">goto</span> AfterPutIn;
+		
+		EndMethod:
+	Done:
+		<span style="color:#66d9ef">if</span>(stacksize <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">goto</span> ReallyDone;
+		T <span style="color:#f92672">=</span> stack[<span style="color:#f92672">--</span>stacksize].T;
+		bct <span style="color:#f92672">=</span> stack[stacksize].bct;
+		ect <span style="color:#f92672">=</span> stack[stacksize].ect;
+		act <span style="color:#f92672">=</span> stack[stacksize].act;
+		<span style="color:#66d9ef">goto</span> TailRecursion;
+	ReallyDone:
+	i <span style="color:#f92672">=</span> <span style="color:#ae81ff">9898</span>;
+	}
+	
+<span style="color:#75715e">/*int main (int argc, char **argv)
+</span><span style="color:#75715e">	{
+</span><span style="color:#75715e">	int AR[10000], i;
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">	srand (time (NULL));
+</span><span style="color:#75715e">	for (i=0; i &lt; 10000; i++) AR[i] = rand()%1000;
+</span><span style="color:#75715e">	for (i=0; i &lt; 10000; i++) printf (&#34;%d &#34;,AR[i]);
+</span><span style="color:#75715e">	printf (&#34;\n\n&#34;);
+</span><span style="color:#75715e">	QuickSort (AR,10000);
+</span><span style="color:#75715e">	for (i=0; i &lt; 10000; i++) printf (&#34;%d &#34;,AR[i]);
+</span><span style="color:#75715e">	printf (&#34;\n&#34;);
+</span><span style="color:#75715e">	return EXIT_SUCCESS;
+</span><span style="color:#75715e">	}*/</span></code></pre></div>
+
+    </div>
+</div>
+<h3 id="diamond-inheritance-in-c">Diamond Inheritance in C</h3>
+<p>Emulating diamond inheritance in C with function pointers.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	PG3.c
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*
+</span><span style="color:#75715e">Shawn O&#39;Neil - Emulating Diamond inheritance in C
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">Golly Gee Gosh I&#39;ve got to be close. I&#39;m fairly sure I&#39;ve got it this
+</span><span style="color:#75715e">time, I don&#39;t think I need to follow two pointers in any XtoX data
+</span><span style="color:#75715e">copy methods, as well as in the Genius2MathMajor data copy for just
+</span><span style="color:#75715e">the Discipline stuff, at least I really hope not.
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">*/</span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;PG3.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newNMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>p)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+	p<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	p<span style="color:#f92672">-&gt;</span>WorkatJob<span style="color:#f92672">=</span>NMUStudentWorkatJob;
+	p<span style="color:#f92672">-&gt;</span>Study<span style="color:#f92672">=</span>NMUStudentStudy;
+	p<span style="color:#f92672">-&gt;</span>Speak<span style="color:#f92672">=</span>NMUStudentSpeak;
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newMathMajor</span>(MathMajor <span style="color:#f92672">*</span>p)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	NMUStudent <span style="color:#f92672">*</span>g;
+	p<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>Name;   <span style="color:#75715e">/*p&#39;s a pointer should point to the address of its name, is this correct syntax?*/</span>
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+	p<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	p<span style="color:#f92672">-&gt;</span>WorkatJob<span style="color:#f92672">=</span>NMUStudentWorkatJob;
+	p<span style="color:#f92672">-&gt;</span>Study<span style="color:#f92672">=</span>MathMajorStudy;
+	p<span style="color:#f92672">-&gt;</span>Speak<span style="color:#f92672">=</span>MathMajorSpeak;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Discipline[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newCSMajor</span>(CSMajor <span style="color:#f92672">*</span>p)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	p<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>Name;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+	p<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	p<span style="color:#f92672">-&gt;</span>WorkatJob<span style="color:#f92672">=</span>CSMajorWorkatJob;
+	p<span style="color:#f92672">-&gt;</span>Study<span style="color:#f92672">=</span>NMUStudentStudy;
+	p<span style="color:#f92672">-&gt;</span>Speak<span style="color:#f92672">=</span>CSMajorSpeak;
+	p<span style="color:#f92672">-&gt;</span>YearsOfExperience <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newGenius</span>(Genius <span style="color:#f92672">*</span>p)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	p<span style="color:#f92672">-&gt;</span>a1 <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>Name;
+	p<span style="color:#f92672">-&gt;</span>a2 <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>Name;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+	p<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	p<span style="color:#f92672">-&gt;</span>WorkatJob<span style="color:#f92672">=</span>CSMajorWorkatJob;
+	p<span style="color:#f92672">-&gt;</span>Study<span style="color:#f92672">=</span>MathMajorStudy;
+	p<span style="color:#f92672">-&gt;</span>Speak<span style="color:#f92672">=</span>GeniusSpeak;
+	p<span style="color:#f92672">-&gt;</span>YearsOfExperience <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		p<span style="color:#f92672">-&gt;</span>Discipline[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
+	p<span style="color:#f92672">-&gt;</span>Salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentWorkatJob</span>(<span style="color:#66d9ef">void</span>) {	printf(<span style="color:#e6db74">&#34;Would you like fries with that?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentStudy</span>(<span style="color:#66d9ef">void</span>) {	printf(<span style="color:#e6db74">&#34;Pass the beer.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentSpeak</span>(<span style="color:#66d9ef">void</span>) {	printf(<span style="color:#e6db74">&#34;When is deer camp?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajorStudy</span>(<span style="color:#66d9ef">void</span>) {	printf(<span style="color:#e6db74">&#34;Don&#39;t close the library yet!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajorSpeak</span>(<span style="color:#66d9ef">void</span>) {	printf(<span style="color:#e6db74">&#34;Int dw f = Int w df!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajorWorkatJob</span>(<span style="color:#66d9ef">void</span>) {printf(<span style="color:#e6db74">&#34;I&#39;m paid to do my homework!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajorSpeak</span>(<span style="color:#66d9ef">void</span>) {printf(<span style="color:#e6db74">&#34;while (1) cout &lt;&lt; </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">You are a jerk!</span><span style="color:#ae81ff">\&#34;\n</span><span style="color:#e6db74">&#34;</span>);}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">GeniusSpeak</span>(<span style="color:#66d9ef">void</span>) {printf(<span style="color:#e6db74">&#34;I can do fast Fourier Transforms!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">MathMajor2NMUStudentPtr</span> (MathMajor <span style="color:#f92672">*</span>p)
+	{
+	NMUStudent <span style="color:#f92672">*</span>g;
+	g <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)p<span style="color:#f92672">-&gt;</span>a;
+	<span style="color:#66d9ef">return</span> g;
+	}
+	
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">CSMajor2NMUStudentPtr</span> (CSMajor <span style="color:#f92672">*</span>p)
+	{
+	NMUStudent <span style="color:#f92672">*</span>g;
+	g <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)p<span style="color:#f92672">-&gt;</span>a;
+	<span style="color:#66d9ef">return</span> g;
+	}
+
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2NMUStudentPtr</span> (Genius <span style="color:#f92672">*</span>p)
+	{
+	NMUStudent <span style="color:#f92672">*</span>g;
+	g <span style="color:#f92672">=</span> (NMUStudent<span style="color:#f92672">*</span>)p<span style="color:#f92672">-&gt;</span>a1;
+	<span style="color:#66d9ef">return</span> g;
+	}
+	
+MathMajor <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2MathMajorPtr</span> (Genius <span style="color:#f92672">*</span>p)
+	{
+	MathMajor <span style="color:#f92672">*</span>g;
+	g <span style="color:#f92672">=</span> (MathMajor<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>a1;
+	<span style="color:#66d9ef">return</span> g;
+	}
+	
+CSMajor <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2CSMajorPtr</span> (Genius <span style="color:#f92672">*</span>p)
+	{
+	CSMajor <span style="color:#f92672">*</span>g;
+	g <span style="color:#f92672">=</span> (CSMajor<span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>p<span style="color:#f92672">-&gt;</span>a2;
+	<span style="color:#66d9ef">return</span> g;
+	}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudent2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, NMUStudent <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;	
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajor2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, MathMajor <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajor2MathMajor</span>(MathMajor <span style="color:#f92672">*</span>l, MathMajor <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	l<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Name[i];;
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Discipline[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Discipline[i];;
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajor2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, CSMajor <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajor2CSMajor</span>(CSMajor <span style="color:#f92672">*</span>l, CSMajor <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	l<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	l<span style="color:#f92672">-&gt;</span>YearsOfExperience <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>YearsOfExperience;
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2MathMajor</span>(MathMajor <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	l<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Discipline[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Discipline[i];;
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2CSMajor</span>(CSMajor <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	l<span style="color:#f92672">-&gt;</span>a <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	l<span style="color:#f92672">-&gt;</span>YearsOfExperience <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>YearsOfExperience;
+	}
+	
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2Genius</span>(Genius <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m)
+	{
+	<span style="color:#66d9ef">int</span> i;
+	l<span style="color:#f92672">-&gt;</span>a1 <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a1;;
+	l<span style="color:#f92672">-&gt;</span>a2 <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>a2;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Name[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Name[i];
+	<span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>DOB[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>DOB[i];
+	l<span style="color:#f92672">-&gt;</span>GradYear <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>GradYear;
+	<span style="color:#75715e">/*l-&gt;WorkatJob = m-&gt;WorkatJob;
+</span><span style="color:#75715e">	l-&gt;Study = m-&gt;Study;
+</span><span style="color:#75715e">	l-&gt;Speak = m-&gt;Speak;*/</span>
+	l<span style="color:#f92672">-&gt;</span>YearsOfExperience <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>YearsOfExperience;
+	<span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; i<span style="color:#f92672">++</span>)
+		l<span style="color:#f92672">-&gt;</span>Discipline[i] <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Discipline[i];
+	l<span style="color:#f92672">-&gt;</span>Salary <span style="color:#f92672">=</span> m<span style="color:#f92672">-&gt;</span>Salary;
+	}</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	PG3.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> NMUStudent
+	{
+	<span style="color:#66d9ef">char</span> Name[<span style="color:#ae81ff">60</span>];
+	<span style="color:#66d9ef">char</span> DOB[<span style="color:#ae81ff">8</span>];
+	<span style="color:#66d9ef">int</span> GradYear;
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>WorkatJob)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Study)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Speak)(<span style="color:#66d9ef">void</span>);
+	} NMUStudent;
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> MathMajor
+	{
+	NMUStudent <span style="color:#f92672">*</span>a;
+
+	<span style="color:#66d9ef">char</span> Discipline[<span style="color:#ae81ff">60</span>];
+
+	<span style="color:#66d9ef">char</span> Name[<span style="color:#ae81ff">60</span>];
+	<span style="color:#66d9ef">char</span> DOB[<span style="color:#ae81ff">8</span>];
+	<span style="color:#66d9ef">int</span> GradYear;
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>WorkatJob)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Study)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Speak)(<span style="color:#66d9ef">void</span>);	
+	} MathMajor;
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> CSMajor
+	{
+	NMUStudent <span style="color:#f92672">*</span>a;
+	
+	<span style="color:#66d9ef">int</span> YearsOfExperience;
+
+	<span style="color:#66d9ef">char</span> Name[<span style="color:#ae81ff">60</span>];
+	<span style="color:#66d9ef">char</span> DOB[<span style="color:#ae81ff">8</span>];
+	<span style="color:#66d9ef">int</span> GradYear;
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>WorkatJob)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Study)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Speak)(<span style="color:#66d9ef">void</span>);
+	} CSMajor;
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> Genius
+	{
+	NMUStudent <span style="color:#f92672">*</span>a1;
+	<span style="color:#66d9ef">char</span> Discipline[<span style="color:#ae81ff">60</span>];
+
+	NMUStudent <span style="color:#f92672">*</span>a2;
+	<span style="color:#66d9ef">int</span> YearsOfExperience;
+
+	<span style="color:#66d9ef">int</span> Salary;
+	
+	<span style="color:#66d9ef">char</span> Name[<span style="color:#ae81ff">60</span>];
+	<span style="color:#66d9ef">char</span> DOB[<span style="color:#ae81ff">8</span>];
+	<span style="color:#66d9ef">int</span> GradYear;
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>WorkatJob)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Study)(<span style="color:#66d9ef">void</span>);
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Speak)(<span style="color:#66d9ef">void</span>);
+	} Genius;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newNMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>p);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentWorkatJob</span>(<span style="color:#66d9ef">void</span>);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentStudy</span>(<span style="color:#66d9ef">void</span>);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudentSpeak</span>(<span style="color:#66d9ef">void</span>);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newMathMajor</span>(MathMajor <span style="color:#f92672">*</span>p);
+<span style="color:#75715e">/*void MathMajorWorkatJob(void);*/</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajorStudy</span>(<span style="color:#66d9ef">void</span>);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajorSpeak</span>(<span style="color:#66d9ef">void</span>);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newCSMajor</span>(CSMajor <span style="color:#f92672">*</span>p);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajorWorkatJob</span>(<span style="color:#66d9ef">void</span>);
+<span style="color:#75715e">/*void CSMajorStudy(void);*/</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajorSpeak</span>(<span style="color:#66d9ef">void</span>);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">newGenius</span>(Genius <span style="color:#f92672">*</span>p);
+<span style="color:#75715e">/*void GeniusWorkatJob(void);*/</span>
+<span style="color:#75715e">/*void GeniusStudy(void);*/</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">GeniusSpeak</span>(<span style="color:#66d9ef">void</span>);
+
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">MathMajor2NMUStudentPtr</span> (MathMajor <span style="color:#f92672">*</span>p);
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">CSMajor2NMUStudentPtr</span> (CSMajor <span style="color:#f92672">*</span>p);
+NMUStudent <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2NMUStudentPtr</span> (Genius <span style="color:#f92672">*</span>p);
+MathMajor <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2MathMajorPtr</span> (Genius <span style="color:#f92672">*</span>p);
+CSMajor <span style="color:#f92672">*</span> <span style="color:#a6e22e">Genius2CSMajorPtr</span> (Genius <span style="color:#f92672">*</span>p);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NMUStudent2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, NMUStudent <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajor2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, MathMajor <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">MathMajor2MathMajor</span>(MathMajor <span style="color:#f92672">*</span>l, MathMajor <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajor2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, CSMajor <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CSMajor2CSMajor</span>(CSMajor <span style="color:#f92672">*</span>l, CSMajor <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2NMUStudent</span>(NMUStudent <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2MathMajor</span>(MathMajor <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2CSMajor</span>(CSMajor <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Genius2Genius</span>(Genius <span style="color:#f92672">*</span>l, Genius <span style="color:#f92672">*</span>m);</code></pre></div>
+
+    </div>
+</div>
+<h3 id="calculating-tree-skew-in-lisp">Calculating tree skew in Lisp</h3>
+<p>I wish we had spent more time with Lisp in this class; this program computes the &ldquo;skew&rdquo; of a tree, a measure of its imbalance.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	skew.lisp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-common-lisp" data-lang="common-lisp"><span style="color:#75715e">;; Given a tree written in preorder (I think), tell me the &#34;skew&#34;</span>
+<span style="color:#75715e">;;</span>
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;  Main method, just opens the files and gives the buffers to the recursion</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(defun skew ()
+	(with-open-file (skew-out <span style="color:#e6db74">&#34;skew.out&#34;</span> <span style="color:#e6db74">:direction</span> <span style="color:#e6db74">:output</span>)
+	(with-open-file (skew-in <span style="color:#e6db74">&#34;skew.in&#34;</span> <span style="color:#e6db74">:direction</span> <span style="color:#e6db74">:input</span>)
+		(docase skew-in skew-out <span style="color:#ae81ff">0</span>)
+	))	
+)
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;  Gets each case, and if it was an empty case it ends</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(defun docase(skew-in skew-out counter)
+	(<span style="color:#66d9ef">let</span> ((tosplit (skew2 () skew-in skew-out))(counter (<span style="color:#a6e22e">+</span> counter <span style="color:#ae81ff">1</span>)))
+		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">not</span> (<span style="color:#a6e22e">null</span> tosplit))
+			(<span style="color:#66d9ef">progn</span>
+				(<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#39;hello</span> (input tosplit))
+				(<span style="color:#a6e22e">format</span> skew-out <span style="color:#e6db74">&#34;Case ~D: The skew factor is ~D~%&#34;</span> counter (input tosplit))
+				(docase skew-in skew-out counter)
+			)
+		)
+	)
+)
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;   Read the input until you get to a blank line</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(defun skew2 (y skew-in skew-out)
+	(setf word (<span style="color:#a6e22e">read-line</span> skew-in))
+	<span style="color:#75715e">;(print y)</span>
+	(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">equal</span> word <span style="color:#e6db74">&#34;&#34;</span>)
+		<span style="color:#75715e">;if the word read was &#34;&#34; return</span>
+		y
+		<span style="color:#75715e">;else return</span>
+		(<span style="color:#66d9ef">let</span>
+			((y (<span style="color:#a6e22e">append</span> y (<span style="color:#a6e22e">list</span> word))))
+			(skew2 y skew-in skew-out)
+		)
+	)
+)
+
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;  Takes an input and gives it to listsplit, using the first entry as</span>
+<span style="color:#75715e">;;  where to split and the rest as what to split</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(DEFUN input (x)
+	<span style="color:#75715e">;(print x)</span>
+	(<span style="color:#66d9ef">let</span>
+		((justsplit (listsplit () (<span style="color:#a6e22e">rest</span> x) (<span style="color:#a6e22e">first</span> x))))
+		(<span style="color:#a6e22e">+</span>	
+			(computeskew (<span style="color:#a6e22e">length</span> (<span style="color:#a6e22e">first</span> justsplit)) (<span style="color:#a6e22e">length</span> (<span style="color:#a6e22e">second</span> justsplit)))
+			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">equal</span> (<span style="color:#a6e22e">first</span> justsplit) ())
+				<span style="color:#ae81ff">0</span><span style="color:#75715e">; (length (second justsplit))</span>
+				(input (<span style="color:#a6e22e">first</span> justsplit))
+			)
+			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">equal</span> (<span style="color:#a6e22e">second</span> justsplit) ())
+				<span style="color:#ae81ff">0</span><span style="color:#75715e">; (length (first justsplit))</span>
+				(input (<span style="color:#a6e22e">second</span> justsplit))
+			)
+		)
+	)
+)
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; Compute the skew of a node given number of nodes on each side</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(DEFUN computeskew (x y)
+	(<span style="color:#66d9ef">let</span> ((   y (<span style="color:#a6e22e">abs</span> (<span style="color:#a6e22e">-</span> x y))    ))
+		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">&lt;=</span> y <span style="color:#ae81ff">1</span>)
+			<span style="color:#ae81ff">0</span>
+			(<span style="color:#a6e22e">-</span> y <span style="color:#ae81ff">1</span>)
+		)
+	)
+)
+
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;  takes an empty, a string, and where to break, and makes two lists out of it</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(DEFUN LISTSPLIT (y x where)
+	(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string&gt;</span> where (<span style="color:#a6e22e">first</span> x))
+			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">equal</span> (<span style="color:#a6e22e">first</span> x) ())		<span style="color:#75715e">;take an element off of the second list and add it to the first</span>
+				(<span style="color:#a6e22e">list</span> y x)								<span style="color:#75715e">;if the second list is null, just return the two</span>
+				(listsplit (<span style="color:#a6e22e">append</span> y (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">first</span> x))) (<span style="color:#a6e22e">rest</span> x) where)	<span style="color:#75715e">;else actually take one off the second and add it to the first</span>
+			)
+			(<span style="color:#a6e22e">list</span> y x)							<span style="color:#75715e">;return both lists now that they are finished</span>
+	)
+)</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	skew.in
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rst" data-lang="rst">H<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>C<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>B<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>A<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>D<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>M<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>K<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>I<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>J<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>L<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>N<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>D<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>B<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>A<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>C<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>J<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>F<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>K<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>L<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>M<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>N<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>H<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>C<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>B<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>A<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>D<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>I<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>J<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>N<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>K<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>L<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>M<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>A<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>B<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>C<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>D<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>E<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>F<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>G</code></pre></div>
+
+    </div>
+</div>
+<h3 id="mergesort-in-prolog">Mergesort in Prolog</h3>
+<p>Prolog is weird.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	mergesort.pl
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-prolog" data-lang="prolog"><span style="color:#a6e22e">split</span>([],[],[]).
+<span style="color:#a6e22e">split</span>(Z,X,Y):-<span style="color:#a6e22e">append</span>(X,Y,Z),<span style="color:#a6e22e">length</span>(X,LenX),<span style="color:#a6e22e">length</span>(Y,LenY),Diff <span style="color:#f92672">is</span> LenX <span style="color:#f92672">-</span> LenY, Diff <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>, Diff <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span>
+
+<span style="color:#a6e22e">merger</span>([], Y, Y).
+<span style="color:#a6e22e">merger</span>(Y, [], Y).
+<span style="color:#a6e22e">merger</span>([A|X],[B|Y],Z):-A <span style="color:#f92672">&lt;</span> B, <span style="color:#a6e22e">append</span>([A],MID,Z), <span style="color:#a6e22e">merger</span>(X, [B|Y], MID).
+<span style="color:#a6e22e">merger</span>([A|X],[B|Y],Z):-A <span style="color:#f92672">&gt;=</span> B, <span style="color:#a6e22e">append</span>([B], MID, Z), <span style="color:#a6e22e">merger</span>([A|X],Y,MID).
+
+<span style="color:#a6e22e">mergesort</span>([],[]).
+<span style="color:#a6e22e">mergesort</span>([A],[A]).
+<span style="color:#a6e22e">mergesort</span>(A,Z):-<span style="color:#a6e22e">length</span>(A,Length),Length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">split</span>(A,B,C),<span style="color:#a6e22e">mergesort</span>(B,First),<span style="color:#a6e22e">mergesort</span>(C,Second),<span style="color:#a6e22e">merger</span>(First,Second,Z).</code></pre></div>
+
+    </div>
+</div>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/cs322-principles-of-programming-languages/" data-id="673486d4d1eda072b341498a05c0f8ea" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="/epistemology/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Epistemology</div>
+    </a>
+    
+
+    
+    <a href="/cs422-algorithms/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CS422, Algorithms</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
+        
+        
+        <a href="/tags/art" style="font-size: 12px;">art</a>
+        
+        
+        <a href="/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="/tags/diy" style="font-size: 12px;">diy</a>
+        
+        
+        <a href="/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="/tags/hiking" style="font-size: 12px;">hiking</a>
+        
+        
+        <a href="/tags/infrastructure" style="font-size: 12px;">infrastructure</a>
+        
+        
+        <a href="/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="/tags/r" style="font-size: 12px;">r</a>
+        
+        
+        <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        ALL
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/tidytensor/" class="thumbnail">
+                    
+                        <span style="background-image:url(/tidytensor/tidytensor_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/tidytensor/" class="title">TidyTensor - More Fun with Deep Learning</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/colette-patricia-oneil/" class="thumbnail">
+                    
+                        <span style="background-image:url(/colette_four_months/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/colette-patricia-oneil/" class="title">Colette Patricia O&#39;Neil</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-06-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/homelab/" class="thumbnail">
+                    
+                        <span style="background-image:url(/homelab/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/homelab/" class="title">Homelab</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-05-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees-pt2/" class="thumbnail">
+                    
+                        <span style="background-image:url(/regression_trees_pt2/decision_tree_crop.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees-pt2/" class="title">Random Forests &amp; Gradient Boosting</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-03-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/regression_trees_files/three_depths.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees/" class="title">Regression Trees &amp; Bagging (more functional R)</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/autodifferentation-and-functional-operators-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/autodifferentation-and-functional-operators-in-r/" class="title">Automatic Differentiation &amp; Functional Operators in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/about/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bio_about/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/about/" class="title">Bio/About</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-04-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/biorecursion/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="title">Bio/Recursion: CS and Bioinformatics in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-primer-for-computational-biology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/primer/primer_closed_1200.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-primer-for-computational-biology/" class="title">A Primer for Computational Biology</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-02-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/3d-printing-modeling-online-tools/" class="thumbnail">
+                    
+                        <span style="background-image:url(/3d_printing_notes/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/3d-printing-modeling-online-tools/" class="title">3D Printing &amp; Modeling, Online Tools</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2017</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/rstackdeque/" class="thumbnail">
+                    
+                        <span style="background-image:url(/rstackdeque/quicksort_vis.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/rstackdeque/" class="title">Rstackdeque</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/stained-glass/" class="thumbnail">
+                    
+                        <span style="background-image:url(/stained-glass/candleholder_web.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/stained-glass/" class="title">Stained Glass</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/megan-and-saul-engagement-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/asula_engagement/0007.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/megan-and-saul-engagement-photos/" class="title">Megan and Saul Engagement Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/functional-parameterized-l-system/" class="thumbnail">
+                    
+                        <span style="background-image:url(/functional_lsys/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/functional-parameterized-l-system/" class="title">Functional Parameterized L-System</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-10-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/hiking-south-sister-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/hiking_south_sister/0008.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/hiking-south-sister-photos/" class="title">Hiking South Sister Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/climate-change-adaptation/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_butterflies/vennsPoster.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/climate-change-adaptation/" class="title">Climate Change Adaptation</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/steve-harvey-appearance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/steve_harvey/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/steve-harvey-appearance/" class="title">Steve Harvey Appearance</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/marble-making-timelapse/" class="thumbnail">
+                    
+                        <span style="background-image:url(/marble/marble2_web.JPG)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/marble-making-timelapse/" class="title">Marble Making Timelapse</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-03-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/topology-aware-file-distribution/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_filedist/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/topology-aware-file-distribution/" class="title">Topology aware file distribution</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/music-wheel/" class="thumbnail">
+                    
+                        <span style="background-image:url(/MusicWheel/screenshot.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/music-wheel/" class="title">Music Wheel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/timelapse-thing/" class="thumbnail">
+                    
+                        <span style="background-image:url(/timelapsething/gaussian.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/timelapse-thing/" class="title">Timelapse Thing</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-07-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/glass-beads/" class="thumbnail">
+                    
+                        <span style="background-image:url(/borosilicate-beads/pendants2_web.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/glass-beads/" class="title">Glass Beads</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/transcriptomics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_transcriptomics/ohr.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/transcriptomics/" class="title">Transcriptomics</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-02-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="thumbnail">
+                    
+                        <span style="background-image:url(/nerf/shotsDotplotBlaster.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="title">A Statistical Analysis of Nerf Blasters and Darts</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/algorithmic-haplotyping/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_haplotyping/coloring.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/algorithmic-haplotyping/" class="title">Algorithmic Haplotyping</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/neil-and-anne-marie-wedding-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/neil_annemarie_wedding/0006.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/neil-and-anne-marie-wedding-photos/" class="title">Neil and Anne-Marie Wedding Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-12-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/misc.-small-java/" class="thumbnail">
+                    
+                        <span style="background-image:url(/miscjava/ColorDistance/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/misc.-small-java/" class="title">Misc. Small Java</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-09-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60416-system-interface-design-microsoft-surface/" class="thumbnail">
+                    
+                        <span style="background-image:url(/microsoft_surface/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60416-system-interface-design-microsoft-surface/" class="title">CSE60416 System Interface Design, Microsoft Surface</a></p>
+                    <p class="item-date">
+                        <time datetime="2009-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2009</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60317-online-algorithms-for-computational-finance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/online_finance/prices.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60317-online-algorithms-for-computational-finance/" class="title">CSE60317 Online Algorithms For Computational Finance</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60647-data-mining-predicting-on-slashdot/" class="thumbnail">
+                    
+                        <span style="background-image:url(/slashdot_predicting/fractile.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60647-data-mining-predicting-on-slashdot/" class="title">CSE60647 Data Mining, Predicting on Slashdot</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/online-learning-and-the-newsvendor-problem/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_alenex/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/online-learning-and-the-newsvendor-problem/" class="title">Online Learning and the Newsvendor Problem</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-01-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60622-cryptography.-bobcash/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bobcash/banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60622-cryptography.-bobcash/" class="title">CSE60622 Cryptography. BobCash</a></p>
+                    <p class="item-date">
+                        <time datetime="2007-10-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2007</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="thumbnail">
+                    
+                        <span style="background-image:url(/learning_ai/banner.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="title">CCSE60171 Artificial Intelligence, Learning to Play Games</a></p>
+                    <p class="item-date">
+                        <time datetime="2006-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2006</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/formal-logic/" class="thumbnail">
+                    
+                        <span style="background-image:url(/logic/logic_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/formal-logic/" class="title">Formal Logic</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs446-computer-graphics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs446/Balls1Crop.jpeg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs446-computer-graphics/" class="title">CS446, Computer Graphics</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs422-algorithms/" class="thumbnail">
+                    
+                        <span style="background-image:url(/Algorithms/algs_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs422-algorithms/" class="title">CS422, Algorithms</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-11-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs322-principles-of-programming-languages/" class="thumbnail">
+                    
+                        <span style="background-image:url(/322/lisp_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs322-principles-of-programming-languages/" class="title">CS322, Principles of Programming Languages</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-09-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/epistemology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/epistemology/knowledge_quote.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/epistemology/" class="title">Epistemology</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-08-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs228-network-programming/" class="thumbnail">
+                    
+                        <span style="background-image:url(/228/network_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs228-network-programming/" class="title">CS228, Network Programming</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-10-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/gainclone-amplifier/" class="thumbnail">
+                    
+                        <span style="background-image:url(/gainclone/ampfront_web.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/gainclone-amplifier/" class="title">Gainclone Amplifier</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs222-data-structures/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs222/avl_tree.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs222-data-structures/" class="title">CS222, Data Structures</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cellular-automata/" class="thumbnail">
+                    
+                        <span style="background-image:url(/CellularAutomata/ca_banner.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cellular-automata/" class="title">Cellular Automata</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/headphone-amp/" class="thumbnail">
+                    
+                        <span style="background-image:url(/headamp2/zippoclosed_web.jpg)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/headphone-amp/" class="title">Headphone Amp</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-01-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs122/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs122/Queens2/screenshot.png)" alt="CS322, Principles of Programming Languages" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs122/" class="title">CS122</a></p>
+                    <p class="item-date">
+                        <time datetime="2002-10-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2002</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021
+      Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+
+
+
+<script>
+hljs.initHighlightingOnLoad();
+hljs.configure({languages: []});
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+var sc_project=505825; 
+var sc_invisible=1; 
+var sc_security=""; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/505825/0//1/" alt="Web Analytics
+Made Easy - StatCounter"></a></div></noscript>
+
+
+
+
+</body>
+</html>

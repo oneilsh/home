@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adventures on Shawn T. O&#39;Neil</title>
+    <link>/tags/adventures/</link>
+    <description>Recent content in Adventures on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/adventures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bio/About</title>
+      <link>/bio/about/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/bio/about/</guid>
+      <description>Work My CV.
+I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
+Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray &amp;amp; white).</description>
+    </item>
+    
+    <item>
+      <title>Steve Harvey Appearance</title>
+      <link>/steve-harvey-appearance/</link>
+      <pubDate>Sat, 05 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/steve-harvey-appearance/</guid>
+      <description>So, I was on TV once. My wife had contacted the Steve Harvey show suggesting I could use a wardrobe makeover. It was quite a surprise to me&amp;ndash;we flew to Chicago for filming just a few days after I learned anything about it!
+It was a ton of fun, and the Steve Harvey crew and show was a great experience. (And I got some nice clothes out of it.)
+  </description>
+    </item>
+    
+  </channel>
+</rss>

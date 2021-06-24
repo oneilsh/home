@@ -1,0 +1,45 @@
+PING PONG
+	send an acknowledgement for each packet recieved, one outstanding packet each
+	always acknowledge, even if you already got it, cuz maybe the last ack got lsot
+	timer for the outstanding timer
+	Advantages
+		Dumb, simple
+	Disadvantages
+		Sucks on high latency link, because your waiting a lot
+		
+Selective Repeat
+	send multiple chunks at once, reciever sends request for packets it didnt get		
+	if the sender doesnt hear any reply, it resends everything it doesnt know the reciever has
+	always acknowledge, even if you already got it, cuz maybe the last ack got lsot
+	list of timers, one for each packet
+	Advantages
+		keeps the wire busy, always sends if theres stuff to send
+		Good performance, even better than what we really use
+		no unnesecary retransmits
+	Disadvantages
+		reciever must cache to keep data in order
+		Complex, lots of error conditions to check for
+		
+The one invented last year - CRC algorithm
+	sends checksums on the file, when the reciever has enough checksums (n bytes of checksum for n bytes of data)
+	then sends ONE acknowlegdement
+	Advantages
+		low bandwidth requirements
+		great in networks with lots of errors
+	Disadvantages
+		you dont know a single byte of the file untill you have them all, you cant
+		process as you get them
+		Super duper complex, rough on cpu's
+
+Go Back N
+	send off some packets, the acks are "staring from the beginning, what is t
+	the highest numbered consequtive you got"
+	list of timers, kill a timer and all the timers below when we get an ack
+
+
+
+TCP
+	uses go back N
+	
+Effects of Losing a packet
+	double the round trip estimate

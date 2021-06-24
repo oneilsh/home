@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philosophy on Shawn T. O&#39;Neil</title>
+    <link>/tags/philosophy/</link>
+    <description>Recent content in Philosophy on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Mar 2005 00:00:00 +0000</lastBuildDate><atom:link href="/tags/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Formal Logic</title>
+      <link>/formal-logic/</link>
+      <pubDate>Sat, 19 Mar 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/formal-logic/</guid>
+      <description>I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
+ Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  </description>
+    </item>
+    
+    <item>
+      <title>Epistemology</title>
+      <link>/epistemology/</link>
+      <pubDate>Fri, 20 Aug 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/epistemology/</guid>
+      <description>I took a Theory of Knowledge class as an undergraduate, and thoroughly enjoyed it. To this day I&amp;rsquo;m surprised how much epistemology is to be found at the intersection of science and engineering.
+ Three Principles of Cartesian Epistemology Gettier&amp;rsquo;s Second Counterexample The Nature of Sense Data Unger&amp;rsquo;s Defense of Scepticism Goldman&amp;rsquo;s Causal Chains Dretske&amp;rsquo;s Epistemic Operators Quine&amp;rsquo;s Naturalization and Kim&amp;rsquo;s Response  </description>
+    </item>
+    
+  </channel>
+</rss>

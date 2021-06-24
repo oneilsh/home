@@ -1,0 +1,10 @@
+This is a version of the first program supporting 
+a variable (x), negation, parenthasis, and functions
+in the infix field. Now also supports multi-digit numbers and decimals.
+<BR>
+Here are the functions:<BR>
+sin       = s()<BR>
+cos       = c()<BR>
+abs val.  = a()<BR>
+log       = l()<BR>
+sqr. root = r()<BR>

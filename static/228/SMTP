@@ -1,0 +1,14 @@
+What is SMTP? Gets mail onto a mail server.
+
+telnet pop.mail.nmu.edu 25
+HELO whatever.com
+MAIL FROM:<haha@someactuallexistingdomain.com>
+RCPT TO:<apoe@nmu.edu>
+DATA
+<Metadata stuff>
+<blank line>
+here is some dayata
+hi man
+whats up?
+.
+

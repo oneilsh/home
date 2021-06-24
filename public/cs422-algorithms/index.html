@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CS422, Algorithms &middot; Shawn T. O&#39;Neil</title>
+    <meta name="generator" content="Hugo 0.84.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="/cs422-algorithms/"/>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/current_highlight.css"> 
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CS422, Algorithms" />
+<meta property="og:description" content="Just a few things from my undergrad algs class." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs422-algorithms/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2004-11-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2004-11-23T00:00:00&#43;00:00" />
+
+
+    
+    <meta itemprop="name" content="CS422, Algorithms">
+<meta itemprop="description" content="Just a few things from my undergrad algs class."><meta itemprop="datePublished" content="2004-11-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2004-11-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1588">
+<meta itemprop="keywords" content="Programming,Class," />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CS422, Algorithms"/>
+<meta name="twitter:description" content="Just a few things from my undergrad algs class."/>
+<meta name="twitter:site" content="@shawntoneil"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo">
+          
+          <i class="logo" style="background-image: url('/css/images/logo.png')"></i>
+          
+          <span class="site-title">Shawn T. O&#39;Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/bio/about/">Bio/About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/bio/about/">Bio/About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="/css/images/avatar.png">
+      
+      <h2 id="name">Shawn T. O&#39;Neil</h2>
+      <h3 id="title">Creations, excursions, pictures, words, and colors.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        44
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          19
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="//vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="/Algorithms/algs_banner.png" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="/cs422-algorithms/">
+    <h1 class="article-title" itemprop="name">
+        CS422, Algorithms
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/programming">Programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/class">Class</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Just a few things from my undergrad algs class.</p>
+<h3 id="linear-time-selection">Linear Time Selection</h3>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	selection.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//Shawn O&#39;Neil CS422 Linear Time Selection Winter 04
+</span><span style="color:#75715e">// found the 100th element (from beginning) in a list of 2,000,000, sorted last to first (2000000 ..... 0)
+</span><span style="color:#75715e">// in 50 seconds, using ~100 MBs of memory!
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+using namespace std;
+
+string<span style="color:#f92672">*</span> <span style="color:#a6e22e">getInput</span>(<span style="color:#66d9ef">int</span> s);
+string<span style="color:#f92672">*</span> <span style="color:#a6e22e">breakIntoFifth</span>(<span style="color:#66d9ef">int</span> n, string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>fifthlength);
+string <span style="color:#a6e22e">getElement</span>(string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">bool</span> median);
+string <span style="color:#a6e22e">linSelSort</span>(string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> k);
+
+<span style="color:#75715e">//handles input and output
+</span><span style="color:#75715e">//line 1: number of elements in input (s)
+</span><span style="color:#75715e">//lines 2 through s+1: inputs into the input array (str)
+</span><span style="color:#75715e">//line s+2: the element to look for
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>)
+		{
+		<span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		
+		cin <span style="color:#f92672">&gt;&gt;</span> s;
+		<span style="color:#66d9ef">if</span> (s <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+				exit(<span style="color:#ae81ff">0</span>);
+		<span style="color:#66d9ef">else</span>
+			{
+			string <span style="color:#f92672">*</span>str <span style="color:#f92672">=</span> getInput(s);
+			cin <span style="color:#f92672">&gt;&gt;</span> k;
+			string answer <span style="color:#f92672">=</span> linSelSort(str, s, k);
+
+			<span style="color:#75715e">//cout &lt;&lt; &#34;The &#34; &lt;&lt; k &lt;&lt; &#34;th element is &#34; &lt;&lt; answer &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> endl;
+			<span style="color:#75715e">//delete[] str;
+</span><span style="color:#75715e"></span>			}
+		}
+	}
+	
+<span style="color:#75715e">//returns the k&#39;th element in a list *input n long, in n time.
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">linSelSort</span>(string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> k)
+	{
+	<span style="color:#66d9ef">if</span>(n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">return</span> getElement(input, n, k, false);
+	<span style="color:#66d9ef">else</span>
+		{
+		string output;
+		<span style="color:#66d9ef">int</span> lengthoffifth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		string <span style="color:#f92672">*</span>fifth <span style="color:#f92672">=</span> breakIntoFifth(n, input, <span style="color:#f92672">&amp;</span>lengthoffifth);
+		string pivot <span style="color:#f92672">=</span> linSelSort(fifth, lengthoffifth, (<span style="color:#66d9ef">int</span>)lengthoffifth<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+		string <span style="color:#f92672">*</span>bef <span style="color:#f92672">=</span> new string[n]; <span style="color:#66d9ef">int</span> befct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		string <span style="color:#f92672">*</span>eq <span style="color:#f92672">=</span> new string[n]; <span style="color:#66d9ef">int</span> eqct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		string <span style="color:#f92672">*</span>aft <span style="color:#f92672">=</span> new string[n]; <span style="color:#66d9ef">int</span> aftct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+			{
+			<span style="color:#66d9ef">if</span>(pivot.compare(input[i]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">//pivot is greater than input[i]
+</span><span style="color:#75715e"></span>				{ bef[befct] <span style="color:#f92672">=</span> input[i]; befct<span style="color:#f92672">++</span>; }
+			<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(pivot.compare(input[i]) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">//pivot is equal to input[i]
+</span><span style="color:#75715e"></span>				{ eq[eqct] <span style="color:#f92672">=</span> input[i]; eqct<span style="color:#f92672">++</span>; }
+			<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(pivot.compare(input[i]) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">//pivot is less than input[i]
+</span><span style="color:#75715e"></span>				{ aft[aftct] <span style="color:#f92672">=</span> input[i]; aftct<span style="color:#f92672">++</span>; }
+			}
+		
+		string <span style="color:#f92672">*</span>returning;
+		<span style="color:#66d9ef">if</span>(k <span style="color:#f92672">&lt;=</span> befct) 	
+			{
+			returning <span style="color:#f92672">=</span> bef;
+			n <span style="color:#f92672">=</span> befct;
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(k <span style="color:#f92672">&gt;</span> befct<span style="color:#f92672">+</span>eqct) 
+			{
+			returning <span style="color:#f92672">=</span> aft;
+			k <span style="color:#f92672">=</span> k <span style="color:#f92672">-</span> befct <span style="color:#f92672">-</span> eqct;
+			n <span style="color:#f92672">=</span> aftct;
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> eq[<span style="color:#ae81ff">0</span>];
+		output <span style="color:#f92672">=</span> linSelSort(returning, n, k);
+		delete[] fifth;
+		delete[] bef;
+		delete[] eq;
+		delete[] aft;
+		<span style="color:#75715e">//delete[] input;
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> output;
+		}
+	}
+	
+<span style="color:#75715e">//breaks an array into chunks of five, returning an array 1/5 the size made out the medians of the chunks
+</span><span style="color:#75715e"></span>string<span style="color:#f92672">*</span> <span style="color:#a6e22e">breakIntoFifth</span>(<span style="color:#66d9ef">int</span> n, string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>fifthlength)
+	{
+	<span style="color:#66d9ef">int</span> lenoutput <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span><span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) lenoutput <span style="color:#f92672">=</span> n<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span>;
+	<span style="color:#66d9ef">else</span> lenoutput <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>)(n<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+	<span style="color:#f92672">*</span>fifthlength <span style="color:#f92672">=</span> lenoutput;
+	string <span style="color:#f92672">*</span>output <span style="color:#f92672">=</span> new string[lenoutput];
+	
+	string <span style="color:#f92672">*</span>chunk <span style="color:#f92672">=</span> new string[<span style="color:#ae81ff">5</span>];
+	<span style="color:#66d9ef">int</span> chunkpos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> outputpos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+		{
+		chunk[chunkpos] <span style="color:#f92672">=</span> input[i];
+		<span style="color:#66d9ef">if</span>(chunkpos <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">||</span> i <span style="color:#f92672">==</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">//if we run out of room in our chunk or we are at the end of the input
+</span><span style="color:#75715e"></span>			{
+			output[outputpos] <span style="color:#f92672">=</span> getElement(chunk, chunkpos, <span style="color:#ae81ff">0</span>, true);
+			outputpos<span style="color:#f92672">++</span>;
+			chunkpos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			}
+		<span style="color:#66d9ef">else</span>
+			chunkpos<span style="color:#f92672">++</span>;
+		}
+	delete[] chunk;
+	<span style="color:#66d9ef">return</span> output;
+	}
+
+<span style="color:#75715e">//given s, reads the next s lines from standard in, buildig and array of string to return
+</span><span style="color:#75715e"></span>string <span style="color:#f92672">*</span><span style="color:#a6e22e">getInput</span>(<span style="color:#66d9ef">int</span> s)
+	{
+	string <span style="color:#f92672">*</span>array;
+	array <span style="color:#f92672">=</span> new string[s];
+	string bogus;
+	getline(cin, bogus);
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> s; i<span style="color:#f92672">++</span>)
+		{
+		getline(cin, array[i]);
+		}	
+	<span style="color:#66d9ef">return</span> array;
+	}
+	
+<span style="color:#75715e">//brute force get an element from the list
+</span><span style="color:#75715e">//if median = true, returns the median
+</span><span style="color:#75715e">//else returns the kth element
+</span><span style="color:#75715e">//Bubble sort is constant time on a limited size input ;-)
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">getElement</span>(string <span style="color:#f92672">*</span>input, <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">bool</span> median)
+	{
+	<span style="color:#66d9ef">if</span>(n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> input[<span style="color:#ae81ff">0</span>];
+	string output;
+	<span style="color:#66d9ef">bool</span> sorted <span style="color:#f92672">=</span> false;
+	<span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>sorted)
+		{
+		sorted <span style="color:#f92672">=</span> true;
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
+			{
+			<span style="color:#66d9ef">if</span>(input[i].compare(input[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+				{
+				string temp <span style="color:#f92672">=</span> input[i];
+				input[i] <span style="color:#f92672">=</span> input[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+				input[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> temp;
+				sorted <span style="color:#f92672">=</span> false;
+				}
+			}
+		}
+	<span style="color:#66d9ef">if</span>(median <span style="color:#f92672">==</span> true)
+		<span style="color:#66d9ef">return</span> input[(<span style="color:#66d9ef">int</span>)n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>];
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(k <span style="color:#f92672">&lt;=</span> n)
+		<span style="color:#66d9ef">return</span> input[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+	string sucker <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sucker, you asked for an element outside the list&#34;</span>;
+	<span style="color:#66d9ef">return</span> sucker;
+	}</code></pre></div>
+
+    </div>
+</div>
+<h3 id="matrix-multiplication">Matrix Multiplication</h3>
+<p>Dynamic programming method for optimizing matrix chain multiplication.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	chain.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// Shawn O&#39;Neil Dynamic Programming for optimal Matrix Multiplication,  Algorithms with Andy Poe Winter 04 
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">getInput</span>(<span style="color:#66d9ef">int</span> nummats);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">computeTable</span>(<span style="color:#66d9ef">int</span> nummats, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> dimsarray);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printOut</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>mults, <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>divides, <span style="color:#66d9ef">int</span> nummats, <span style="color:#66d9ef">int</span> row, <span style="color:#66d9ef">int</span> col);
+
+<span style="color:#75715e">//Main method, calls IO and handes the case for only 1 matrix.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+	<span style="color:#66d9ef">int</span> nummats <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Please enter number of matrices:  &#34;</span>;
+	cin <span style="color:#f92672">&gt;&gt;</span> nummats;
+	<span style="color:#66d9ef">if</span>(nummats <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;You need zero multiplications.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>dimsarray <span style="color:#f92672">=</span> getInput(nummats);
+		computeTable(nummats, dimsarray);
+		}
+	}
+
+<span style="color:#75715e">//given a number of matrices, and an array of dimensions (size 1+nummats)
+</span><span style="color:#75715e">//computes the table of the least amount of multiplies from matrices a through b
+</span><span style="color:#75715e">//where this is stored in mults[a][b] (arrays start at 0, that is the number
+</span><span style="color:#75715e">//of mults required for the first through third arrays are stored in mults[0][2])
+</span><span style="color:#75715e">//and computes the appropropriate divide point for each multipilication in divides
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">computeTable</span>(<span style="color:#66d9ef">int</span> nummats, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> dimsarray)
+	{
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>mults <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>[nummats];
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>divides <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>[nummats];
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nummats; i<span style="color:#f92672">++</span>)
+		{
+		mults[i] <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[nummats];
+		divides[i] <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[nummats];
+		}
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nummats; i<span style="color:#f92672">++</span>)
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> nummats; j<span style="color:#f92672">++</span>)
+			{mults[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; divides[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;}
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nummats; i<span style="color:#f92672">++</span>)
+		mults[i][i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	
+	<span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> nummats; i<span style="color:#f92672">++</span>)
+		{
+		y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> i; x <span style="color:#f92672">&lt;</span> nummats; x<span style="color:#f92672">++</span>)
+			{
+			<span style="color:#75715e">//here is where the order we want happens within the array, for x,y
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//so what is the least number of multiplications to multiply arrays y through x?
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//cout &lt;&lt; x &lt;&lt; &#34;,&#34; &lt;&lt; y &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//int othermults = mults[x-1][y];
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//if(mults[x][y+1] &lt; othermults) othermults = mults[x][y+1];
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> togethermults <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">if</span>(x<span style="color:#f92672">-</span>y <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>)
+				{
+				togethermults <span style="color:#f92672">=</span> dimsarray[y]<span style="color:#f92672">*</span>dimsarray[x]<span style="color:#f92672">*</span>dimsarray[x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+				}
+			<span style="color:#66d9ef">else</span>
+				{
+				<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> div <span style="color:#f92672">=</span> y; div <span style="color:#f92672">&lt;</span> x; div<span style="color:#f92672">++</span>) 	<span style="color:#75715e">//divide after the divide number
+</span><span style="color:#75715e"></span>					{
+					<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> dimsarray[y]<span style="color:#f92672">*</span>dimsarray[div<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">*</span>dimsarray[x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+					temp <span style="color:#f92672">+=</span> mults[div][y];
+					temp <span style="color:#f92672">+=</span> mults[x][div<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+					<span style="color:#66d9ef">if</span>(temp <span style="color:#f92672">&lt;</span> togethermults <span style="color:#f92672">||</span> togethermults <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) 
+						{
+						togethermults <span style="color:#f92672">=</span> temp;
+						divides[x][y] <span style="color:#f92672">=</span> div;
+						}
+					}
+				}
+			
+			mults[x][y] <span style="color:#f92672">=</span> togethermults;
+			<span style="color:#75715e">//increment the y at the end
+</span><span style="color:#75715e"></span>			y<span style="color:#f92672">++</span>;
+			}
+		}
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;You need &#34;</span> <span style="color:#f92672">&lt;&lt;</span> mults[nummats<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; multiplications.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	printOut(mults, divides, nummats, <span style="color:#ae81ff">0</span>, nummats<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+	cout <span style="color:#f92672">&lt;&lt;</span> endl;
+	}
+
+
+<span style="color:#75715e">//given a divides matrix and a row and column, prints out
+</span><span style="color:#75715e">//the parenthatized multiplation pattern for the optimal
+</span><span style="color:#75715e">//matrix multiplication of matrices row through column (again starting at 0)
+</span><span style="color:#75715e">// nummults = 5, 1,2,3,4,5,6 should be (((( 1 2 ) 3 ) 4 ) 5 )
+</span><span style="color:#75715e">// or in my format, (((( 0 1 ) 2 ) 3 ) 4 )
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printOut</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>mults, <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>divides, <span style="color:#66d9ef">int</span> nummats, <span style="color:#66d9ef">int</span> row, <span style="color:#66d9ef">int</span> col)
+	{
+	<span style="color:#75715e">//cout &lt;&lt; &#34;row is &#34; &lt;&lt; row &lt;&lt; &#34; col is &#34; &lt;&lt; col &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(col<span style="color:#f92672">-</span>row <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> row<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(col<span style="color:#f92672">-</span>row <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;( &#34;</span> <span style="color:#f92672">&lt;&lt;</span> row<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;  &#34;</span> <span style="color:#f92672">&lt;&lt;</span> row<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; )&#34;</span>;<span style="color:#75715e">//cout &lt;&lt; &#34;( &#34;&lt;&lt; row &lt;&lt; &#34; &#34; &lt;&lt; row+1 &lt;&lt; &#34; )&#34; &lt;&lt; &#34; &#34;;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">int</span> divide <span style="color:#f92672">=</span> divides[col][row];
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;(&#34;</span>;
+		printOut(mults, divides, nummats, row, divide);
+
+		printOut(mults, divides, nummats, divide<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, col);
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;)&#34;</span>;
+		}
+	}
+
+
+<span style="color:#75715e">//handes input, given a number of matrices, asks for the dimensions and returns them in an array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">getInput</span>(<span style="color:#66d9ef">int</span> nummats)
+	{
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>array;
+	array <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[nummats<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nummats<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
+		{
+		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Please enter the number of rows in matrix 1:  &#34;</span>;
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">==</span> nummats) cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Please enter the number of columns in matrix &#34;</span> <span style="color:#f92672">&lt;&lt;</span> nummats <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;:  &#34;</span>;
+		<span style="color:#66d9ef">else</span> cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Please enter the number of columns in matrix &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; and rows in matrix &#34;</span> <span style="color:#f92672">&lt;&lt;</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;:  &#34;</span>;
+		cin <span style="color:#f92672">&gt;&gt;</span> array[i];
+		}
+	<span style="color:#66d9ef">return</span> array;
+	}</code></pre></div>
+
+    </div>
+</div>
+<h3 id="rsa-encryption">RSA Encryption</h3>
+<p>And decryption.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	RSA.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//Shawn O&#39;Neil RSA encrypt/decrypt and factor to crack, this will run slow ;-)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">AtoEmodM</span>(<span style="color:#66d9ef">int</span> A, <span style="color:#66d9ef">int</span> e, <span style="color:#66d9ef">int</span> M);
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findPhiM</span>(<span style="color:#66d9ef">int</span> M);
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findD</span>(<span style="color:#66d9ef">int</span> e,<span style="color:#66d9ef">int</span> PhiM);
+
+
+<span style="color:#75715e">//Main method, handles input and output, YAY!!!!!!
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+	string command;
+	<span style="color:#66d9ef">int</span> N;
+	<span style="color:#66d9ef">int</span> e;
+	<span style="color:#66d9ef">int</span> M;
+	<span style="color:#66d9ef">while</span>(command <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;QUIT&#34;</span>)
+		{
+		cin <span style="color:#f92672">&gt;&gt;</span> command;
+		<span style="color:#66d9ef">if</span>(cin.eof()) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">if</span>(command <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ENCRYPT&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> N;
+			cin <span style="color:#f92672">&gt;&gt;</span> e;
+			cin <span style="color:#f92672">&gt;&gt;</span> M;
+			cout <span style="color:#f92672">&lt;&lt;</span> AtoEmodM(M,e,N) <span style="color:#f92672">&lt;&lt;</span> endl;
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(command <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;DECRYPT&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> N;
+			cin <span style="color:#f92672">&gt;&gt;</span> e;
+			cout <span style="color:#f92672">&lt;&lt;</span> findD(e, findPhiM(N)) <span style="color:#f92672">&lt;&lt;</span> endl;
+			}
+		command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bogusnesssdude&#34;</span>;
+		}
+	}
+
+<span style="color:#75715e">//finds D given, e, PhiM where (d*e)%PhiM = 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findD</span>(<span style="color:#66d9ef">int</span> e, <span style="color:#66d9ef">int</span> PhiM)
+	{
+	<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> row0 <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>];
+	<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> row1 <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>];
+	<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> row2 <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>];
+	row0[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; row0[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> PhiM; row0[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	row1[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; row1[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> e;
+	row2[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">7334</span>;
+	<span style="color:#66d9ef">while</span>(row2[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
+		{
+		row1[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> row0[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">/</span>row1[<span style="color:#ae81ff">1</span>];
+		row2[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> row0[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span>(row1[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>row1[<span style="color:#ae81ff">2</span>]);
+		row2[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> row0[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>(row0[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">/</span>row1[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">*</span>row1[<span style="color:#ae81ff">1</span>]);
+		
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> temp <span style="color:#f92672">=</span> row0;
+		row0 <span style="color:#f92672">=</span> row1;
+		row1 <span style="color:#f92672">=</span> row2;
+		row2 <span style="color:#f92672">=</span> new <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>];
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; i<span style="color:#f92672">++</span>) row2[i] <span style="color:#f92672">=</span> row1[i];
+		delete[] temp;
+		}
+	
+	<span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> row2[<span style="color:#ae81ff">2</span>];
+	<span style="color:#66d9ef">while</span>(answer <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+		answer <span style="color:#f92672">=</span> answer<span style="color:#f92672">+</span>PhiM;
+	<span style="color:#66d9ef">return</span> answer;
+	}
+
+<span style="color:#75715e">//Factors M to the first two factors it finds p and q, and returns (p-1)(q-1)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findPhiM</span>(<span style="color:#66d9ef">int</span> M)
+	{
+	<span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+	<span style="color:#66d9ef">int</span> q <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">while</span>(M<span style="color:#f92672">/</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">!=</span> M) p<span style="color:#f92672">++</span>;
+	q <span style="color:#f92672">=</span> M<span style="color:#f92672">/</span>p;
+	p<span style="color:#f92672">--</span>;q<span style="color:#f92672">--</span>;
+	<span style="color:#66d9ef">return</span> p<span style="color:#f92672">*</span>q;
+	}
+	
+<span style="color:#75715e">//returns A^e%M in a fast manner
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">AtoEmodM</span>(<span style="color:#66d9ef">int</span> A, <span style="color:#66d9ef">int</span> e, <span style="color:#66d9ef">int</span> M)
+	{
+	<span style="color:#66d9ef">int</span> lastleft <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> nextleft <span style="color:#f92672">=</span> A;
+	<span style="color:#66d9ef">int</span> runningproduct <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">while</span>(e <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>)
+		{
+		<span style="color:#66d9ef">if</span>(e<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> e) runningproduct <span style="color:#f92672">=</span> runningproduct <span style="color:#f92672">*</span> nextleft <span style="color:#f92672">%</span> M;
+		lastleft <span style="color:#f92672">=</span> nextleft;
+		nextleft <span style="color:#f92672">=</span> lastleft <span style="color:#f92672">*</span> lastleft <span style="color:#f92672">%</span> M;
+		e <span style="color:#f92672">=</span> e<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+		}
+	<span style="color:#66d9ef">return</span> runningproduct;
+	}</code></pre></div>
+
+    </div>
+</div>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/cs422-algorithms/" data-id="72a973a30a6ae6b8836707f9f8c51795" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="/cs322-principles-of-programming-languages/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">CS322, Principles of Programming Languages</div>
+    </a>
+    
+
+    
+    <a href="/cs446-computer-graphics/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CS446, Computer Graphics</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
+        
+        
+        <a href="/tags/art" style="font-size: 12px;">art</a>
+        
+        
+        <a href="/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="/tags/diy" style="font-size: 12px;">diy</a>
+        
+        
+        <a href="/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="/tags/hiking" style="font-size: 12px;">hiking</a>
+        
+        
+        <a href="/tags/infrastructure" style="font-size: 12px;">infrastructure</a>
+        
+        
+        <a href="/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="/tags/r" style="font-size: 12px;">r</a>
+        
+        
+        <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        ALL
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/tidytensor/" class="thumbnail">
+                    
+                        <span style="background-image:url(/tidytensor/tidytensor_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/tidytensor/" class="title">TidyTensor - More Fun with Deep Learning</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/colette-patricia-oneil/" class="thumbnail">
+                    
+                        <span style="background-image:url(/colette_four_months/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/colette-patricia-oneil/" class="title">Colette Patricia O&#39;Neil</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-06-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/homelab/" class="thumbnail">
+                    
+                        <span style="background-image:url(/homelab/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/homelab/" class="title">Homelab</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-05-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees-pt2/" class="thumbnail">
+                    
+                        <span style="background-image:url(/regression_trees_pt2/decision_tree_crop.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees-pt2/" class="title">Random Forests &amp; Gradient Boosting</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-03-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/regression_trees_files/three_depths.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees/" class="title">Regression Trees &amp; Bagging (more functional R)</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/autodifferentation-and-functional-operators-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/autodifferentation-and-functional-operators-in-r/" class="title">Automatic Differentiation &amp; Functional Operators in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/about/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bio_about/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/about/" class="title">Bio/About</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-04-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/biorecursion/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="title">Bio/Recursion: CS and Bioinformatics in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-primer-for-computational-biology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/primer/primer_closed_1200.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-primer-for-computational-biology/" class="title">A Primer for Computational Biology</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-02-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/3d-printing-modeling-online-tools/" class="thumbnail">
+                    
+                        <span style="background-image:url(/3d_printing_notes/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/3d-printing-modeling-online-tools/" class="title">3D Printing &amp; Modeling, Online Tools</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2017</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/rstackdeque/" class="thumbnail">
+                    
+                        <span style="background-image:url(/rstackdeque/quicksort_vis.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/rstackdeque/" class="title">Rstackdeque</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/stained-glass/" class="thumbnail">
+                    
+                        <span style="background-image:url(/stained-glass/candleholder_web.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/stained-glass/" class="title">Stained Glass</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/megan-and-saul-engagement-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/asula_engagement/0007.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/megan-and-saul-engagement-photos/" class="title">Megan and Saul Engagement Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/functional-parameterized-l-system/" class="thumbnail">
+                    
+                        <span style="background-image:url(/functional_lsys/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/functional-parameterized-l-system/" class="title">Functional Parameterized L-System</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-10-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/hiking-south-sister-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/hiking_south_sister/0008.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/hiking-south-sister-photos/" class="title">Hiking South Sister Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/climate-change-adaptation/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_butterflies/vennsPoster.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/climate-change-adaptation/" class="title">Climate Change Adaptation</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/steve-harvey-appearance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/steve_harvey/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/steve-harvey-appearance/" class="title">Steve Harvey Appearance</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/marble-making-timelapse/" class="thumbnail">
+                    
+                        <span style="background-image:url(/marble/marble2_web.JPG)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/marble-making-timelapse/" class="title">Marble Making Timelapse</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-03-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/topology-aware-file-distribution/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_filedist/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/topology-aware-file-distribution/" class="title">Topology aware file distribution</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/music-wheel/" class="thumbnail">
+                    
+                        <span style="background-image:url(/MusicWheel/screenshot.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/music-wheel/" class="title">Music Wheel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/timelapse-thing/" class="thumbnail">
+                    
+                        <span style="background-image:url(/timelapsething/gaussian.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/timelapse-thing/" class="title">Timelapse Thing</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-07-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/glass-beads/" class="thumbnail">
+                    
+                        <span style="background-image:url(/borosilicate-beads/pendants2_web.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/glass-beads/" class="title">Glass Beads</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/transcriptomics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_transcriptomics/ohr.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/transcriptomics/" class="title">Transcriptomics</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-02-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="thumbnail">
+                    
+                        <span style="background-image:url(/nerf/shotsDotplotBlaster.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="title">A Statistical Analysis of Nerf Blasters and Darts</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/algorithmic-haplotyping/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_haplotyping/coloring.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/algorithmic-haplotyping/" class="title">Algorithmic Haplotyping</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/neil-and-anne-marie-wedding-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/neil_annemarie_wedding/0006.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/neil-and-anne-marie-wedding-photos/" class="title">Neil and Anne-Marie Wedding Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-12-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/misc.-small-java/" class="thumbnail">
+                    
+                        <span style="background-image:url(/miscjava/ColorDistance/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/misc.-small-java/" class="title">Misc. Small Java</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-09-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60416-system-interface-design-microsoft-surface/" class="thumbnail">
+                    
+                        <span style="background-image:url(/microsoft_surface/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60416-system-interface-design-microsoft-surface/" class="title">CSE60416 System Interface Design, Microsoft Surface</a></p>
+                    <p class="item-date">
+                        <time datetime="2009-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2009</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60317-online-algorithms-for-computational-finance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/online_finance/prices.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60317-online-algorithms-for-computational-finance/" class="title">CSE60317 Online Algorithms For Computational Finance</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60647-data-mining-predicting-on-slashdot/" class="thumbnail">
+                    
+                        <span style="background-image:url(/slashdot_predicting/fractile.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60647-data-mining-predicting-on-slashdot/" class="title">CSE60647 Data Mining, Predicting on Slashdot</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/online-learning-and-the-newsvendor-problem/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_alenex/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/online-learning-and-the-newsvendor-problem/" class="title">Online Learning and the Newsvendor Problem</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-01-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60622-cryptography.-bobcash/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bobcash/banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60622-cryptography.-bobcash/" class="title">CSE60622 Cryptography. BobCash</a></p>
+                    <p class="item-date">
+                        <time datetime="2007-10-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2007</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="thumbnail">
+                    
+                        <span style="background-image:url(/learning_ai/banner.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="title">CCSE60171 Artificial Intelligence, Learning to Play Games</a></p>
+                    <p class="item-date">
+                        <time datetime="2006-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2006</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/formal-logic/" class="thumbnail">
+                    
+                        <span style="background-image:url(/logic/logic_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/formal-logic/" class="title">Formal Logic</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs446-computer-graphics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs446/Balls1Crop.jpeg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs446-computer-graphics/" class="title">CS446, Computer Graphics</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs422-algorithms/" class="thumbnail">
+                    
+                        <span style="background-image:url(/Algorithms/algs_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs422-algorithms/" class="title">CS422, Algorithms</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-11-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs322-principles-of-programming-languages/" class="thumbnail">
+                    
+                        <span style="background-image:url(/322/lisp_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs322-principles-of-programming-languages/" class="title">CS322, Principles of Programming Languages</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-09-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/epistemology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/epistemology/knowledge_quote.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/epistemology/" class="title">Epistemology</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-08-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs228-network-programming/" class="thumbnail">
+                    
+                        <span style="background-image:url(/228/network_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs228-network-programming/" class="title">CS228, Network Programming</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-10-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/gainclone-amplifier/" class="thumbnail">
+                    
+                        <span style="background-image:url(/gainclone/ampfront_web.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/gainclone-amplifier/" class="title">Gainclone Amplifier</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs222-data-structures/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs222/avl_tree.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs222-data-structures/" class="title">CS222, Data Structures</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cellular-automata/" class="thumbnail">
+                    
+                        <span style="background-image:url(/CellularAutomata/ca_banner.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cellular-automata/" class="title">Cellular Automata</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/headphone-amp/" class="thumbnail">
+                    
+                        <span style="background-image:url(/headamp2/zippoclosed_web.jpg)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/headphone-amp/" class="title">Headphone Amp</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-01-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs122/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs122/Queens2/screenshot.png)" alt="CS422, Algorithms" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs122/" class="title">CS122</a></p>
+                    <p class="item-date">
+                        <time datetime="2002-10-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2002</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021
+      Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+
+
+
+<script>
+hljs.initHighlightingOnLoad();
+hljs.configure({languages: []});
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+var sc_project=505825; 
+var sc_invisible=1; 
+var sc_security=""; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/505825/0//1/" alt="Web Analytics
+Made Easy - StatCounter"></a></div></noscript>
+
+
+
+
+</body>
+</html>

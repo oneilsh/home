@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>r on Shawn T. O&#39;Neil</title>
+    <link>/tags/r/</link>
+    <description>Recent content in r on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TidyTensor - More Fun with Deep Learning</title>
+      <link>/tidytensor/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tidytensor/</guid>
+      <description>TidyTensor is an R package for inspecting and manipulating tensors (multidimensional arrays). i It provides an improved print() function for summarizing structure, named tensors, conversion to data frames, and high-level manipulation functions. Designed to complement the excellent keras package, functionality is layered on top of base R types.
+TidyTensor was inspired by a workshop I taught in deep learning with R, and a desire to explain and explore tensors in a more intuitive way.</description>
+    </item>
+    
+    <item>
+      <title>Random Forests &amp; Gradient Boosting</title>
+      <link>/regression-trees-pt2/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/regression-trees-pt2/</guid>
+      <description>In an earlier post we considered machine learning “models” as functions producting predictions from data, and training models to be the production of these functions with higher-order functions. From there we built regression trees–models created recursively by determining 1) a splitting column (column 1 or 2 in this case), and 2) a good value in that column to split the dataset on. At each split, we find a column and value that produces two relatively homogenous sets of y values (in the sense that the values in each y subset can be well-predicted from the column values).</description>
+    </item>
+    
+    <item>
+      <title>Regression Trees &amp; Bagging (more functional R)</title>
+      <link>/regression-trees/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/regression-trees/</guid>
+      <description>I recently ran across this excellent article explaining gradient boosting in the context of regression trees. The article concludes by describing how the technique implements a gradient-descent process, but what I find most fascinating is the concept of “functional modeling”–building machine learning models from other models as building blocks.
+This post explores that idea by implementing regression trees in base R (with a little visualization help from ggplot2, dplyr, and tidyr) with functional programming concepts, including a technique called bootstrap aggregating.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Differentiation &amp; Functional Operators in R</title>
+      <link>/autodifferentation-and-functional-operators-in-r/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/autodifferentation-and-functional-operators-in-r/</guid>
+      <description>I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
+First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.</description>
+    </item>
+    
+  </channel>
+</rss>

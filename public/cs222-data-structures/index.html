@@ -1,0 +1,3252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CS222, Data Structures &middot; Shawn T. O&#39;Neil</title>
+    <meta name="generator" content="Hugo 0.84.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="/cs222-data-structures/"/>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/current_highlight.css"> 
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CS222, Data Structures" />
+<meta property="og:description" content="Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs222-data-structures/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2003-05-17T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2003-05-17T00:00:00&#43;00:00" />
+
+
+    
+    <meta itemprop="name" content="CS222, Data Structures">
+<meta itemprop="description" content="Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!"><meta itemprop="datePublished" content="2003-05-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2003-05-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="5450">
+<meta itemprop="keywords" content="Programming,Class," />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CS222, Data Structures"/>
+<meta name="twitter:description" content="Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!"/>
+<meta name="twitter:site" content="@shawntoneil"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo">
+          
+          <i class="logo" style="background-image: url('/css/images/logo.png')"></i>
+          
+          <span class="site-title">Shawn T. O&#39;Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/bio/about/">Bio/About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/bio/about/">Bio/About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="/css/images/avatar.png">
+      
+      <h2 id="name">Shawn T. O&#39;Neil</h2>
+      <h3 id="title">Creations, excursions, pictures, words, and colors.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        44
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          19
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="//vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="/cs222/avl_tree.png" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="/cs222-data-structures/">
+    <h1 class="article-title" itemprop="name">
+        CS222, Data Structures
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/programming">Programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/class">Class</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!</p>
+<h3 id="hash-table">Hash Table</h3>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	hash.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//Shawn O&#39;Neil - Hash Table. ADD, DELETE, MEAN, GRADE implemented. PRINT works, but prints the
+</span><span style="color:#75715e">//entire thing in no particular order.
+</span><span style="color:#75715e">//CS222 - Winter 03.
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;htable.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">//#include &#34;list.h&#34;
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#75715e">#define NOTFOUND 1
+</span><span style="color:#75715e">#define OUTRANGE 2
+</span><span style="color:#75715e">#define DUPLICATE 3
+</span><span style="color:#75715e">#define NONONZERO 4
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">//Hash Table constructor
+</span><span style="color:#75715e"></span>HTable<span style="color:#f92672">::</span>HTable()
+	{
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>)
+		{
+		scores[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		numbers[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		}
+	}
+
+<span style="color:#75715e">//Hash Table destructor
+</span><span style="color:#75715e"></span>HTable<span style="color:#f92672">::~</span>HTable()
+	{
+	}
+
+<span style="color:#75715e">//Given a name, looks up its position in the table
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> HTable<span style="color:#f92672">::</span>lookup(string thename)
+	{
+	<span style="color:#66d9ef">int</span> current <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> thename.length(); i<span style="color:#f92672">++</span>)
+		{
+		current <span style="color:#f92672">=</span> (current<span style="color:#f92672">*</span><span style="color:#ae81ff">256</span><span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>(<span style="color:#66d9ef">int</span>)(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span>)thename[i]))<span style="color:#f92672">%</span><span style="color:#ae81ff">25013</span>;
+		}
+	<span style="color:#66d9ef">return</span> current;
+	}
+
+<span style="color:#75715e">//Adds a name to the table
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> HTable<span style="color:#f92672">::</span>add(string thename)
+	{
+	t[lookup(thename)].add(thename);
+	}
+
+<span style="color:#75715e">//deletes a name from the table
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> HTable<span style="color:#f92672">::</span>del(string thename)
+	{
+	t[lookup(thename)].del(thename, this);
+	}
+
+<span style="color:#75715e">//Sets thenames grade on test number to score, throws outrange if score or test are no good
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> HTable<span style="color:#f92672">::</span>grade(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename)
+	{
+	<span style="color:#66d9ef">if</span>(score <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">else</span>
+		{
+		t[lookup(thename)].grade(number, score, thename);
+		scores[number] <span style="color:#f92672">+=</span> score;
+		numbers[number]<span style="color:#f92672">++</span>;
+		}
+	}
+
+<span style="color:#75715e">//returns the mean on test
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> HTable<span style="color:#f92672">::</span>mean(<span style="color:#66d9ef">int</span> test)
+	{
+	<span style="color:#66d9ef">if</span>(numbers[test] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+		throw NONONZERO;
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> scores[test]<span style="color:#f92672">/</span>numbers[test];
+	}
+
+<span style="color:#75715e">//prints the entire hash table in no particular order
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> HTable<span style="color:#f92672">::</span>print()
+	{
+	<span style="color:#75715e">//dont be stupid, you cant full print a hash table! well, ill
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//implement some approximation...
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">25013</span>; i<span style="color:#f92672">++</span>)
+	t[i].fullprint();
+	}
+
+<span style="color:#75715e">//Used by delete, at the node in the linked list level to fix the totals so the mean funciton will work
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> HTable<span style="color:#f92672">::</span>redogrades(<span style="color:#66d9ef">int</span> test, <span style="color:#66d9ef">double</span> score)
+	{
+	scores[test] <span style="color:#f92672">-=</span> score;
+	numbers[test]<span style="color:#f92672">--</span>;
+	}
+
+<span style="color:#75715e">//Main method, use ADD , DELETE, GRADE, MEAN, and PRINT (only if you really want to...)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> mainf(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv)
+	{
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Happy birthday euclid.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	HTable t;
+	string action;
+	<span style="color:#66d9ef">int</span> number;
+	<span style="color:#66d9ef">double</span> grade;
+	string name;
+	<span style="color:#66d9ef">while</span>(cin <span style="color:#f92672">&gt;&gt;</span> action, cin)
+		{
+		cin.ignore();
+		<span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ADD&#34;</span>)
+			{
+			getline(cin, name);
+			try
+				{
+				t.add(name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Successfully added &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOTFOUND)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;. Name already exists.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;PRINT&#34;</span>)
+			{
+			try
+				{
+			<span style="color:#75715e">//	cout &lt;&lt; endl;
+</span><span style="color:#75715e"></span>				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Statistics: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				t.print();
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOTFOUND)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;GRADE&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> number;
+			cin.ignore();
+			cin <span style="color:#f92672">&gt;&gt;</span> grade;
+			cin.ignore();
+			getline(cin, name);
+			try
+				{
+				t.grade(number, grade, name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Set &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;&#39;s grade on test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; to &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOTFOUND)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test or number or score out of range&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;DELETE&#34;</span>)
+			{
+			getline(cin, name);
+			try
+				{
+				t.del(name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Successfully deleted &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOTFOUND)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test number out of range ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;MEAN&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> number;
+			try
+				{
+				<span style="color:#66d9ef">double</span> mean <span style="color:#f92672">=</span> t.mean(number);
+				<span style="color:#66d9ef">if</span>(mean <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;The mean on test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; is &#34;</span> <span style="color:#f92672">&lt;&lt;</span> t.mean(number) <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span>
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;There are no nonzero means in the database for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOTFOUND)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test number out of range.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> NONONZERO)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no nonzero test scores.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		}
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bye, thanks for using.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	}</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	htable.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef _LLH_
+</span><span style="color:#75715e">#define _LLH_
+</span><span style="color:#75715e"></span>class HTable;
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;list.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+
+
+class HTable
+	{
+	  private:
+	    LL t[<span style="color:#ae81ff">25013</span>];
+		 <span style="color:#66d9ef">double</span> scores[<span style="color:#ae81ff">5</span>];
+		 <span style="color:#66d9ef">int</span> numbers[<span style="color:#ae81ff">5</span>];
+	  public:
+	    HTable();
+	    <span style="color:#f92672">~</span>HTable();
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(string thename);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grade</span>(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">del</span>(string thename);
+		 <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">mean</span>(<span style="color:#66d9ef">int</span> test);
+
+	    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lookup</span>(string name);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redogrades</span>(<span style="color:#66d9ef">int</span> test, <span style="color:#66d9ef">double</span> score);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>();
+	};
+
+<span style="color:#75715e">#endif</span></code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	llist.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;htable.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#75715e">#define NOTFOUND 1
+</span><span style="color:#75715e">#define OUTRANGE 2
+</span><span style="color:#75715e">#define DUPLICATE 3
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//Linked List constructor
+</span><span style="color:#75715e"></span>LL<span style="color:#f92672">::</span>LL()
+	{
+	root <span style="color:#f92672">=</span> NULL;
+	}
+
+<span style="color:#75715e">//Linked List destructor
+</span><span style="color:#75715e"></span>LL<span style="color:#f92672">::~</span>LL()
+	{
+	delete root;
+	}
+
+<span style="color:#75715e">//Add a name to the linked list
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>add(string thename)
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		{
+		root <span style="color:#f92672">-&gt;</span> add(thename);
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		root <span style="color:#f92672">=</span> new Node();
+		root<span style="color:#f92672">-&gt;</span>setname(thename);
+		}
+	}
+
+<span style="color:#75715e">//Delete a name from the linked list
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>del(string thename, HTable <span style="color:#f92672">*</span>table)
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> NULL)
+		throw NOTFOUND;
+	<span style="color:#66d9ef">else</span>
+		root<span style="color:#f92672">-&gt;</span>del(thename, NULL, root, table);
+	}
+
+<span style="color:#75715e">//prints a name in the linked list, throws not found if name doesnt exist
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>print(string thename)
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		root<span style="color:#f92672">-&gt;</span>print(thename);
+	<span style="color:#66d9ef">else</span>
+		throw NOTFOUND;
+	}
+
+<span style="color:#75715e">//prints the entire linked list
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>fullprint()
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		{
+		root<span style="color:#f92672">-&gt;</span>fullprint();
+		cout <span style="color:#f92672">&lt;&lt;</span> endl;
+		}
+	}
+
+<span style="color:#75715e">//Sets the grade for thename on test number to score
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>grade(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename)
+	{
+	<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		root<span style="color:#f92672">-&gt;</span>grade(number, score, thename);
+	<span style="color:#66d9ef">else</span>
+		throw NOTFOUND;
+	}
+
+<span style="color:#75715e">//Node constructor
+</span><span style="color:#75715e"></span>Node<span style="color:#f92672">::</span>Node()
+	{
+	next <span style="color:#f92672">=</span> NULL;
+	grade1 <span style="color:#f92672">=</span> grade2 <span style="color:#f92672">=</span> grade3 <span style="color:#f92672">=</span> grade4 <span style="color:#f92672">=</span> grade5 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	}
+
+<span style="color:#75715e">//Node destructor
+</span><span style="color:#75715e"></span>Node<span style="color:#f92672">::~</span>Node()
+	{
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		delete next;
+	}
+
+<span style="color:#75715e">//Node add method, adds to THE END OF THE LINKED LIST
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>add(string thename)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">==</span> thename)
+		throw DUPLICATE;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		next<span style="color:#f92672">-&gt;</span>add(thename);
+	<span style="color:#66d9ef">else</span>
+		{
+		next <span style="color:#f92672">=</span> new Node();
+		next <span style="color:#f92672">-&gt;</span> setname(thename);
+		}
+	}
+
+<span style="color:#75715e">//Sets thenames grade on test number to score
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>grade(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename)
+	{
+	<span style="color:#66d9ef">if</span>(thename <span style="color:#f92672">==</span> name)
+		{
+		<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+			grade1 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+			grade2 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+			grade3 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)
+			grade4 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>)
+			grade5 <span style="color:#f92672">=</span> score;
+		}
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		{
+		next<span style="color:#f92672">-&gt;</span>grade(number, score, thename);
+		}
+	<span style="color:#66d9ef">else</span>
+		throw NOTFOUND;
+	}
+
+<span style="color:#75715e">//prints the stuff for the thename
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>print(string thename)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">==</span> thename)
+		{
+		cout <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade2 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade3 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade4 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade5 <span style="color:#f92672">&lt;&lt;</span> endl;
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">==</span> NULL)
+			throw NOTFOUND;
+		<span style="color:#66d9ef">else</span>
+			next<span style="color:#f92672">-&gt;</span>print(thename);
+		}
+	}
+
+<span style="color:#75715e">//prints the node and everything after it
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>fullprint()
+	{
+	cout <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; : &#34;</span><span style="color:#f92672">&lt;&lt;</span>grade1 <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; , &#34;</span><span style="color:#f92672">&lt;&lt;</span> grade2<span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span><span style="color:#f92672">&lt;&lt;</span> grade3 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade4 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade5 <span style="color:#f92672">&lt;&lt;</span>endl;
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		next<span style="color:#f92672">-&gt;</span>fullprint();
+	}
+
+<span style="color:#75715e">//deletes thename from the list. uses table to set the mean stuff so that will work
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>del(string thename, Node <span style="color:#f92672">*</span>parent, Node <span style="color:#f92672">*&amp;</span>root, HTable <span style="color:#f92672">*</span>table)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">==</span> thename)
+		{
+		<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+			parent<span style="color:#f92672">-&gt;</span>setnext(next);
+		<span style="color:#66d9ef">else</span>
+			root<span style="color:#f92672">=</span>next;
+		next <span style="color:#f92672">=</span> NULL;
+		<span style="color:#66d9ef">if</span>(grade1 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			table<span style="color:#f92672">-&gt;</span>redogrades(<span style="color:#ae81ff">1</span>, grade1);
+		<span style="color:#66d9ef">if</span>(grade2 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			table<span style="color:#f92672">-&gt;</span>redogrades(<span style="color:#ae81ff">2</span>, grade2);
+		<span style="color:#66d9ef">if</span>(grade3 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			table<span style="color:#f92672">-&gt;</span>redogrades(<span style="color:#ae81ff">3</span>, grade3);
+		<span style="color:#66d9ef">if</span>(grade4 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			table<span style="color:#f92672">-&gt;</span>redogrades(<span style="color:#ae81ff">4</span>, grade4);
+		<span style="color:#66d9ef">if</span>(grade5 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			table<span style="color:#f92672">-&gt;</span>redogrades(<span style="color:#ae81ff">5</span>, grade5);
+		delete this;
+		}
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		{
+		next<span style="color:#f92672">-&gt;</span>del(thename, this, root, table);
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		throw NOTFOUND;
+		}
+	}
+
+<span style="color:#75715e">//sets the name for this node
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setname(string newname)
+	{
+	name <span style="color:#f92672">=</span> newname;
+	}
+
+<span style="color:#75715e">//sets the next pointer for this node
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setnext(Node <span style="color:#f92672">*</span>q)
+	{
+	next <span style="color:#f92672">=</span> q;
+	}
+
+<span style="color:#75715e">/*int main()
+</span><span style="color:#75715e">	{
+</span><span style="color:#75715e">	LL h;
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.add(&#34;hi&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.add(&#34;hi&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.add(&#34;bob&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.print(&#34;hi&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.del(&#34;hi&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	try
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		h.del(&#34;bob&#34;);
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	catch(int e)
+</span><span style="color:#75715e">		{
+</span><span style="color:#75715e">		if(e == 1)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;notfound&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 2)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;outrange&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		else if(e == 3)
+</span><span style="color:#75715e">			cout &lt;&lt; &#34;duplicate&#34; &lt;&lt; endl;
+</span><span style="color:#75715e">		}
+</span><span style="color:#75715e">	h.fullprint();
+</span><span style="color:#75715e">	}
+</span><span style="color:#75715e">	*/</span></code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	list.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef _LLP_
+</span><span style="color:#75715e">#define _LLP_
+</span><span style="color:#75715e"></span>class LL;
+class Node;
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;htable.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+class LL
+	{
+		private:
+			Node <span style="color:#f92672">*</span>root;
+		public:
+			LL();
+			<span style="color:#f92672">~</span>LL();
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fullprint</span>();
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grade</span>(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">del</span>(string thename, HTable <span style="color:#f92672">*</span>table);
+	};
+	
+class Node
+	{
+		private:
+			string name;
+			Node <span style="color:#f92672">*</span>next;
+			<span style="color:#66d9ef">double</span> grade1, grade2, grade3, grade4, grade5;
+		public:
+			Node();
+			<span style="color:#f92672">~</span>Node();
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grade</span>(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">del</span>(string thename, Node <span style="color:#f92672">*</span>q, Node <span style="color:#f92672">*&amp;</span>root, HTable <span style="color:#f92672">*</span>table);
+			
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setnext</span>(Node <span style="color:#f92672">*</span>q);   
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fullprint</span>();
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(string thename);
+			<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setname</span>(string newname);
+			
+	};
+<span style="color:#75715e">#endif</span></code></pre></div>
+
+    </div>
+</div>
+<h3 id="avl-tree">AVL Tree</h3>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	treemethods.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//CS222 Program 5, AVL tree with delete
+</span><span style="color:#75715e">//Shawn O&#39;Neil
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;tree1.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+<span style="color:#75715e">#define EMPTYTREE 1
+</span><span style="color:#75715e">#define DUPLICATE 2
+</span><span style="color:#75715e">#define NOMATCH 3
+</span><span style="color:#75715e">#define OUTRANGE 4
+</span><span style="color:#75715e">#define NONONZERO 5
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//tree constructor
+</span><span style="color:#75715e"></span>Tree<span style="color:#f92672">::</span>Tree()
+	{
+	root <span style="color:#f92672">=</span> NULL;
+	}
+
+<span style="color:#75715e">//tree destructor
+</span><span style="color:#75715e"></span>Tree<span style="color:#f92672">::~</span>Tree()
+	{
+	delete root;
+	}
+
+<span style="color:#75715e">//adds a node to the tree
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Tree<span style="color:#f92672">::</span>add(string name)
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> NULL)
+		{
+		root <span style="color:#f92672">=</span> new Node();
+		root<span style="color:#f92672">-&gt;</span>setname(name);
+		root<span style="color:#f92672">-&gt;</span>setparent(NULL);
+		}
+	<span style="color:#66d9ef">else</span>
+		root<span style="color:#f92672">-&gt;</span>add(name, root);
+	}
+
+<span style="color:#75715e">//sets a grade for the node of thename
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Tree<span style="color:#f92672">::</span>grade(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename)
+	{
+	<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">if</span>(score <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		root<span style="color:#f92672">-&gt;</span>grade(number, score, thename);
+	<span style="color:#66d9ef">else</span>
+		throw EMPTYTREE;
+	}
+
+<span style="color:#75715e">//prints the tree
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Tree<span style="color:#f92672">::</span>print()
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		root<span style="color:#f92672">-&gt;</span>print();
+	<span style="color:#66d9ef">else</span>
+		throw EMPTYTREE;
+	}
+
+<span style="color:#75715e">//deletes a node from the tree, with the name of name
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Tree<span style="color:#f92672">::</span>del(string name)
+	{
+	<span style="color:#66d9ef">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		root<span style="color:#f92672">-&gt;</span>del(name, root);
+	<span style="color:#66d9ef">else</span>
+		throw EMPTYTREE;
+	}
+
+<span style="color:#75715e">//gets the mean of all the nonzero particular exams in the tree
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> Tree<span style="color:#f92672">::</span>mean(<span style="color:#66d9ef">int</span> exam)
+	{
+	<span style="color:#66d9ef">if</span>(exam <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> exam <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> exam <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> exam <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> exam <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>)
+		throw OUTRANGE;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(root <span style="color:#f92672">!=</span> NULL)
+		{
+		<span style="color:#66d9ef">double</span> total <span style="color:#f92672">=</span>  root<span style="color:#f92672">-&gt;</span>gettotal(exam);
+		<span style="color:#66d9ef">double</span> number <span style="color:#f92672">=</span> root<span style="color:#f92672">-&gt;</span>getnumber(exam);
+		<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			<span style="color:#66d9ef">return</span> total<span style="color:#f92672">/</span>number;
+		<span style="color:#66d9ef">else</span>
+			throw NONONZERO;
+		}
+	<span style="color:#66d9ef">else</span>
+		throw EMPTYTREE;
+	}
+
+<span style="color:#75715e">//checks to see if the tree is empty. dont think its actually used...
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> Tree<span style="color:#f92672">::</span>empty()
+	{
+	<span style="color:#66d9ef">return</span> root <span style="color:#f92672">==</span> NULL;
+	}
+
+<span style="color:#75715e">//node constructor
+</span><span style="color:#75715e"></span>Node<span style="color:#f92672">::</span>Node()
+	{
+	parent <span style="color:#f92672">=</span> left <span style="color:#f92672">=</span> right <span style="color:#f92672">=</span> NULL;
+	grade1 <span style="color:#f92672">=</span> grade2 <span style="color:#f92672">=</span> grade3 <span style="color:#f92672">=</span> grade4 <span style="color:#f92672">=</span> grade5 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	height <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	}
+
+<span style="color:#75715e">//node destructor
+</span><span style="color:#75715e"></span>Node<span style="color:#f92672">::~</span>Node()
+	{
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		delete left;
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		delete right;
+	<span style="color:#75715e">//cout &lt;&lt; &#34;destructing: &#34; &lt;&lt; name &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	}
+
+<span style="color:#75715e">//adds a name to the tree, *&amp;root is used by by the computeheights method, for the AVL in case it needs to rotate and set a new root
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>add(string thename, Node <span style="color:#f92672">*&amp;</span>root)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">!=</span> thename)
+		{
+		<span style="color:#66d9ef">if</span>(thename <span style="color:#f92672">&lt;</span> name)
+			{
+			<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+				left<span style="color:#f92672">-&gt;</span>add(thename, root);
+			<span style="color:#66d9ef">else</span>
+				{
+				left <span style="color:#f92672">=</span> new Node();
+				left<span style="color:#f92672">-&gt;</span>setparent(this);
+				left<span style="color:#f92672">-&gt;</span>setname(thename);
+				left<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			}
+		<span style="color:#66d9ef">else</span>
+			{
+			<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+				right<span style="color:#f92672">-&gt;</span>add(thename, root);
+			<span style="color:#66d9ef">else</span>
+				{
+				right <span style="color:#f92672">=</span> new Node();
+				right<span style="color:#f92672">-&gt;</span>setparent(this);
+				right<span style="color:#f92672">-&gt;</span>setname(thename);
+				right<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			}
+		}
+	<span style="color:#66d9ef">else</span>
+		throw DUPLICATE;
+	}
+
+<span style="color:#75715e">//sets the node n as a child of the current node
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>resetchild(Node <span style="color:#f92672">*</span>n)
+	{
+	string thename <span style="color:#f92672">=</span> n<span style="color:#f92672">-&gt;</span>getname();
+	<span style="color:#66d9ef">if</span>(thename <span style="color:#f92672">&lt;</span> name)
+		left <span style="color:#f92672">=</span> n;
+	<span style="color:#66d9ef">else</span>
+		right <span style="color:#f92672">=</span> n;
+	n<span style="color:#f92672">-&gt;</span>setparent(this);
+	}
+
+<span style="color:#75715e">//sets the child with the name thename to null. used when deleting a node
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setchildtonull(string thename)
+	{
+	<span style="color:#75715e">//cout &lt;&lt; &#34;setting &#34; &lt;&lt; thename &lt;&lt; &#34; to null. left is &#34; &lt;&lt; endl;// left-&gt;getname() &lt;&lt; &#34; right is &#34; &lt;&lt; right-&gt;getname() &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		<span style="color:#66d9ef">if</span>(left<span style="color:#f92672">-&gt;</span>getname() <span style="color:#f92672">==</span> thename)
+			left <span style="color:#f92672">=</span> NULL;
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		<span style="color:#66d9ef">if</span>(right<span style="color:#f92672">-&gt;</span>getname() <span style="color:#f92672">==</span> thename)
+			right <span style="color:#f92672">=</span> NULL;
+	}
+
+<span style="color:#75715e">//returns the name
+</span><span style="color:#75715e"></span>string Node<span style="color:#f92672">::</span>getname()
+	{
+	<span style="color:#66d9ef">return</span> name;
+	}
+
+<span style="color:#75715e">//returns a particular grade
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> Node<span style="color:#f92672">::</span>getgrade(<span style="color:#66d9ef">int</span> number)
+	{
+	<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		<span style="color:#66d9ef">return</span> grade1;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+		<span style="color:#66d9ef">return</span> grade2;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+		<span style="color:#66d9ef">return</span> grade3;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)
+		<span style="color:#66d9ef">return</span> grade4;
+	<span style="color:#66d9ef">else</span>
+		<span style="color:#66d9ef">return</span> grade5;
+
+	}
+
+<span style="color:#75715e">//gets total number of nodes with nonzero grades from this point down
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> Node<span style="color:#f92672">::</span>getnumber(<span style="color:#66d9ef">int</span> exam)
+	{
+	<span style="color:#66d9ef">double</span> total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> grade1 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		total <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> grade2 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		total <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> grade3 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		total <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> grade4 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		total <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&amp;&amp;</span> grade5 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		total <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		total <span style="color:#f92672">=</span> total <span style="color:#f92672">+</span> left<span style="color:#f92672">-&gt;</span>getnumber(exam);
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		total <span style="color:#f92672">=</span> total <span style="color:#f92672">+</span> right<span style="color:#f92672">-&gt;</span>getnumber(exam);
+	<span style="color:#66d9ef">return</span> total;
+	}
+
+<span style="color:#75715e">//gets total of the grades for exam number exam from this point down
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> Node<span style="color:#f92672">::</span>gettotal(<span style="color:#66d9ef">int</span> exam)
+	{
+	<span style="color:#66d9ef">double</span> mytotal <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> grade1;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> grade2;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> grade3;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> grade4;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> grade5;
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> left<span style="color:#f92672">-&gt;</span>gettotal(exam);
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		mytotal <span style="color:#f92672">=</span> mytotal <span style="color:#f92672">+</span> right<span style="color:#f92672">-&gt;</span>gettotal(exam);
+	<span style="color:#66d9ef">return</span> mytotal;
+	}
+
+<span style="color:#75715e">//this is used to get the immediate successor of a node, short version used by delete
+</span><span style="color:#75715e"></span>Node <span style="color:#f92672">*</span> Node<span style="color:#f92672">::</span>slideleft()
+	{
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">==</span> NULL)
+		<span style="color:#66d9ef">return</span> this;
+	<span style="color:#66d9ef">else</span>
+		<span style="color:#66d9ef">return</span> left<span style="color:#f92672">-&gt;</span>slideleft();
+	}
+
+<span style="color:#75715e">//deletes a node from the tree. if the node we want to delete is the parent,
+</span><span style="color:#75715e">//then it usees *&amp;root  to set the root of the tree
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>del(string thename, Node <span style="color:#f92672">*&amp;</span>root)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">==</span> thename)
+		{
+		<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">==</span> NULL <span style="color:#f92672">&amp;&amp;</span> right <span style="color:#f92672">==</span> NULL)
+			{
+			<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+				{
+				parent<span style="color:#f92672">-&gt;</span>setchildtonull(name);
+				parent<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			<span style="color:#66d9ef">else</span>
+				root <span style="color:#f92672">=</span> NULL;
+			delete this;
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(left <span style="color:#f92672">==</span> NULL)
+			{
+			<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+				{
+				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				q<span style="color:#f92672">-&gt;</span>resetchild(right);
+				q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			<span style="color:#66d9ef">else</span>
+				{
+				root <span style="color:#f92672">=</span> right;
+				right<span style="color:#f92672">-&gt;</span>setparent(NULL);
+				}
+			right <span style="color:#f92672">=</span> NULL;
+			delete this;
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(right <span style="color:#f92672">==</span> NULL)
+			{
+			<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+				{
+				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				q<span style="color:#f92672">-&gt;</span>resetchild(left);
+				q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			<span style="color:#66d9ef">else</span>
+				{
+				root <span style="color:#f92672">=</span> left;
+				left<span style="color:#f92672">-&gt;</span>setparent(NULL);
+				}
+			left <span style="color:#f92672">=</span> NULL;
+			delete this;
+			}
+		<span style="color:#66d9ef">else</span>
+			{
+			Node <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>slideleft();
+			name <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getname();
+			grade1 <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getgrade(<span style="color:#ae81ff">1</span>);
+			grade2 <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getgrade(<span style="color:#ae81ff">2</span>);
+			grade3 <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getgrade(<span style="color:#ae81ff">3</span>);
+			grade4 <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getgrade(<span style="color:#ae81ff">4</span>);
+			grade5 <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>getgrade(<span style="color:#ae81ff">5</span>);
+			p<span style="color:#f92672">-&gt;</span>del(p<span style="color:#f92672">-&gt;</span>getname(),root);
+			}
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">if</span>(thename <span style="color:#f92672">&lt;</span> name)
+			{
+			<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">==</span> NULL)
+				throw NOMATCH;
+			<span style="color:#66d9ef">else</span>
+				left<span style="color:#f92672">-&gt;</span>del(thename, root);
+			}
+		<span style="color:#66d9ef">else</span>
+			{
+			<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">==</span> NULL)
+				throw NOMATCH;
+			<span style="color:#66d9ef">else</span>
+				right<span style="color:#f92672">-&gt;</span>del(thename, root);
+			}
+		}
+	}
+
+<span style="color:#75715e">//sets the parent node
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setparent(Node <span style="color:#f92672">*</span>n)
+	{
+	parent <span style="color:#f92672">=</span> n;
+	}
+
+<span style="color:#75715e">//sets the name, duh
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setname(string thename)
+	{
+	name <span style="color:#f92672">=</span> thename;
+	}
+
+<span style="color:#75715e">//Returns the mean of all the nonzero scores on a particular test from this point down
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> Node<span style="color:#f92672">::</span>mean(<span style="color:#66d9ef">int</span> exam)
+	{
+	<span style="color:#66d9ef">double</span> leftmean <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">double</span> rightmean <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">double</span> memean <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+	<span style="color:#66d9ef">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		memean <span style="color:#f92672">=</span> grade1;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+		memean <span style="color:#f92672">=</span> grade2;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+		memean <span style="color:#f92672">=</span> grade3;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)
+		memean <span style="color:#f92672">=</span> grade4;
+	<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(exam <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>)
+		memean <span style="color:#f92672">=</span> grade5;
+
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		rightmean <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>mean(exam);
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		leftmean <span style="color:#f92672">=</span> left<span style="color:#f92672">-&gt;</span>mean(exam);
+
+	<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(leftmean <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		count<span style="color:#f92672">++</span>;
+	<span style="color:#66d9ef">if</span>(rightmean <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		count<span style="color:#f92672">++</span>;
+	<span style="color:#66d9ef">if</span>(memean <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+		count<span style="color:#f92672">++</span>;
+
+	<span style="color:#66d9ef">if</span>(count <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">return</span> (leftmean<span style="color:#f92672">+</span>rightmean<span style="color:#f92672">+</span>memean)<span style="color:#f92672">/</span>count;
+	}
+
+<span style="color:#75715e">// Sets the grade for a particular test for the node.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>grade(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename)
+	{
+	<span style="color:#66d9ef">if</span>(name <span style="color:#f92672">==</span> thename)
+		{
+		<span style="color:#66d9ef">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+			grade1 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+			grade2 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+			grade3 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)
+			grade4 <span style="color:#f92672">=</span> score;
+		<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(number <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>)
+			grade5 <span style="color:#f92672">=</span> score;
+		}
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(thename <span style="color:#f92672">&lt;</span> name)
+		{
+		<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+			left<span style="color:#f92672">-&gt;</span>grade(number, score, thename);
+		<span style="color:#66d9ef">else</span>
+			throw NOMATCH;
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+			right<span style="color:#f92672">-&gt;</span>grade(number, score, thename);
+		<span style="color:#66d9ef">else</span>
+			throw NOMATCH;
+		}
+	}
+
+<span style="color:#66d9ef">int</span> Node<span style="color:#f92672">::</span>getheight()
+	{
+	<span style="color:#66d9ef">return</span> height;
+	}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>computeheights(Node <span style="color:#f92672">*&amp;</span>root)
+	{
+	<span style="color:#66d9ef">int</span> lh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> rh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">==</span> NULL <span style="color:#f92672">&amp;&amp;</span> right <span style="color:#f92672">==</span> NULL)
+		{
+		height <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+		<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+			parent<span style="color:#f92672">-&gt;</span>computeheights(root);
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+			lh <span style="color:#f92672">=</span> left<span style="color:#f92672">-&gt;</span>getheight();
+		<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+			rh <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>getheight();
+
+
+		<span style="color:#66d9ef">if</span>(rh <span style="color:#f92672">-</span> lh <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)	<span style="color:#75715e">//too heavy on the right
+</span><span style="color:#75715e"></span>			{
+			<span style="color:#75715e">//cout &lt;&lt; &#34;too heavy on right&#34; &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> zigheight <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">int</span> dirheight <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+				<span style="color:#66d9ef">if</span>(right<span style="color:#f92672">-&gt;</span>left <span style="color:#f92672">!=</span> NULL)
+					zigheight <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>left<span style="color:#f92672">-&gt;</span>getheight();
+			<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+				<span style="color:#66d9ef">if</span>(right<span style="color:#f92672">-&gt;</span>right <span style="color:#f92672">!=</span> NULL)
+					dirheight <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>right<span style="color:#f92672">-&gt;</span>getheight();
+			<span style="color:#66d9ef">if</span>(zigheight <span style="color:#f92672">&gt;</span> dirheight)		<span style="color:#75715e">//needs a double rotation
+</span><span style="color:#75715e"></span>				{
+				right<span style="color:#f92672">-&gt;</span>rotateright(root);		<span style="color:#75715e">//tell the those two to recomputer their heights w/out recursion
+</span><span style="color:#75715e"></span>				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				rotateleft(root);
+				<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">!=</span> NULL)
+					q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			<span style="color:#66d9ef">else</span>									<span style="color:#75715e">//single rotation
+</span><span style="color:#75715e"></span>				{
+				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				rotateleft(root);				<span style="color:#75715e">//add a part to recompute the heigts of the two invovled w/out recursion
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">!=</span> NULL)
+					q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			}
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(lh <span style="color:#f92672">-</span> rh <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)	<span style="color:#75715e">//too heavy on the left
+</span><span style="color:#75715e"></span>			{
+			<span style="color:#75715e">//cout &lt;&lt; &#34;too heavy on left&#34; &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> zigheight <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">int</span> dirheight <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+				<span style="color:#66d9ef">if</span>(left<span style="color:#f92672">-&gt;</span>right <span style="color:#f92672">!=</span> NULL)
+					zigheight <span style="color:#f92672">=</span> left<span style="color:#f92672">-&gt;</span>right<span style="color:#f92672">-&gt;</span>getheight();
+			<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+				<span style="color:#66d9ef">if</span>(left<span style="color:#f92672">-&gt;</span>left <span style="color:#f92672">!=</span> NULL)
+					dirheight <span style="color:#f92672">=</span> left<span style="color:#f92672">-&gt;</span>left<span style="color:#f92672">-&gt;</span>getheight();
+			<span style="color:#66d9ef">if</span>(zigheight <span style="color:#f92672">&gt;</span> dirheight)		<span style="color:#75715e">//double rotation
+</span><span style="color:#75715e"></span>				{
+				left<span style="color:#f92672">-&gt;</span>rotateleft(root);
+				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				rotateright(root);
+				<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">!=</span> NULL)
+					q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			<span style="color:#66d9ef">else</span>									<span style="color:#75715e">//single rotation
+</span><span style="color:#75715e"></span>				{
+				Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+				rotateright(root);
+				<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">!=</span> NULL)
+					q<span style="color:#f92672">-&gt;</span>computeheights(root);
+				}
+			}
+		<span style="color:#66d9ef">else</span>								<span style="color:#75715e">//not heavier on either side, computer my height and pass it up
+</span><span style="color:#75715e"></span>			{
+			<span style="color:#75715e">//cout &lt;&lt; &#34;still avl from here down&#34; &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span>(lh <span style="color:#f92672">&gt;</span> rh)
+				height <span style="color:#f92672">=</span> lh <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+			<span style="color:#66d9ef">else</span>
+				height <span style="color:#f92672">=</span> rh <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+			<span style="color:#66d9ef">if</span>(parent <span style="color:#f92672">!=</span> NULL)
+				parent<span style="color:#f92672">-&gt;</span>computeheights(root);
+			}
+		}
+		<span style="color:#75715e">//if rh and lh are more than one off, rotate
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//but first check to see if the zigzag child is greater than the height of the direct grandchild
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//if so, rotate zigzag child up twice (i.e., rotate zigzag grandchild up(absolute recomputing the two involved), then have it call its new parent
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//compute heights (recursive) CASE DOUBLE ROTATION?
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//recompute the heigts of yourself and THEN the other one that you rotated (the two involved) based off of what
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//know their childrens heights are, but dont recurse this up the tree, so make a definatecomputeheights method.
+</span><span style="color:#75715e"></span>	}
+
+Node <span style="color:#f92672">*</span> Node<span style="color:#f92672">::</span>getleft(){
+	<span style="color:#66d9ef">return</span> left;}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setleft(Node <span style="color:#f92672">*</span>n){
+	left <span style="color:#f92672">=</span> n;}
+
+Node <span style="color:#f92672">*</span> Node<span style="color:#f92672">::</span>getright(){
+	<span style="color:#66d9ef">return</span> right;}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>setright(Node <span style="color:#f92672">*</span>n){
+	right <span style="color:#f92672">=</span> n;}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>absheight(){
+	<span style="color:#66d9ef">int</span> lh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> rh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		lh <span style="color:#f92672">=</span> left<span style="color:#f92672">-&gt;</span>getheight();
+	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		rh <span style="color:#f92672">=</span> right<span style="color:#f92672">-&gt;</span>getheight();
+	<span style="color:#66d9ef">if</span>(rh <span style="color:#f92672">&gt;</span> lh)
+		height <span style="color:#f92672">=</span> rh <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">else</span>
+		height <span style="color:#f92672">=</span> lh <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>rotateleft(Node <span style="color:#f92672">*&amp;</span>root){
+	Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+	Node <span style="color:#f92672">*</span>r <span style="color:#f92672">=</span> right;
+	Node <span style="color:#f92672">*</span>z <span style="color:#f92672">=</span> r<span style="color:#f92672">-&gt;</span>getleft();
+	parent <span style="color:#f92672">=</span> r;
+	r<span style="color:#f92672">-&gt;</span>setleft(this);
+	right <span style="color:#f92672">=</span> z;
+	<span style="color:#66d9ef">if</span>(z <span style="color:#f92672">!=</span> NULL) z<span style="color:#f92672">-&gt;</span>setparent(this);
+	<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">==</span> NULL) root <span style="color:#f92672">=</span> r;
+	<span style="color:#66d9ef">else</span> q<span style="color:#f92672">-&gt;</span>resetchild(r);
+	r<span style="color:#f92672">-&gt;</span>setparent(q);
+	absheight();
+	r<span style="color:#f92672">-&gt;</span>absheight();
+	<span style="color:#75715e">//cout &lt;&lt; &#34;Rotated left. &#34; &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	}
+
+<span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>rotateright(Node <span style="color:#f92672">*&amp;</span>root){
+	Node <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> parent;
+	Node <span style="color:#f92672">*</span>l <span style="color:#f92672">=</span> left;
+	Node <span style="color:#f92672">*</span>z <span style="color:#f92672">=</span> l<span style="color:#f92672">-&gt;</span>getright();
+	parent <span style="color:#f92672">=</span> l;
+	l<span style="color:#f92672">-&gt;</span>setright(this);
+	left <span style="color:#f92672">=</span> z;
+	<span style="color:#66d9ef">if</span>(z <span style="color:#f92672">!=</span> NULL) z<span style="color:#f92672">-&gt;</span>setparent(this);
+	<span style="color:#66d9ef">if</span>(q <span style="color:#f92672">==</span> NULL) root <span style="color:#f92672">=</span> l;
+	<span style="color:#66d9ef">else</span> q<span style="color:#f92672">-&gt;</span>resetchild(l);
+	l<span style="color:#f92672">-&gt;</span>setparent(q);
+	absheight();
+	l<span style="color:#f92672">-&gt;</span>absheight();
+	<span style="color:#75715e">//cout &lt;&lt; &#34;Rotated right. &#34; &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	}
+
+<span style="color:#75715e">//Print method for the node, inorder. Prints name, and grades.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Node<span style="color:#f92672">::</span>print()
+	{
+	<span style="color:#66d9ef">if</span>(left <span style="color:#f92672">!=</span> NULL)
+		left<span style="color:#f92672">-&gt;</span>print();
+	cout <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade2 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade3 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade4 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; , &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade5 <span style="color:#f92672">&lt;&lt;</span> endl;<span style="color:#75715e">//&#34; height: &#34; &lt;&lt; height &lt;&lt;endl;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(right <span style="color:#f92672">!=</span> NULL)
+		right<span style="color:#f92672">-&gt;</span>print();
+	}
+
+<span style="color:#66d9ef">int</span> main(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span> argv)
+	{
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Happy birthday euclid.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	Tree t;
+	string action;
+	<span style="color:#66d9ef">int</span> number;
+	<span style="color:#66d9ef">double</span> grade;
+	string name;
+	<span style="color:#66d9ef">while</span>(cin <span style="color:#f92672">&gt;&gt;</span> action, cin)
+		{
+		cin.ignore();
+		<span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ADD&#34;</span>)
+			{
+			getline(cin, name);
+			try
+				{
+				t.add(name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Successfully added &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOMATCH)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> EMPTYTREE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could nto add, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;. Name already exists.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not add, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;PRINT&#34;</span>)
+			{
+			try
+				{
+			<span style="color:#75715e">//	cout &lt;&lt; endl;
+</span><span style="color:#75715e"></span>				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Statistics: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				t.print();
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOMATCH)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> EMPTYTREE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Database Empty, could not print.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not print, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;GRADE&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> number;
+			cin.ignore();
+			cin <span style="color:#f92672">&gt;&gt;</span> grade;
+			cin.ignore();
+			getline(cin, name);
+			try
+				{
+				t.grade(number, grade, name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Set &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;&#39;s grade on test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; to &#34;</span> <span style="color:#f92672">&lt;&lt;</span> grade <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOMATCH)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> EMPTYTREE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, database empty&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not grade &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test number out of range&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;DELETE&#34;</span>)
+			{
+			getline(cin, name);
+			try
+				{
+				t.del(name);
+				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Successfully deleted &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOMATCH)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> EMPTYTREE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, database empty&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not delete &#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test number out of range ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(action <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;MEAN&#34;</span>)
+			{
+			cin <span style="color:#f92672">&gt;&gt;</span> number;
+			try
+				{
+				<span style="color:#66d9ef">double</span> mean <span style="color:#f92672">=</span> t.mean(number);
+				<span style="color:#66d9ef">if</span>(mean <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;The mean on test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; is &#34;</span> <span style="color:#f92672">&lt;&lt;</span> t.mean(number) <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span>
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;There are no nonzero means in the database for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			catch(<span style="color:#66d9ef">int</span> e)
+				{
+				<span style="color:#66d9ef">if</span>(e <span style="color:#f92672">==</span> NOMATCH)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no match in database ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> EMPTYTREE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, database empty&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> DUPLICATE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean, ERROR&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> OUTRANGE)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, test number out of range.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span>(e <span style="color:#f92672">==</span> NONONZERO)
+					cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Could not get mean for test &#34;</span> <span style="color:#f92672">&lt;&lt;</span> number <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, no nonzero grades in database.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+				cout <span style="color:#f92672">&lt;&lt;</span> endl;
+				}
+			}
+
+		}
+	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bye, thanks for using.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	}</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	tree1.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef _LLH_
+</span><span style="color:#75715e">#define _LLH_
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+class Tree;
+class Node;
+
+class Tree
+	{
+	  private:
+	    Node <span style="color:#f92672">*</span>root;
+	  public:
+	    Tree();
+	    <span style="color:#f92672">~</span>Tree();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(string name);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grade</span>(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">del</span>(string name);
+	    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">mean</span>(<span style="color:#66d9ef">int</span> exam);
+	    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>();
+	};
+	
+class Node
+	{
+	  private:
+	    Node <span style="color:#f92672">*</span>parent;
+	    Node <span style="color:#f92672">*</span>left;
+	    Node <span style="color:#f92672">*</span>right;
+	    <span style="color:#66d9ef">double</span> grade1, grade2, grade3, grade4, grade5;
+		 <span style="color:#66d9ef">int</span> height;
+	    string name;
+	  public:
+	    Node();
+	    <span style="color:#f92672">~</span>Node();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setparent</span>(Node <span style="color:#f92672">*</span>n);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setname</span>(string thename);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(string thename, Node <span style="color:#f92672">*&amp;</span>root);
+	    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">mean</span>(<span style="color:#66d9ef">int</span> exam);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grade</span>(<span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">double</span> score, string thename);
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">del</span>(string thename, Node <span style="color:#f92672">*&amp;</span>root);
+	    string <span style="color:#a6e22e">getname</span>();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setchildtonull</span>(string thename);
+	    Node <span style="color:#f92672">*</span> <span style="color:#a6e22e">slideleft</span>();
+	    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getgrade</span>(<span style="color:#66d9ef">int</span> number);
+	    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getnumber</span>(<span style="color:#66d9ef">int</span> exam);
+	    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">gettotal</span>(<span style="color:#66d9ef">int</span> exam);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">computeheights</span>(Node <span style="color:#f92672">*&amp;</span>root);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rotateleft</span>(Node <span style="color:#f92672">*&amp;</span>root);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rotateright</span>(Node <span style="color:#f92672">*&amp;</span>root);
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">absheight</span>();
+		 Node <span style="color:#f92672">*</span> <span style="color:#a6e22e">getleft</span>();
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setleft</span>(Node <span style="color:#f92672">*</span>n);
+		 Node <span style="color:#f92672">*</span> <span style="color:#a6e22e">getright</span>();
+		 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setright</span>(Node <span style="color:#f92672">*</span>n);
+		 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getheight</span>();
+	    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">resetchild</span>(Node <span style="color:#f92672">*</span>n);
+	};
+	
+<span style="color:#75715e">#endif</span></code></pre></div>
+
+    </div>
+</div>
+<h3 id="very-long-integer-division">Very long integer division</h3>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	divide.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//  Shawn O&#39;Neil - Program 1 for CS222
+</span><span style="color:#75715e">//  Integer Division for very long strings.
+</span><span style="color:#75715e">//  Fixed the powers of 10 quotient bug
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+string <span style="color:#a6e22e">add</span>(string n, string d);
+string <span style="color:#a6e22e">subtract</span>(string top, string bottom);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">RemLead0</span>(string <span style="color:#f92672">&amp;</span>s);
+string <span style="color:#a6e22e">RemLastChar</span>(string s);
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isSmaller</span>(string one, string two);
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkAllNumbers</span>(string n);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">divide</span>(string top, string bot, string <span style="color:#f92672">&amp;</span>q, string <span style="color:#f92672">&amp;</span>r);
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+ 	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Enter an integer:  &#34;</span>;
+ 	string n;
+ 	getline (cin,n);
+ 	cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Enter another integer:  &#34;</span>;
+ 	string d;
+ 	getline (cin,d);
+	RemLead0(d);
+	RemLead0(n);
+	<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>checkAllNumbers(n))
+		{
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Numerator contains non-number characters. Quitting. &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+		}
+	<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>checkAllNumbers(d))
+		{
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Denominator contains non-number characters. Quitting. &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+		}
+	<span style="color:#66d9ef">if</span>(d <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span>)
+		{
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Divide by zero error. Quitting. &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+		}
+	string q <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+	string r <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+ 	divide(n,d,q,r);
+	cout <span style="color:#f92672">&lt;&lt;</span> q <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;  remainder  &#34;</span> <span style="color:#f92672">&lt;&lt;</span> r <span style="color:#f92672">&lt;&lt;</span> endl;
+	}
+
+
+<span style="color:#75715e">// A method to divide two strings.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">divide</span>(string top, string bot, string <span style="color:#f92672">&amp;</span>q, string <span style="color:#f92672">&amp;</span>r)
+	{
+	string quo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+	string temp <span style="color:#f92672">=</span> bot;
+	<span style="color:#66d9ef">if</span>(top <span style="color:#f92672">==</span> bot)
+		{
+		q <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
+		r <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>;
+		<span style="color:#66d9ef">return</span>;
+		}
+	<span style="color:#66d9ef">int</span> counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">while</span>(isSmaller(temp, top))
+		{
+		temp <span style="color:#f92672">=</span> temp <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;0&#34;</span>;
+		counter<span style="color:#f92672">++</span>;
+		}
+	temp <span style="color:#f92672">=</span> RemLastChar(temp);
+	counter<span style="color:#f92672">--</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> counter; counter <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; counter<span style="color:#f92672">--</span>)
+		{
+		i <span style="color:#f92672">=</span> i;	<span style="color:#75715e">//so my computer doesn&#39;t bitch about unused i
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">while</span>(isSmaller(temp, top))
+			{
+			top <span style="color:#f92672">=</span> subtract(top, temp);
+			count<span style="color:#f92672">++</span>;
+			}
+		quo <span style="color:#f92672">=</span> quo <span style="color:#f92672">+</span> (<span style="color:#66d9ef">char</span>)(count <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;0&#39;</span>);
+		temp <span style="color:#f92672">=</span> RemLastChar(temp);
+		}
+	q <span style="color:#f92672">=</span> quo;
+	r <span style="color:#f92672">=</span> top;
+	}
+
+<span style="color:#75715e">// Subtracts the bot string from the top string, checking to make sure the top string is bigger. Uses the nines compliment method.
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">subtract</span>(string top, string bot)
+	{
+	<span style="color:#66d9ef">int</span> lentop <span style="color:#f92672">=</span> top.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> lenbot <span style="color:#f92672">=</span> bot.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">if</span>(isSmaller(top, bot) <span style="color:#f92672">&amp;&amp;</span> top <span style="color:#f92672">!=</span> bot)
+		cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Subtraction resulted in negative number. Not responsible for really messed up answers. &#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> lentop <span style="color:#f92672">-</span> lenbot; i<span style="color:#f92672">++</span>)
+		{
+		bot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">+</span> bot;
+		lenbot<span style="color:#f92672">++</span>;
+		}
+
+	string nines <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> lenbot <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
+		{
+		nines <span style="color:#f92672">=</span> nines <span style="color:#f92672">+</span> (<span style="color:#66d9ef">char</span>)((<span style="color:#ae81ff">9</span> <span style="color:#f92672">-</span> (bot[i]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>))<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;0&#39;</span>);
+		}
+	string ninesplus1 <span style="color:#f92672">=</span> add(nines, <span style="color:#e6db74">&#34;1&#34;</span>);
+	string subtotal <span style="color:#f92672">=</span> add(ninesplus1, top);
+	string answer <span style="color:#f92672">=</span> subtotal.substr(<span style="color:#ae81ff">1</span>);
+	RemLead0(answer);
+	<span style="color:#66d9ef">return</span> answer;
+	}
+
+<span style="color:#75715e">// Adds two numerical strings n, and d.
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">add</span>(string n, string d)
+	{
+	<span style="color:#66d9ef">int</span> len1 <span style="color:#f92672">=</span> n.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> len2 <span style="color:#f92672">=</span> d.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">int</span> carry <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	string sum  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+
+	<span style="color:#66d9ef">while</span>(len1 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len2 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
+		{
+		<span style="color:#66d9ef">int</span> digit1, digit2;
+
+		<span style="color:#66d9ef">if</span>(len1 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) digit1 <span style="color:#f92672">=</span> n[len1]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>;
+		<span style="color:#66d9ef">else</span> digit1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+		<span style="color:#66d9ef">if</span>(len2 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) digit2 <span style="color:#f92672">=</span> d[len2]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>;
+		<span style="color:#66d9ef">else</span> digit2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+		<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> digit1<span style="color:#f92672">+</span>digit2<span style="color:#f92672">+</span>carry;
+		<span style="color:#66d9ef">if</span>(i  <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span>)							<span style="color:#75715e">//or carry = i &gt; 9 ? 1 : 0;
+</span><span style="color:#75715e"></span>			carry <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;						<span style="color:#75715e">//OR carry = i / 10;
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">else</span>
+			carry <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">int</span> digit <span style="color:#f92672">=</span> i<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>;
+		sum <span style="color:#f92672">=</span> ( (<span style="color:#66d9ef">char</span>)(digit <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;0&#39;</span>) )<span style="color:#f92672">+</span> sum;
+		len1<span style="color:#f92672">--</span>;
+		len2<span style="color:#f92672">--</span>;
+		}
+	<span style="color:#66d9ef">if</span>(carry <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		sum <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#f92672">+</span> sum;
+	<span style="color:#66d9ef">return</span> sum;
+	}
+<span style="color:#75715e">//Returns true if all characters in the string are numbers, false otherwise.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkAllNumbers</span>(string n)
+	{
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">int</span>)n.length(); i<span style="color:#f92672">++</span>)
+		{
+		<span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">&gt;</span> n[i] <span style="color:#f92672">||</span> n[i] <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;9&#39;</span>)
+			<span style="color:#66d9ef">return</span> false;
+		}
+	<span style="color:#66d9ef">return</span> true;
+	}
+
+<span style="color:#75715e">// Returns a string just like the one it takes, but without the last character.
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">RemLastChar</span>(string s)
+	{
+	string answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">int</span>)s.length() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
+		{
+		answer <span style="color:#f92672">=</span> answer <span style="color:#f92672">+</span> s[i];
+		}
+	<span style="color:#66d9ef">return</span> answer;
+	}
+
+<span style="color:#75715e">// Checks to see if numerical string one is smaller than string two. If it is, it returns true.
+</span><span style="color:#75715e">// I could&#39;ve sworn one could do this with built in c++ string libraries, but for some reason I couln&#39;t get it to work.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isSmaller</span>(string one, string two)
+	{
+	<span style="color:#66d9ef">int</span> lenone <span style="color:#f92672">=</span> one.length();
+	<span style="color:#66d9ef">int</span> lentwo <span style="color:#f92672">=</span> two.length();
+	<span style="color:#75715e">//cout &lt;&lt; &#34;one: &#34; &lt;&lt; one &lt;&lt;&#34; len1: &#34; &lt;&lt; lenone &lt;&lt; &#34; two: &#34;&lt;&lt; two &lt;&lt;&#34; len2: &#34; &lt;&lt; lentwo &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(lentwo <span style="color:#f92672">&gt;</span> lenone)
+		{
+		<span style="color:#75715e">//cout &lt;&lt; one &lt;&lt; &#34; is smaller than &#34; &lt;&lt; two &lt;&lt; endl;
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> true;
+		}
+	<span style="color:#66d9ef">if</span>(lenone <span style="color:#f92672">==</span> lentwo)
+		{
+		<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">while</span>(one[i] <span style="color:#f92672">==</span> two[i] <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">!=</span> lenone<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+			{
+			i<span style="color:#f92672">++</span>;
+			}
+		<span style="color:#66d9ef">if</span>(one[i] <span style="color:#f92672">&lt;=</span> two[i])
+			{
+			<span style="color:#75715e">//cout &lt;&lt; one &lt;&lt; &#34; is smaller than &#34; &lt;&lt; two &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> true;
+			}
+		<span style="color:#66d9ef">else</span>
+			{
+			<span style="color:#75715e">//cout &lt;&lt; one &lt;&lt; &#34; is not smaller than &#34; &lt;&lt; two &lt;&lt; endl;
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> false;
+			}
+		}
+	<span style="color:#75715e">//cout &lt;&lt; one &lt;&lt; &#34; is not smaller than &#34; &lt;&lt; two &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> false;
+	}
+
+<span style="color:#75715e">// Removes the leading 0&#39;s from a string. If the string is all 0&#39;s, it leaves the last one on.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">RemLead0</span>(string <span style="color:#f92672">&amp;</span>s)
+	{
+	<span style="color:#66d9ef">while</span>(s[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span><span style="color:#e6db74">&#39;0&#39;</span>)		<span style="color:#75715e">/// or while(s != &#34;0&#34; &amp;&amp; s[0] == &#39;0&#39;)
+</span><span style="color:#75715e"></span>		{
+		<span style="color:#66d9ef">if</span>(s <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span>) <span style="color:#66d9ef">break</span>;	<span style="color:#75715e">//and take this out
+</span><span style="color:#75715e"></span>		s <span style="color:#f92672">=</span> s.substr(<span style="color:#ae81ff">1</span>);
+		}
+	}</code></pre></div>
+
+    </div>
+</div>
+<h3 id="mergesort-on-linked-list">Mergesort on Linked List</h3>
+<p>This was one of my favorite assignments!</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	llmethods.cpp
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">//CS222 Shawn O&#39;Neil Program 2, Linked List Merge Sort
+</span><span style="color:#75715e">//Working Version
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ll.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+	{
+	LL M;
+	M.addfront(<span style="color:#e6db74">&#34;G&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;C&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;H&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;C&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;I&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;K&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;A&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;D&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;D&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;E&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;B&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;F&#34;</span>);
+	M.addfront(<span style="color:#e6db74">&#34;J&#34;</span>);
+	M.print();
+	cout <span style="color:#f92672">&lt;&lt;</span> endl;
+	M.sort();
+	M.print();
+	}
+
+LL<span style="color:#f92672">::</span>LL()
+	{
+	head <span style="color:#f92672">=</span> NULL;
+	}
+
+LL<span style="color:#f92672">::~</span>LL()
+	{
+	}
+
+<span style="color:#75715e">//Prints the Linked List
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>print()
+	{
+	<span style="color:#66d9ef">if</span>(head <span style="color:#f92672">!=</span> NULL)
+		head<span style="color:#f92672">-&gt;</span>print();
+	}
+
+<span style="color:#75715e">//Splits the linked list from head down
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>split()
+	{
+	<span style="color:#66d9ef">if</span>(head <span style="color:#f92672">!=</span> NULL)
+		head <span style="color:#f92672">=</span>  head<span style="color:#f92672">-&gt;</span>split();
+	}
+
+<span style="color:#75715e">//Sorts the linked list from head down
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>sort()
+	{
+	<span style="color:#66d9ef">if</span>(head <span style="color:#f92672">!=</span> NULL)
+		head <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>sort();
+	}
+
+<span style="color:#75715e">//Adds a node to the front of the linked list.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LL<span style="color:#f92672">::</span>addfront(string str)
+	{
+	<span style="color:#66d9ef">if</span>(head <span style="color:#f92672">!=</span> NULL)
+		head <span style="color:#f92672">=</span> new LLN(str, head);
+	<span style="color:#66d9ef">else</span>
+		head <span style="color:#f92672">=</span> new LLN(str, NULL);
+	}
+
+
+LLN<span style="color:#f92672">::</span>LLN(string str, LLN <span style="color:#f92672">*</span>n)
+	{
+	s <span style="color:#f92672">=</span> str;
+	next <span style="color:#f92672">=</span> n;
+	}
+
+LLN<span style="color:#f92672">::~</span>LLN()
+	{
+	}
+
+<span style="color:#75715e">//Sorts the linked list from this node downward - doesn&#39;t work, probably broken merge
+</span><span style="color:#75715e"></span>LLN <span style="color:#f92672">*</span> LLN<span style="color:#f92672">::</span>sort()
+	{
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">==</span> NULL)
+		{
+		<span style="color:#66d9ef">return</span> this;
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		LLN <span style="color:#f92672">*</span>list <span style="color:#f92672">=</span> this;
+		LLN <span style="color:#f92672">*</span>one <span style="color:#f92672">=</span> split();
+		one <span style="color:#f92672">=</span> one<span style="color:#f92672">-&gt;</span>sort();
+		list <span style="color:#f92672">=</span> list<span style="color:#f92672">-&gt;</span>sort();
+		list <span style="color:#f92672">=</span> list<span style="color:#f92672">-&gt;</span>merge(one);
+		<span style="color:#66d9ef">return</span> list;
+		}
+	}
+
+<span style="color:#75715e">//Splits the linked list from this point downward Returns pointer to the head of other list
+</span><span style="color:#75715e"></span>LLN <span style="color:#f92672">*</span> LLN<span style="color:#f92672">::</span>split()
+	{
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		{
+		LLN <span style="color:#f92672">*</span>temp <span style="color:#f92672">=</span> next;
+		next <span style="color:#f92672">=</span> temp<span style="color:#f92672">-&gt;</span>split();
+		<span style="color:#66d9ef">return</span> temp;
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		<span style="color:#66d9ef">return</span> NULL;
+		}
+	}
+
+<span style="color:#75715e">//Merges two sorted linked lists, returns head of sorted linked list - I believe this is broken
+</span><span style="color:#75715e"></span>LLN <span style="color:#f92672">*</span> LLN<span style="color:#f92672">::</span>merge(LLN <span style="color:#f92672">*</span>o)
+	{
+	<span style="color:#66d9ef">if</span>(o <span style="color:#f92672">==</span> NULL)
+		{
+		<span style="color:#66d9ef">return</span> this;
+		}
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">==</span> NULL)
+		{
+		<span style="color:#66d9ef">if</span>(s <span style="color:#f92672">&lt;=</span> o<span style="color:#f92672">-&gt;</span>s)
+			{
+			next <span style="color:#f92672">=</span> o;
+			<span style="color:#66d9ef">return</span> this;
+			}
+		}
+	LLN <span style="color:#f92672">*</span>temp;
+	<span style="color:#66d9ef">if</span>(s <span style="color:#f92672">&lt;=</span> o<span style="color:#f92672">-&gt;</span>s)
+		{
+		temp <span style="color:#f92672">=</span> this;
+		temp<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> o<span style="color:#f92672">-&gt;</span>merge(next);
+		}
+	<span style="color:#66d9ef">else</span>
+		{
+		temp <span style="color:#f92672">=</span> o;
+		temp<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> merge(o<span style="color:#f92672">-&gt;</span>next);
+		}
+	<span style="color:#66d9ef">return</span> temp;
+	}
+
+<span style="color:#75715e">//Prints the linked list from this point downward
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> LLN<span style="color:#f92672">::</span>print()
+	{
+	cout <span style="color:#f92672">&lt;&lt;</span> s <span style="color:#f92672">&lt;&lt;</span> endl;
+	<span style="color:#66d9ef">if</span>(next <span style="color:#f92672">!=</span> NULL)
+		next<span style="color:#f92672">-&gt;</span>print();
+	}</code></pre></div>
+
+    </div>
+</div>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+    	
+    	ll.h
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef _LLH_
+</span><span style="color:#75715e">#define _LLH_
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+
+class LL;
+class LLN;
+
+class LL
+	{
+	  private:
+	LLN <span style="color:#f92672">*</span>head;
+	  public:
+	LL ();
+	<span style="color:#f92672">~</span>LL ();
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span> ();
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">split</span>();
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addfront</span> (string str);
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sort</span> (); <span style="color:#75715e">//Sorts a LL in alphabetical order
+</span><span style="color:#75715e"></span>	};
+
+class LLN
+	{
+	  private:
+  	LLN <span style="color:#f92672">*</span>next;
+  	string s;
+ 	  public:
+	LLN (string str, LLN <span style="color:#f92672">*</span>n);
+	<span style="color:#f92672">~</span>LLN ();
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span> ();
+
+	LLN <span style="color:#f92672">*</span><span style="color:#a6e22e">sort</span> (); <span style="color:#75715e">//Sorts the list from this point down;
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">//returns the new head of this sorted list
+</span><span style="color:#75715e"></span>
+	LLN <span style="color:#f92672">*</span><span style="color:#a6e22e">split</span> (); <span style="color:#75715e">//Splits the list in half.  If original list is
+</span><span style="color:#75715e"></span>                 <span style="color:#75715e">//1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;... , the new lists are 1-&gt;3-&gt;5-&gt;...
+</span><span style="color:#75715e"></span>                 <span style="color:#75715e">//and 2-&gt;4-&gt;6-&gt;... this is still node 1 (of course) and
+</span><span style="color:#75715e"></span>                 <span style="color:#75715e">//the pointer to node 2 is returned.
+</span><span style="color:#75715e"></span>
+	LLN <span style="color:#f92672">*</span><span style="color:#a6e22e">merge</span> (LLN <span style="color:#f92672">*</span>o); <span style="color:#75715e">//merges two sorted lists.  this is the head of
+</span><span style="color:#75715e"></span>                       <span style="color:#75715e">//one list; o is the head of the other.  The new
+</span><span style="color:#75715e"></span>                       <span style="color:#75715e">//head of the merged list is returned.
+</span><span style="color:#75715e"></span>	};
+<span style="color:#75715e">#endif</span></code></pre></div>
+
+    </div>
+</div>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/cs222-data-structures/" data-id="61537843135d1deee62cfa84a4d87795" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="/cellular-automata/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Cellular Automata</div>
+    </a>
+    
+
+    
+    <a href="/gainclone-amplifier/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Gainclone Amplifier</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
+        
+        
+        <a href="/tags/art" style="font-size: 12px;">art</a>
+        
+        
+        <a href="/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="/tags/diy" style="font-size: 12px;">diy</a>
+        
+        
+        <a href="/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="/tags/hiking" style="font-size: 12px;">hiking</a>
+        
+        
+        <a href="/tags/infrastructure" style="font-size: 12px;">infrastructure</a>
+        
+        
+        <a href="/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="/tags/r" style="font-size: 12px;">r</a>
+        
+        
+        <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        ALL
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/tidytensor/" class="thumbnail">
+                    
+                        <span style="background-image:url(/tidytensor/tidytensor_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/tidytensor/" class="title">TidyTensor - More Fun with Deep Learning</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/colette-patricia-oneil/" class="thumbnail">
+                    
+                        <span style="background-image:url(/colette_four_months/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/colette-patricia-oneil/" class="title">Colette Patricia O&#39;Neil</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-06-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/homelab/" class="thumbnail">
+                    
+                        <span style="background-image:url(/homelab/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/homelab/" class="title">Homelab</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-05-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees-pt2/" class="thumbnail">
+                    
+                        <span style="background-image:url(/regression_trees_pt2/decision_tree_crop.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees-pt2/" class="title">Random Forests &amp; Gradient Boosting</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-03-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/regression-trees/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/regression_trees_files/three_depths.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression-trees/" class="title">Regression Trees &amp; Bagging (more functional R)</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/autodifferentation-and-functional-operators-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/autodifferentation-and-functional-operators-in-r/" class="title">Automatic Differentiation &amp; Functional Operators in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/about/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bio_about/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/about/" class="title">Bio/About</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-04-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/biorecursion/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bio/recursion-cs-and-bioinformatics-in-r/" class="title">Bio/Recursion: CS and Bioinformatics in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-primer-for-computational-biology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/primer/primer_closed_1200.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-primer-for-computational-biology/" class="title">A Primer for Computational Biology</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-02-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/3d-printing-modeling-online-tools/" class="thumbnail">
+                    
+                        <span style="background-image:url(/3d_printing_notes/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/3d-printing-modeling-online-tools/" class="title">3D Printing &amp; Modeling, Online Tools</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2017</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/rstackdeque/" class="thumbnail">
+                    
+                        <span style="background-image:url(/rstackdeque/quicksort_vis.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/rstackdeque/" class="title">Rstackdeque</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/stained-glass/" class="thumbnail">
+                    
+                        <span style="background-image:url(/stained-glass/candleholder_web.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/stained-glass/" class="title">Stained Glass</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/megan-and-saul-engagement-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/asula_engagement/0007.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/megan-and-saul-engagement-photos/" class="title">Megan and Saul Engagement Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/functional-parameterized-l-system/" class="thumbnail">
+                    
+                        <span style="background-image:url(/functional_lsys/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/functional-parameterized-l-system/" class="title">Functional Parameterized L-System</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-10-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/hiking-south-sister-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/hiking_south_sister/0008.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/hiking-south-sister-photos/" class="title">Hiking South Sister Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/climate-change-adaptation/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_butterflies/vennsPoster.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/climate-change-adaptation/" class="title">Climate Change Adaptation</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/steve-harvey-appearance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/steve_harvey/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/steve-harvey-appearance/" class="title">Steve Harvey Appearance</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/marble-making-timelapse/" class="thumbnail">
+                    
+                        <span style="background-image:url(/marble/marble2_web.JPG)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/marble-making-timelapse/" class="title">Marble Making Timelapse</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-03-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/topology-aware-file-distribution/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_filedist/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/topology-aware-file-distribution/" class="title">Topology aware file distribution</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/music-wheel/" class="thumbnail">
+                    
+                        <span style="background-image:url(/MusicWheel/screenshot.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/music-wheel/" class="title">Music Wheel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/timelapse-thing/" class="thumbnail">
+                    
+                        <span style="background-image:url(/timelapsething/gaussian.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/timelapse-thing/" class="title">Timelapse Thing</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-07-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/glass-beads/" class="thumbnail">
+                    
+                        <span style="background-image:url(/borosilicate-beads/pendants2_web.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/glass-beads/" class="title">Glass Beads</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/transcriptomics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_transcriptomics/ohr.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/transcriptomics/" class="title">Transcriptomics</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-02-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="thumbnail">
+                    
+                        <span style="background-image:url(/nerf/shotsDotplotBlaster.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/a-statistical-analysis-of-nerf-blasters-and-darts/" class="title">A Statistical Analysis of Nerf Blasters and Darts</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/algorithmic-haplotyping/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_haplotyping/coloring.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/algorithmic-haplotyping/" class="title">Algorithmic Haplotyping</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/neil-and-anne-marie-wedding-photos/" class="thumbnail">
+                    
+                        <span style="background-image:url(/neil_annemarie_wedding/0006.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/neil-and-anne-marie-wedding-photos/" class="title">Neil and Anne-Marie Wedding Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-12-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/misc.-small-java/" class="thumbnail">
+                    
+                        <span style="background-image:url(/miscjava/ColorDistance/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/misc.-small-java/" class="title">Misc. Small Java</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-09-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60416-system-interface-design-microsoft-surface/" class="thumbnail">
+                    
+                        <span style="background-image:url(/microsoft_surface/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60416-system-interface-design-microsoft-surface/" class="title">CSE60416 System Interface Design, Microsoft Surface</a></p>
+                    <p class="item-date">
+                        <time datetime="2009-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2009</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60317-online-algorithms-for-computational-finance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/online_finance/prices.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60317-online-algorithms-for-computational-finance/" class="title">CSE60317 Online Algorithms For Computational Finance</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60647-data-mining-predicting-on-slashdot/" class="thumbnail">
+                    
+                        <span style="background-image:url(/slashdot_predicting/fractile.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60647-data-mining-predicting-on-slashdot/" class="title">CSE60647 Data Mining, Predicting on Slashdot</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/online-learning-and-the-newsvendor-problem/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_alenex/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/online-learning-and-the-newsvendor-problem/" class="title">Online Learning and the Newsvendor Problem</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-01-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cse60622-cryptography.-bobcash/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bobcash/banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cse60622-cryptography.-bobcash/" class="title">CSE60622 Cryptography. BobCash</a></p>
+                    <p class="item-date">
+                        <time datetime="2007-10-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2007</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="thumbnail">
+                    
+                        <span style="background-image:url(/learning_ai/banner.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/ccse60171-artificial-intelligence-learning-to-play-games/" class="title">CCSE60171 Artificial Intelligence, Learning to Play Games</a></p>
+                    <p class="item-date">
+                        <time datetime="2006-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2006</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/formal-logic/" class="thumbnail">
+                    
+                        <span style="background-image:url(/logic/logic_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/formal-logic/" class="title">Formal Logic</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs446-computer-graphics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs446/Balls1Crop.jpeg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs446-computer-graphics/" class="title">CS446, Computer Graphics</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs422-algorithms/" class="thumbnail">
+                    
+                        <span style="background-image:url(/Algorithms/algs_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs422-algorithms/" class="title">CS422, Algorithms</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-11-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs322-principles-of-programming-languages/" class="thumbnail">
+                    
+                        <span style="background-image:url(/322/lisp_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs322-principles-of-programming-languages/" class="title">CS322, Principles of Programming Languages</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-09-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/epistemology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/epistemology/knowledge_quote.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/epistemology/" class="title">Epistemology</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-08-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs228-network-programming/" class="thumbnail">
+                    
+                        <span style="background-image:url(/228/network_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs228-network-programming/" class="title">CS228, Network Programming</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-10-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/gainclone-amplifier/" class="thumbnail">
+                    
+                        <span style="background-image:url(/gainclone/ampfront_web.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/gainclone-amplifier/" class="title">Gainclone Amplifier</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs222-data-structures/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs222/avl_tree.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs222-data-structures/" class="title">CS222, Data Structures</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cellular-automata/" class="thumbnail">
+                    
+                        <span style="background-image:url(/CellularAutomata/ca_banner.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cellular-automata/" class="title">Cellular Automata</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/headphone-amp/" class="thumbnail">
+                    
+                        <span style="background-image:url(/headamp2/zippoclosed_web.jpg)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/headphone-amp/" class="title">Headphone Amp</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-01-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li style="">
+                <div class="item-thumbnail">
+                    <a href="/cs122/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs122/Queens2/screenshot.png)" alt="CS222, Data Structures" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs122/" class="title">CS122</a></p>
+                    <p class="item-date">
+                        <time datetime="2002-10-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2002</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021
+      Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+
+
+
+<script>
+hljs.initHighlightingOnLoad();
+hljs.configure({languages: []});
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+var sc_project=505825; 
+var sc_invisible=1; 
+var sc_security=""; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/505825/0//1/" alt="Web Analytics
+Made Easy - StatCounter"></a></div></noscript>
+
+
+
+
+</body>
+</html>

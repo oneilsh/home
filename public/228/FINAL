@@ -1,0 +1,38 @@
+DAY ONE
+	TTS (time to send) = size/thruput + latency
+
+Layers
+	Physical
+	Network
+	Application  theres more here...
+	
+Collision, 
+	Aloha
+	Slotted Aloha
+	Reservation Aloha
+	Ethernets collision schemes
+Token ring, token bus
+ARP, RARP, DHCP, 	
+Ethernet
+	MAC Address, how many bits
+	Timout value computation
+	
+IP
+	Ford, Dijkstra, BGP
+	do two rounds of fords algorithm, AH KNOW THIS
+	Collisions, they dont do have them, or lost packets, or anything
+	
+TCP
+	knows about lost packets, because of a lost ack or something
+	use the computer thing for RTT things
+	Congestion windows
+		slow start 
+			lower half and upper half stuff
+
+HTTP
+
+EMAIL
+
+EX
+	What is the 106th byte of a packet?	
+	
