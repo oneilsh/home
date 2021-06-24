@@ -1,5 +1,5 @@
 +++
-banner = "/Algorithms/algs_banner.png"
+banner = "Algorithms/algs_banner.png"
 categories = []
 date = "2004-11-23"
 description = ""
@@ -19,7 +19,7 @@ Just a few things from my undergrad algs class.
 
 {{< expand "selection.cpp" >}}
 {{< highlight c >}}
-{{< readfile file="/static/Algorithms/PG1/selection.cpp" >}}
+{{< readfile file="static/Algorithms/PG1/selection.cpp" >}}
 {{< /highlight >}}
 {{< /expand >}}
 
@@ -31,7 +31,7 @@ Dynamic programming method for optimizing matrix chain multiplication.
 
 {{< expand "chain.cpp" >}}
 {{< highlight c >}}
-{{< readfile file="/static/Algorithms/PG2/chain.cpp" >}}
+{{< readfile file="static/Algorithms/PG2/chain.cpp" >}}
 {{< /highlight >}}
 {{< /expand >}}
 
@@ -43,6 +43,6 @@ And decryption.
 
 {{< expand "RSA.cpp" >}}
 {{< highlight c >}}
-{{< readfile file="/static/Algorithms/PG3/RSA.cpp" >}}
+{{< readfile file="static/Algorithms/PG3/RSA.cpp" >}}
 {{< /highlight >}}
 {{< /expand >}}

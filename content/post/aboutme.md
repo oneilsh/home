@@ -1,5 +1,5 @@
 +++
-banner = "/bio_about/banner.jpg"
+banner = "bio_about/banner.jpg"
 categories = []
 date = "2018-04-13"
 description = ""
@@ -20,6 +20,6 @@ I am a Senior Faculty Research Assistant at the Center for Genome Research and B
 
 My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray & white). 
 
-{{< figure src="/bio_about/kate_cats.jpg" width="50%" >}}
+{{< figure src="bio_about/kate_cats.jpg" width="50%" >}}
 
 I like wood, glass, photography and digital art, and more recently I've been tinkering with 3d printers, FPV drones, and similar gadgetry. I have a fondness for mathematical logic, hiking, martial arts, nerf blasters, and programming. 

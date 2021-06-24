@@ -1,5 +1,5 @@
 +++
-banner = "/research_filedist/banner.png"
+banner = "research_filedist/banner.png"
 categories = []
 date = "2013-11-25"
 description = ""
@@ -17,7 +17,7 @@ This paper was initially presented at COCOON 2011, and later invited for submiss
 
 
 
-{{< figure src="/research_filedist/me_presenting.jpg" alt="During my shaggy hair phase." width="50%" >}}
+{{< figure src="research_filedist/me_presenting.jpg" alt="During my shaggy hair phase." width="50%" >}}
 
 
 

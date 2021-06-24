@@ -1,5 +1,5 @@
 +++
-banner = "/epistemology/knowledge_quote.png"
+banner = "epistemology/knowledge_quote.png"
 categories = []
 date = "2004-08-20"
 description = ""

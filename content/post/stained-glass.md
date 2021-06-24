@@ -1,5 +1,5 @@
 +++
-banner = "/stained-glass/candleholder_web.jpg"
+banner = "stained-glass/candleholder_web.jpg"
 categories = []
 date = "2015-05-20"
 description = ""

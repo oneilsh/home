@@ -1,5 +1,5 @@
 +++
-banner = "/logic/logic_banner.png"
+banner = "logic/logic_banner.png"
 categories = []
 date = "2005-03-19"
 description = ""

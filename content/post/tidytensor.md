@@ -1,5 +1,5 @@
 ---
-banner: "/tidytensor/tidytensor_banner.png"
+banner: "tidytensor/tidytensor_banner.png"
 title: TidyTensor - More Fun with Deep Learning
 author: Shawn T. O'Neil
 date: '2019-08-16'

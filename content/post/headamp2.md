@@ -1,5 +1,5 @@
 +++
-banner = "/headamp2/zippoclosed_web.jpg"
+banner = "headamp2/zippoclosed_web.jpg"
 categories = []
 date = "2003-01-07"
 description = ""

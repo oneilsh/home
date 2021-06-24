@@ -1,5 +1,5 @@
 +++
-banner = "/nerf/shotsDotplotBlaster.png"
+banner = "nerf/shotsDotplotBlaster.png"
 categories = []
 date = "2012-08-06"
 description = ""
@@ -19,7 +19,7 @@ By Shawn O'Neil and Katie Drueen.
 Nerf [blasters](http://www.hasbro.com/nerf/en_US/) have been a favorite toy since their introduction in the late 1980s. Once simple toys, these machines have evolved into manual as well as battery-operated, accessory-laden, belt and clip-fed [behemoths](http://nerf.wikia.com/wiki/N-Strike). Communities have grown around [painting](http://meandmunch.deviantart.com/gallery/) and/or modifying ("modding") these blasters to shoot further or more [accurately](http://modworks.blogspot.com/), and it is now possible to purchase aftermarket internal parts as [well](http://www.orangemodworks.com/).
 
 
-{{< figure src="/nerf/vulcan_alpha.png" alt="Figure 1: The Nerf Vulcan." width="50%" >}}
+{{< figure src="nerf/vulcan_alpha.png" alt="Figure 1: The Nerf Vulcan." width="50%" >}}
 
 The Nerf blaster lineup provides a variety of firing mechanisms, each presenting different characteristics for rate of fire, accuracy, distance, and modding potential. For example, the older [Longshot](http://nerf.wikia.com/wiki/Longshot_CS-6) used a "direct" plunger system which provided greater ranges than the "reverse" plunger found on recent blasters. Battery-operated flywheel-based blasters such as the [Rayven](http://nerf.wikia.com/wiki/Rayven_CS-18) provide for high rates of fire, but may suffer in accuracy and distance (unless modified by increasing the voltage used).
 
@@ -42,18 +42,18 @@ Each of the four blasters was fired 50 times using each of the three dart types.
 We tested four blasters: the battery-operated flywheel-based Nerf Rayven* modified to accept either 4 AA batteries or a single 9v battery, and the reverse-plunger Nerf Recon* in both stock and modified forms (sans barrel attachments). The modifications on the Recon (aside from painting) included a basic air-restrictor removal and plunger-spring stretch*. It should be noted that all darts were in nearly new or gently used state: blue Elite and older-style orange darts were new from packaging (but cycled through each blaster a few times to wear them in) and white darts were similarly well-cared for (but not purchased for the purposes of this experiment).
 
 
-{{< figure src="/nerf/guns.jpg" alt="Figure 3: Blasters and dart types tested." width="50%" >}}
+{{< figure src="nerf/guns.jpg" alt="Figure 3: Blasters and dart types tested." width="50%" >}}
 
 ### Results: Overview
 
 Figure 4 shows the shot groupings organized by dart and blaster type. Red points indicate group centers, and transparent red circles enclose the 50% most accurate shots for each grouping. Immediately we see some interesting patterns: for example, blue darts do indeed seem to be suffering from less drop, particularly for the Recon and modified Recon.
 
 
-{{< figure src="/nerf/shotsDotplot.png" alt="Figure 4: Shot placements. Red dots indicate group centers, 50% of shots occur within red circles." width="80%" >}}
+{{< figure src="nerf/shotsDotplot.png" alt="Figure 4: Shot placements. Red dots indicate group centers, 50% of shots occur within red circles." width="80%" >}}
 
 Figure 5 shows these same shots grouped by blaster, with points colored by dart type. The modified Recon appears to shoot the furthest, and is overall quite accurate.
 
-{{< figure src="/nerf/shotsDotplotBlaster.png" alt="Figure 4: Shot placements. Red dots indicate group centers, 50% of shots occur within red circles." width="100%" >}}
+{{< figure src="nerf/shotsDotplotBlaster.png" alt="Figure 4: Shot placements. Red dots indicate group centers, 50% of shots occur within red circles." width="100%" >}}
 
 Figures 6 and 7 show distributions of drop and accuracy for dart and blaster types, smoothed with kernel density estimates. Again we see interesting differences between different darts and blasters; the statistical analyses of the next section will bear these out.
 
@@ -70,20 +70,20 @@ Figures 6 and 7 show distributions of drop and accuracy for dart and blaster typ
 We analyzed both the drop and accuracy data using a 2x3 Analysis of Variance approach. For drop, we found significant (p < 0.05) main effects in both blaster and dart type, as well as in the interaction. Tukey's post-hoc test revealed that the modified Recon suffered less drop than all three other blasters, and that the modified Rayven shot higher than the unmodified versions of both the Rayven and Recon; we also found that Elite darts shot higher than both orange and white darts (p < 0.05) though we did not see a difference between orange and white darts at a 0.05 level, possibly due to sample size (p = 0.08). Figure 8 is a traditional line plot showing average drop for each dart and blaster combination.
 
 
-{{< figure src="/nerf/dropLines.png" alt="Figure 8: Average dart drop by dart type and blaster." width="100%" >}}
+{{< figure src="nerf/dropLines.png" alt="Figure 8: Average dart drop by dart type and blaster." width="100%" >}}
 
 Figure 9 shows a transitively-reduced graph for which blaster and dart combinations suffered significantly less drop than others in the post-hoc test (an arrow or path from combination A to combination B signifies A dropped less than B, p < 0.05). As we discovered by main effect, blue Elite darts were predominantly better: in no case was a blaster better with orange or white darts than Elite darts. Both the Recon and Rayven showed significant improvements in distance with modification.
 
-{{< figure src="/nerf/dropSigs.png" alt="Figure 9: Post-hoc significance results for distance. An arrow or path from combination A to B indicates that combination A dropped less than combination B (p < 0.05)." width="70%" >}}
+{{< figure src="nerf/dropSigs.png" alt="Figure 9: Post-hoc significance results for distance. An arrow or path from combination A to B indicates that combination A dropped less than combination B (p < 0.05)." width="70%" >}}
 
 Figures 10 and 11 show average accuracies by blaster and dart and a similar comparison of statistically significant combination differences (p < 0.05). Here we see that the modified Recon was easily the most accurate blaster; when shooting Elite darts it bested all other combinations except for itself with white or orange darts (which themselves bested the modified Rayven shooting Elite darts, the least accurate combination). ANOVA for this test revealed significant effects in the main effect of blaster only: accuracy differences between darts were not found.
 
 
-{{< figure src="/nerf/accuracyLines.png" alt="Figure 10: Average accuracy by dart type and blaster." width="100%" >}}
+{{< figure src="nerf/accuracyLines.png" alt="Figure 10: Average accuracy by dart type and blaster." width="100%" >}}
 
 <br />
 
-{{< figure src="/nerf/accuracySigs.png" alt="Figure 11: Post-hoc significance results for accuracy. An arrow or path from combination A to B indicates that combination A was more accurate than combination B (p < 0.05)." width="85%" >}}
+{{< figure src="nerf/accuracySigs.png" alt="Figure 11: Post-hoc significance results for accuracy. An arrow or path from combination A to B indicates that combination A was more accurate than combination B (p < 0.05)." width="85%" >}}
 
 
 
@@ -114,7 +114,7 @@ Main conclusion: Nerf is Awesome.
 Some time after the previous tests were ran, we obtained a nerf retaliator, one of the new direct-plunger nerf blasters from the "Elite" line:
 
 
-{{< figure src="/nerf/retaliator.jpg" alt="Figure 12: Nerf Retaliator." width="50%" >}}
+{{< figure src="nerf/retaliator.jpg" alt="Figure 12: Nerf Retaliator." width="50%" >}}
 
 
 While the nerf retaliator is a more powerful blaster designed to work with the blue elite darts, it also features something new to the nerf line: a "rifled" barrel attachment:
@@ -132,7 +132,7 @@ While the retaliator barrel is not "rifled" in the traditional sense (where the 
 Fortunately, our experimental design can answer this question emprically. We tested a stock Retaliator blaster body with elite darts, using three different barrel configurations: 1) Using the "rifled" retaliator barrel attachment, 2) using the non-rifled Recon barrel attachment, and 3) using no barrel attachment. Here are the raw shot-placements:
 
 
-{{< figure src="/nerf/shotsDotplotBarrel.png" alt="Figure 14: Shot placements by barrel configuration for Retaliator blaster, using Elite darts. 50% of shots occur within red circles; red points indicate group median position." width="100%" >}}
+{{< figure src="nerf/shotsDotplotBarrel.png" alt="Figure 14: Shot placements by barrel configuration for Retaliator blaster, using Elite darts. 50% of shots occur within red circles; red points indicate group median position." width="100%" >}}
 
 hese results are clear visually: the "rifled" Retaliator barrel is more accurate than the unrifled Recon barrel, which is in turn more accurate than the absense of a barrel attachment. Further, both barrel attachments showed less drop than the lack of an attachment, which may be considered a surprising result. These results are also supported statistically: Tukey's post-hoc analysis supports the accuracy differences for all three barrel types as well as the distance differences at a p < 0.01 level:
 

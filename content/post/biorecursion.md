@@ -1,5 +1,5 @@
 +++
-banner = "/biorecursion/banner.jpg"
+banner = "biorecursion/banner.jpg"
 categories = []
 date = "2018-03-09"
 description = ""

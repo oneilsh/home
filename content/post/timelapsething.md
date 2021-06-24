@@ -1,5 +1,5 @@
 +++
-banner = "/timelapsething/gaussian.png"
+banner = "timelapsething/gaussian.png"
 categories = []
 date = "2013-07-27"
 description = ""
@@ -26,7 +26,7 @@ A note on usage: I usually use [Magic Lantern](http://www.magiclantern.fm/) firm
 
 Finally, it's a good idea to crop and resize the images to 1280x720 (for 720p) or 1920x1080 (for 1080p) *first* to minimize filesizes and computational time while working!
 
-{{< figure src="/timelapsething/basewindow.png" alt="Main Window" size="50%">}}
+{{< figure src="timelapsething/basewindow.png" alt="Main Window" size="50%">}}
 
 
 
@@ -84,7 +84,7 @@ The median option can also be used to, in theory at least, remove single-frame a
 I was interested in expanding the length of my timelapses by interpolating frames (though in reality this is best done by selecting an appropriate frame rate interval and shutter speed, using neutral density filters (or [more creative solutions](http://www.youtube.com/watch?v=Jmwpi0RRuyo)) if necessary to allow for long exposure times). After some experimentation, I settled on interpolating images by using a sliding gaussian distribution, where we interpolate as a weighted average of frames given a standard deviation (the mean moves over the frames in steps that determine the number of new frames). To save on computation, this is only done over frames within a certain window of the mean:
 
 
-{{< figure src="/timelapsething/gaussian.png" alt="Gaussian interpolation of image timeseries." size="90%">}}
+{{< figure src="timelapsething/gaussian.png" alt="Gaussian interpolation of image timeseries." size="90%">}}
 
 To see the effect of this, compare these videos: the right video contains twice as many frames as the former, with a 1-image standard deviation interpolation. If taken to extremes, this expansion can create an interesting effect fairly reminiscent of cheap tv slow-mo shots:
 
@@ -99,7 +99,7 @@ To see the effect of this, compare these videos: the right video contains twice 
 
 The only other feature worth discussing in detail at this time is the batch crop/resize tool. This tool allows you to select a new size for your images (say, 1280x720, for 720p) even if the new aspect ratio isn't equal to the old aspect ratio. If the aspect ratios aren't equal, the new aspect ratio will be calculated and the largest fitting crop with that ratio will be selected from the original frames. If the gravity option is set to "Center" it will be left alone, if set to "North" the new frame will be pushed to the top (if it isn't already there), if "West" it will pushed to the left (if not already there), etc. After that, the selected areas are cropped and resized to produce the output.
 
-{{< figure src="/timelapsething/cropresize.png" alt="Crop and Resize" size="50%">}}
+{{< figure src="timelapsething/cropresize.png" alt="Crop and Resize" size="50%">}}
 
 ### Misc
 

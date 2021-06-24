@@ -1,5 +1,5 @@
 +++
-banner = "/marble/marble2_web.JPG"
+banner = "marble/marble2_web.JPG"
 categories = []
 date = "2014-03-20"
 description = ""

@@ -1,5 +1,5 @@
 +++
-banner = "/hiking_south_sister/0008.jpg"
+banner = "hiking_south_sister/0008.jpg"
 categories = []
 date = "2014-08-25"
 description = ""

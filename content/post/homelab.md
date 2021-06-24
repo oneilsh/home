@@ -1,5 +1,5 @@
 +++
-banner = "/homelab/banner.png"
+banner = "homelab/banner.png"
 categories = []
 date = "2019-05-18"
 description = ""

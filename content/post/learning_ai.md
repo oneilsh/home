@@ -1,5 +1,5 @@
 +++
-banner = "/learning_ai/banner.jpg"
+banner = "learning_ai/banner.jpg"
 categories = []
 date = "2006-10-06"
 description = ""

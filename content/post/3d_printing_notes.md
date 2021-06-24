@@ -1,5 +1,5 @@
 +++
-banner = "/3d_printing_notes/banner.jpg"
+banner = "3d_printing_notes/banner.jpg"
 categories = []
 date = "2017-11-03"
 description = ""
@@ -24,7 +24,7 @@ By the way: the most common format for 3d-models (at least those used for 3d pri
 
 I love TinkerCAD! This web-based tool lets one combine basic 3d shapes (boxes, cylinders, cones, etc.) into more complex models. When you sign up, there is a short tutorial sequence on using it, which I highly recommend.
 
-{{< figure src="/3d_printing_notes/tinkercad.jpg" alt="Tinkercad" width="80%" >}}
+{{< figure src="3d_printing_notes/tinkercad.jpg" alt="Tinkercad" width="80%" >}}
 
 Some TinkerCAD features I particularly like:
 
@@ -48,7 +48,7 @@ TinkerCAD does have a “shape generator” section, which allows users to code 
 
 SculptGL is another in-browser software for 3d modeling, but this one is all about sculpting “digital clay.” Fascinatingly, this very polished software seems to be a personal project of a single person, Stephane Ginier. 
 
-{{< figure src="/3d_printing_notes/sculptgl.jpg" alt="I didn't sculpt this. Found it on the web." width="80%" >}}
+{{< figure src="3d_printing_notes/sculptgl.jpg" alt="I didn't sculpt this. Found it on the web." width="80%" >}}
 
 
 There is definitely an artform to using ScupltGL effectively, one that I am far from mastering. One of my students has done some pretty remarkable things however, and she seems to use the “drag” and “smooth” tools most frequently, with many small adjustments accumulating over time.
@@ -67,7 +67,7 @@ Most of the standard slicers (e.g. Cura, Slic3r) are desktop software, but 3DPri
 
 (Update: I've been using Cura with my personal printer, and I've been meaning to try out Slic3r.)
 
-{{< figure src="/3d_printing_notes/3dprinteros.jpg" alt="Slicing." width="80%" >}}
+{{< figure src="3d_printing_notes/3dprinteros.jpg" alt="Slicing." width="80%" >}}
 
 3DPrinterOS is a company that sells their suite of web-based tools for managing multiple printers, and includes other tools for managing STL files as well, but I haven’t explored those.
 
@@ -78,7 +78,7 @@ I’m always keeping an eye out for things I can program. Why do work when I can
 
 In the meantime, I ran across OpenJSCAD, an in-browser, javascript-based port of the OpenSCAD language. 
 
-{{< figure src="/3d_printing_notes/openjscad.jpg" alt="OpenJSCAD includes an in-browser editor." width="80%" >}}
+{{< figure src="3d_printing_notes/openjscad.jpg" alt="OpenJSCAD includes an in-browser editor." width="80%" >}}
 
 I had never heard of the desktop-based [OpenSCAD](http://www.openscad.org/) before, and frankly I’m a little glad for OpenJSCAD, since I’m already familiar with javascript. There appears to be a large OpenSCAD community, and a [good number of people](https://plus.google.com/communities/114958480887231067224) also working with OpenJSCAD. 
 
@@ -92,7 +92,7 @@ Finally, Open(J)SCAD includes some really neat built-in features that just aren�
 
 This is a really new one (as of this year). I’m excited about it and hope it goes somewhere! As much as I like coding, I realize it’s not everyone’s cup of tea. BlocksCAD produces OpenSCAD code (using OpenJSCAD in between I believe) via the [Scratch](https://scratch.mit.edu/) interface, which was developed for introducing kids to coding. The end result is a pretty intuitive way of developing programmatically-defined 3d-shapes:
 
-{{< figure src="/3d_printing_notes/blockscad.jpg" alt="BlocksCAD." width="80%" >}}
+{{< figure src="3d_printing_notes/blockscad.jpg" alt="BlocksCAD." width="80%" >}}
 
 The interface still has some rough edges (and I had to learn a bit about Scratch). Still, I can see how it will be a useful item in the toolbox, particularly for those who want some of the power of OpenSCAD for complex parts that can then be imported into other software.
 (Weird aside: BlocksCAD started life as a DARPA-funded project.)

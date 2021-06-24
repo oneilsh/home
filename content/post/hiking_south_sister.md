@@ -1,5 +1,5 @@
 +++
-banner = "/asula_engagement/0007.jpg"
+banner = "asula_engagement/0007.jpg"
 categories = []
 date = "2014-11-20"
 description = ""

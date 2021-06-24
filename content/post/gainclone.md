@@ -1,5 +1,5 @@
 +++
-banner = "/gainclone/ampfront_web.jpg"
+banner = "gainclone/ampfront_web.jpg"
 categories = []
 date = "2003-06-18"
 description = ""

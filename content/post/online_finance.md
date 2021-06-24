@@ -1,5 +1,5 @@
 +++
-banner = "/online_finance/prices.png"
+banner = "online_finance/prices.png"
 categories = []
 date = "2008-11-16"
 description = ""

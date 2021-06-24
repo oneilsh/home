@@ -1,5 +1,5 @@
 +++
-banner = "/miscjava/ColorDistance/banner.png"
+banner = "miscjava/ColorDistance/banner.png"
 categories = []
 date = "2010-09-21"
 description = ""
@@ -60,7 +60,7 @@ In Java. In case you need it (I did).
 
 {{< expand "Hungarian.java" >}}
 {{< highlight java >}}
-{{< readfile file="/static/miscjava/Hungarian.java" >}}
+{{< readfile file="static/miscjava/Hungarian.java" >}}
 {{< /highlight >}}
 {{< /expand >}}
 

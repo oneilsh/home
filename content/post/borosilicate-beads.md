@@ -1,5 +1,5 @@
 +++
-banner = "/borosilicate-beads/pendants2_web.jpg"
+banner = "borosilicate-beads/pendants2_web.jpg"
 categories = []
 date = "2013-05-17"
 description = ""

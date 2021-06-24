@@ -1,5 +1,5 @@
 +++
-banner = "/neil_annemarie_wedding/0006.jpg"
+banner = "neil_annemarie_wedding/0006.jpg"
 categories = []
 date = "2010-12-21"
 description = ""

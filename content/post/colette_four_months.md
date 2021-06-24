@@ -1,5 +1,5 @@
 +++
-banner = "/colette_four_months/banner.jpg"
+banner = "colette_four_months/banner.jpg"
 categories = []
 date = "2019-06-29"
 description = ""

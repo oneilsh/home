@@ -1,5 +1,5 @@
 +++
-banner = "/primer/primer_closed_1200.png"
+banner = "primer/primer_closed_1200.png"
 categories = []
 date = "2018-02-12"
 description = ""
@@ -25,6 +25,6 @@ This Open-Access textbook was a collaboration with Open Oregon State and OSU Pre
 
 *Part III, Programming in R*: The R language specializes in statistical data analysis, and is also quite useful for visualizing large datasets. This third part covers the basics of R as a programming language (data types, if-statements, functions, loops and when to use them) as well as techniques for large-scale, multi-test analyses. Other topics include S3 classes and data visualization with ggplot2.
 
-{{< figure src="/primer/primer_open_1200.png" alt=" " width="80%" >}}
+{{< figure src="primer/primer_open_1200.png" alt=" " width="80%" >}}
 
 

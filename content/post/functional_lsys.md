@@ -1,5 +1,5 @@
 +++
-banner = "/functional_lsys/banner.png"
+banner = "functional_lsys/banner.png"
 categories = []
 date = "2014-10-15"
 description = ""

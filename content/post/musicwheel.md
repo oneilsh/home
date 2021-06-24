@@ -1,5 +1,5 @@
 +++
-banner = "/MusicWheel/screenshot.png"
+banner = "MusicWheel/screenshot.png"
 categories = []
 date = "2013-11-16"
 description = ""

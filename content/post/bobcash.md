@@ -1,5 +1,5 @@
 +++
-banner = "/bobcash/banner.png"
+banner = "bobcash/banner.png"
 categories = []
 date = "2007-10-20"
 description = ""
@@ -15,7 +15,7 @@ This was a project I did for Cryptography, which implemented a digital cash sche
 
 (This relates to Bitcoin and other modern digital currencies, except that in those systems the signature is not kept via a centralized bank, but rather on a "public ledger" called the blockchain.)
 
-{{< figure src="/bobcash/bobcash_web.jpg" width="50%" >}}
+{{< figure src="bobcash/bobcash_web.jpg" width="50%" >}}
 
 There's more to digital cash than that, of course, but that's the idea. See the paper for more details. Here, the string of letters and the signature is all wrapped up in a jpeg using steganography. This makes it easy to transfer digital cash between parties, as the image itself then "becomes" the cash. This project was an exercise in security for me: all connections are SSL enabled, including the connection to random.org from which true random data is drawn from. Strong password libraries are used, etc. The only weakness currently present is the use of only 20 random bits used in the blinded signature protocol. I also needed to implement RSA style blind signatures myself, as I didn't find any libraries for such purpose.
 

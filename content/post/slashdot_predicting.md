@@ -1,5 +1,5 @@
 +++
-banner = "/slashdot_predicting/fractile.png"
+banner = "slashdot_predicting/fractile.png"
 categories = []
 date = "2008-04-05"
 description = ""
@@ -15,7 +15,7 @@ Much of the research I performed during my Master's was on the newsvendor proble
 
 However, since we are interested in looking at the number of comments as a demand for a product to be sold, we don't stop there. Using cost-sensitive data mining approaches, we interpret probabilistic predictions as a sort of "customized distribution" and order the correct amount in terms of likely profit maximization.
 
-{{< figure src="/slashdot_predicting/comments_dist.png" width="60%" >}}
+{{< figure src="slashdot_predicting/comments_dist.png" width="60%" >}}
 
 As a bonus, be sure to check out the paper for some interesting statistics about Slashdot summaries from 2002 to 2007.
 

@@ -1,5 +1,5 @@
 +++
-banner = "/CellularAutomata/ca_banner.png"
+banner = "CellularAutomata/ca_banner.png"
 categories = []
 date = "2003-04-14"
 description = ""

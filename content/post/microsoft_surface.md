@@ -1,5 +1,5 @@
 +++
-banner = "/microsoft_surface/banner.png"
+banner = "microsoft_surface/banner.png"
 categories = []
 date = "2009-12-17"
 description = ""
