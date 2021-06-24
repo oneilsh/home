@@ -1,3 +1,0 @@
-<p>I'm thinking of changing the name on this one. Try clicking and dragging within the applet, with either mouse button.</p>
-
-<p>This was made with <a href=http://processing.org>processing.org</a>.</p>

@@ -1,7 +1,0 @@
-This is a program that solves the pegs in holes problem.
-The premise is that you have a triangular board with a peg in
-every hole except one (see above). You may jump over one peg with
-another to get rid of the one jumped over. The object is to end up
-with only one peg left. Pressing the <B>5</B> button will solve for
-a fifteen peg board, likewise pressing <B>6</B> will solve for a 21 peg board.
-The <B>Next</B> and <B>Prev</B> buttons increment through the steps taken to solve the puzzle.

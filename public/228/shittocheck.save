@@ -1,7 +1,0 @@
-check for null pointer:
-gethostbyname
-getservbyname
-socket
-connect
-
-check int return -1:
