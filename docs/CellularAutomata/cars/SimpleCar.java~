@@ -1,0 +1,151 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class SimpleCar extends Obj
+	{
+	//public int x, y;
+	//public double dir;
+	//public Color LightColor;
+	public int debug;
+	public double LOffset, ROffset, LWidth, RWidth, LRange, RRange, LLEdge, LREdge, RLEdge, RREdge;
+	public BasicNet brain;
+
+	public SimpleCar()
+		{
+		super();
+		LightColor = Color.green;
+		LOffset = -12.5;
+		ROffset = 12.5;
+		LWidth = 45;
+		RWidth = 45;
+		LRange = 350;
+		RRange = 350;
+		debug = 0;
+		LREdge = LOffset-LWidth/2;
+		LLEdge = LOffset+LWidth/2;
+		RREdge = ROffset-RWidth/2;
+		RLEdge = ROffset+RWidth/2;
+		LLEdge = dirnorm(LLEdge);
+		LREdge = dirnorm(LREdge);
+		RLEdge = dirnorm(RLEdge);
+		RREdge = dirnorm(RREdge);
+		brain = new BasicNet(2, 4, 4, 0.7, 0.07);
+		}
+
+	public SimpleCar(int thex, int they)
+		{
+		super(thex, they);
+		LightColor = Color.green;
+		LOffset = -12.5;
+		ROffset = 12.5;
+		LWidth = 45;
+		RWidth = 45;
+		LRange = 350;
+		RRange = 350;
+		debug = 0;
+		LREdge = LOffset-LWidth/2;
+		LLEdge = LOffset+LWidth/2;
+		RREdge = ROffset-RWidth/2;
+		RLEdge = ROffset+RWidth/2;
+		LLEdge = dirnorm(LLEdge);
+		LREdge = dirnorm(LREdge);
+		RLEdge = dirnorm(RLEdge);
+		RREdge = dirnorm(RREdge);
+		brain = new BasicNet(2, 4, 4, 0.7, 0.07);
+		}
+
+	public void go(Obj array[], int count, int i)
+		{
+		boolean leftsensor = false;
+		boolean rightsensor = false;
+		for(int j = 0; j < count; j++)
+			{
+			if(j != i)
+				{
+				double directoffset = direction(array[j].getx(), array[j].gety(), x, y)-dir;
+				directoffset = dirnorm(directoffset);
+				double distance = distance(array[j].getx(), array[j].gety(), x, y);
+				//System.out.println("Direction of other: "+direction(array[j].getx(), array[j].gety(), x, y)+" My Dir: "+dir);
+				//if(array[j].getLightColor() == Color.blue)
+				//	{
+				//	System.out.println("Left: " +LLEdge+" , "+directoffset+" , "+LREdge);
+				//	System.out.println("Right: " +RLEdge+" , "+directoffset+" , "+RREdge);
+				//	}
+				if(array[j].getLightColor() == Color.blue)
+					{
+					if(distance < LRange && ((LLEdge > directoffset && directoffset >= 0) || (360 > directoffset && directoffset > LREdge)))
+						leftsensor = true;
+					if(distance < RRange && ((RLEdge > directoffset && directoffset >= 0) || (360 > directoffset && directoffset > RREdge)))
+						rightsensor = true;
+					}
+				}
+			}
+
+		double[] stimulus = new double[100];
+		if(leftsensor) 
+			stimulus[0] = 1;
+		else
+			stimulus[0] = 0;
+		if(rightsensor)
+			stimulus[1] = 1;
+		else
+			stimulus[1] = 0;
+			
+		double response[] = brain.stimulate(stimulus);
+		System.out.println("Response: "+response[0]+" , "response[1]+" , "+response[2]+" , "+response[3]);
+		if(response[0] > .5) super.turn(-5);
+		else if(response[1] > .5) super.turn(5);
+		else if(response[2] > .5) super.moveforward(5);
+		else if(response[3] > .5) {super.moveforward(5); super.turn(5);}
+		
+/*
+		if(leftsensor && !rightsensor)
+			super.turn(-5);
+		else if(!leftsensor && rightsensor)
+			super.turn(5);
+		else if(leftsensor && rightsensor)
+			super.moveforward(5);
+		else if(!leftsensor && !rightsensor)
+			{
+			//System.out.println("doing nothing "+debug);
+			//debug++;
+			double rand = Math.random();
+			if(rand < .1)
+				super.turn(8);
+			else if(rand >.7)
+				super.turn(-8);
+			else
+				super.moveforward(5);
+			}
+*/
+		}
+
+
+	public void paint(Graphics g)
+		{
+		g.setColor(LightColor);
+		g.fillOval(x, y, 7, 7);
+		g.setColor(new Color(200, 200, 200));
+		g.fillOval(x, y, 5, 5);
+		g.setColor(Color.black);
+
+		double rad = dir*Math.PI/180;
+		//System.out.println("rads: "+rad+" cos(rads) = "+Math.cos(rad));
+		g.drawLine(x+3, y+3, (int)(x+20*Math.cos(rad)+3), (int)(y-20*Math.sin(rad)+3));
+		if(senseview)
+			{
+			double rad1 = (dir+ROffset-RWidth/2)*Math.PI/180;//Right Sensor Left Line
+			double rad2 = (dir+ROffset+RWidth/2)*Math.PI/180;//Right Sensor Right Line
+			double rad3 = (dir+LOffset-LWidth/2)*Math.PI/180;//Left Sensor Left Line
+			double rad4 = (dir+LOffset+LWidth/2)*Math.PI/180;//Left Sensor Right Line
+			g.setColor(Color.yellow);
+			g.drawLine(x+3, y+3, (int)(x+RRange*Math.cos(rad1)+3), (int)(y-RRange*Math.sin(rad1)+3));//Right Sensor
+			g.drawLine(x+3, y+3, (int)(x+RRange*Math.cos(rad2)+3), (int)(y-RRange*Math.sin(rad2)+3));//Right Sensor
+			g.setColor(Color.orange);
+			g.drawLine(x+3, y+3, (int)(x+LRange*Math.cos(rad3)+3), (int)(y-LRange*Math.sin(rad3)+3));//Left Sensor
+			g.drawLine(x+3, y+3, (int)(x+LRange*Math.cos(rad4)+3), (int)(y-LRange*Math.sin(rad4)+3));//Left Sensor
+			}
+		}
+
+
+	}

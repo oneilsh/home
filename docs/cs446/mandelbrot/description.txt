@@ -1,0 +1,8 @@
+<p class="text">
+This is the mandelbrot set fractal. Click on the image to zoom in closer to
+that point. Press the 'o' button to zoom out. Pretty simple really.
+</p>
+<p class="text">
+<a href="code/java/mandelbrot/MyPanel.java">Here</a> is the source for the program. Not too shabby
+for a mere 150 lines of code.
+</p>

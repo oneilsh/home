@@ -1,0 +1,11 @@
+This is a simple simulator for digital braitenberg vehicles, which are cars which have a number of sensors (which in this case sense the color of other object in the field) that register as being either ON or OFF. Based on these sensors, the cars decide (either via lookup table/randomized algorithms/any other codable behavior) what to do, move, turn, turn on/off their lights, etc.<br><br>
+
+The <b>Sensors View</b> button toggles whether the range of the sensors on the objects is visable or not. The circle segments show the actual sensor range, the circles themselves show the lenth of the sensor range.<br><br>
+
+The text box below that determines the distance objects are drawn from each other if they are drawn in a line by clicking and dragging (play with it by clicking and dragging on the canvas, you'll see.) You may have to hit enter after changing this value.<br><br>
+
+The <b>Add</b> button cycles through the type of object which will be added to the canvas if the canvas (or "playing field") is clicked on or a clicked and dragged on.<br><br>
+
+The <b>Stop/Go</b> button toggles the simulation on and off. <br><br>
+
+The <b>Clear</b> button cleares the canvas of objects, and the <b>Del Last</b> button deletes the last object added.
