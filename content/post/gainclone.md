@@ -28,7 +28,7 @@ This one was a *long* time in the making. The case is cherry, the face plate and
 
   "pure-u-1-3|/gainclone/inside_web.jpg" 
   "pure-u-1-3|/gainclone/knobs_web.jpg" 
-  "pure-u-1-3|/gainclone/responseto400_web.jpg|Response 0 to 400 Hz" 
-  "pure-u-1-3|/gainclone/responseto50_web.jpg|Response 0 to 50 Hz" 
+  "pure-u-1-3|gainclone/responseto400_web.jpg|Response 0 to 400 Hz" 
+  "pure-u-1-3|gainclone/responseto50_web.jpg|Response 0 to 50 Hz" 
 
 >}}

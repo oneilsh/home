@@ -32,8 +32,8 @@ This study attempts to address these shortfalls by comparing both dart accuracy 
 In order to test both accuracy and distance for blaster/dart combinations in an efficient, controlled, and repeatable manner, we designed a range in which darts could be fired at a sliding glass door marked with a grid annotating the x and y-coordinates of each hit. Before each round of firing, dart tips were marked with liquid eyeliner which reliably marked their hit location on the door. To ensure repeatability and comparability of shots between blasters, a small level was attached to a wall aligned with the door approximately 19 feet away. The level was placed at a height of 64 inches. During firing, each blaster's top rail was held flush against both the wall and the level.
 
 {{< fluid_imgs 
-  "pure-u-1-2|/nerf/grid.jpg|Figure 2: Experimental setup." 
-  "pure-u-1-2|/nerf/level.jpg|Kate is taking a break to watch some TV on the futon. Science!" 
+  "pure-u-1-2|nerf/grid.jpg|Figure 2: Experimental setup." 
+  "pure-u-1-2|nerf/level.jpg|Kate is taking a break to watch some TV on the futon. Science!" 
 
 >}}
 
@@ -60,8 +60,8 @@ Figures 6 and 7 show distributions of drop and accuracy for dart and blaster typ
 
 
 {{< fluid_imgs 
-  "pure-u-1-1|/nerf/distsByDart.png|Figure 6." 
-  "pure-u-1-1|/nerf/distsByBlaster.png|Figure 7." 
+  "pure-u-1-1|nerf/distsByDart.png|Figure 6." 
+  "pure-u-1-1|nerf/distsByBlaster.png|Figure 7." 
 
 >}}
 
@@ -120,9 +120,9 @@ Some time after the previous tests were ran, we obtained a nerf retaliator, one 
 While the nerf retaliator is a more powerful blaster designed to work with the blue elite darts, it also features something new to the nerf line: a "rifled" barrel attachment:
 
 {{< fluid_imgs 
-  "pure-u-1-3|/nerf/web-barrel_comparison.jpg|Retaliator and older Recon barrel attachment side by side." 
-  "pure-u-1-3|/nerf/web-retalaiator_barrel.jpg|Retaliator barrel internal." 
-  "pure-u-1-3|/nerf/web-recon_barrel.jpg|Recon barrel internal." 
+  "pure-u-1-3|nerf/web-barrel_comparison.jpg|Retaliator and older Recon barrel attachment side by side." 
+  "pure-u-1-3|nerf/web-retalaiator_barrel.jpg|Retaliator barrel internal." 
+  "pure-u-1-3|nerf/web-recon_barrel.jpg|Recon barrel internal." 
 
 >}}
 

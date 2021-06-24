@@ -42,8 +42,8 @@ The deflickering algorithm first analyzes each picture, estimating its exposure.
 
 
 {{< fluid_imgs 
-  "pure-u-1-2|/timelapsething/deflicker.png|Deflicker UI." 
-  "pure-u-1-2|/timelapsething/curves.png|Exposure curves before and after deflickering."
+  "pure-u-1-2|timelapsething/deflicker.png|Deflicker UI." 
+  "pure-u-1-2|timelapsething/curves.png|Exposure curves before and after deflickering."
 >}}
 
 This window also allows the user to modify an exposure adjustment smoothly over time in exposure stops. For example, the Original.Plus0to1EV curve in figure 2 is the Original smoothed curve with +0EV added to the first frame through +1EV added to the last. There is also a "None" deflickering option so that this adjustment can be applied independently of deflickering.

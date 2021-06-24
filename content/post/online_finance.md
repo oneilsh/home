@@ -16,8 +16,8 @@ This class was very interesting; we studied some of the basics of online algorit
 This "project" is a review of the main result of an interesting paper, entitled "Making Decisions in the Face of Uncertainty: How to Pick a Winner Almost Every Time," by Awerbuch et al. For details, check out the paper. 
 
 {{< fluid_imgs 
-  "pure-u-1-2|/online_finance/winner_picking.png|Winner picking." 
-  "pure-u-1-2|/online_finance/prices.png|All part of my get-rich-slow scheme." 
+  "pure-u-1-2|online_finance/winner_picking.png|Winner picking." 
+  "pure-u-1-2|online_finance/prices.png|All part of my get-rich-slow scheme." 
 
 >}}
 
