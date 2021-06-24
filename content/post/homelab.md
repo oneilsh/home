@@ -19,5 +19,5 @@ help from NGINX for reverse proxying, pfsense for local DNS and routing, ddclien
 
 Note that the diagram is interactive (click for full-page version), and enabling or disabling certain layers may help in browsing. Configuration notes are included. 
 
-<!-- <a href="https://a0f5e397-e761-40ed-b772-7483ae90b62e.htmlpasta.com/"><img src="/homelab/homelab_screenshot.png"></img></a> -->
+<!-- <a href="https://a0f5e397-e761-40ed-b772-7483ae90b62e.htmlpasta.com/"><img src="homelab/homelab_screenshot.png"></img></a> -->
 
