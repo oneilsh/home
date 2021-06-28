@@ -1,0 +1,555 @@
+---
+banner: "images/three_depths.png"
+title: Regression Trees & Bagging (more functional R)
+author: Shawn T. O'Neil
+date: '2019-02-05'
+slug: regression-trees
+categories: []
+tags:
+  - programming
+  - r
+  - theory
+  - machine learning
+---
+
+
+
+<p>I recently ran across this excellent <a href="https://explained.ai/gradient-boosting/index.html">article</a> explaining gradient boosting in the context of regression trees. The article concludes by describing how the technique implements a gradient-descent process, but what I find most fascinating is the concept of “functional modeling”–building machine learning models from other models as building blocks.</p>
+<p>This post explores that idea by implementing regression trees in base R (with a little visualization help from <code>ggplot2</code>, <code>dplyr</code>, and <code>tidyr</code>) with functional programming concepts, including a technique called bootstrap aggregating. In a future post we’ll extend to random forests and gradient boosting machines.</p>
+<p><br /></p>
+<div id="models-as-functions" class="section level2">
+<h2>Models as Functions</h2>
+<p>The word “model” finds use in many scientific fields, engineering, mathematics, and, yes, machine learning. It’s a difficult word to pin down; is there a consistent definition that can be applied across these fields?</p>
+<p>I’m not sure, but for at least machine learning I’d posit that a model is a tool for making predictions (informed by data!). Linear models, for example, map input <span class="math inline">\(x\)</span> values to predicted <span class="math inline">\(\hat{y}\)</span> values, and we “train” them by considering known <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> data to fit the prediction line to.</p>
+<p>A model is thus a type of <em>function</em>, with <span class="math inline">\(x\)</span> values as potential input parameters, and predicted <span class="math inline">\(\hat{y}\)</span> values as outputs. <em>Training</em> a model is the process of producing such a function. Suppose we have some <code>x</code> values and corresponding <code>y</code> values derived from them with some added noise:</p>
+<pre class="r"><code>library(ggplot2)
+
+x1 &lt;- runif(100, min = 0, max = 10)
+y1 &lt;- 1.5 * x1 + 15 + rnorm(100, mean = 0, sd = 1)
+
+# a data frame with columns for the original x1 and y1 data, and the predictions
+plot_df &lt;- data.frame(x1, y1)
+
+ggplot(plot_df) +
+  geom_point(aes(x = x1, y = y1)) +
+  scale_x_continuous(name = &quot;x&quot;) +
+  scale_y_continuous(name = &quot;y&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>If a model is a function, and training a model produces that function from known <code>x</code> and <code>y</code> data, a training function might have this general form:</p>
+<pre class="r"><code>train_model &lt;- function(x, y) { 
+  
+  predictor &lt;- function(new_x) { 
+    return(4)                     
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Here, <code>predictor</code> is the model function (or, if you will, the “model”). Notice that it takes some <code>new_x</code> (to produce predictions for) and returns some predicted values, here just <code>4</code>. To train a model on our <code>x</code> and <code>y</code>, we call the <code>train_model</code> function and then call the resulting model function on some new <code>x</code> data.</p>
+<pre class="r"><code>model &lt;- train_model(x1, y1)   # get a model function trained on x1 and y1
+predictions &lt;- model(c(3, 4))  # call the model function to get predictions for x = c(3, 4)
+print(predictions)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>The prediction of <code>4</code> isn’t that useful. Let’s adjust the training so that the predictions are the mean of the training <code>y</code> values:</p>
+<pre class="r"><code>train_model &lt;- function(x, y) { 
+  mean_y &lt;- mean(y)                   # Compute mean_y as part of training process
+  
+  predictor &lt;- function(new_x) { 
+    return(mean_y)                    # The model function will return it as a prediction
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Now this is fun–because the <code>predictor</code> function is created locally within <code>train_model</code>, it has access to the variables that are defined in the scope of <code>train_model</code> when <em>it</em> was called, and can use them whenever (or wherever) it is called, even after it is returned; <code>train_model</code> is thus a <a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">closure</a>, as well as a <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order function</a> since it returns a function.</p>
+<p>Now if we run our test, we see that we get the mean of the <code>y</code> values supplied during training.</p>
+<pre class="r"><code>model &lt;- train_model(x1, y1)
+predictions &lt;- model(c(3, 4))  
+print(predictions)                    # predictions are now computed from the training y data</code></pre>
+<pre><code>## [1] 22.84191</code></pre>
+<p>This is alright, though since we are asking for predictions for two <code>x</code> values, we should return two predictions. In general, we want the predictor function to return <span class="math inline">\(n\)</span> predictions for <span class="math inline">\(n\)</span> <code>x</code> values; we’ll use the <code>rep</code> function to produce a vector of the right length.</p>
+<pre class="r"><code>train_model &lt;- function(x, y) { 
+  mean_y &lt;- mean(y) 
+  
+  predictor &lt;- function(new_x) { 
+    return(rep(mean_y, length(new_x)))   # give back as many predictions as asked for
+  }
+  return(predictor)
+}
+
+model &lt;- train_model(x1, y1)
+predictions &lt;- model(c(3, 4)) 
+print(predictions)</code></pre>
+<pre><code>## [1] 22.84191 22.84191</code></pre>
+<p>Now we can produce predictions for all of the original <code>x</code> data, and see how the results of the model (blue) compare to the actual values (black).</p>
+<pre class="r"><code>model &lt;- train_model(x1, y1)
+yhat &lt;- model(x1)
+
+# a data frame with columns for the original x1 and y1 data, and the predictions
+plot_df &lt;- data.frame(x1, y1, yhat)
+
+ggplot(plot_df) +
+  geom_point(aes(x = x1, y = y1)) +
+  geom_point(aes(x = x1, y = yhat), color = &quot;blue&quot;) +
+  scale_x_continuous(name = &quot;x&quot;) +
+  scale_y_continuous(name = &quot;y&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>As machine learning algorithms go, this is pretty basic. But it provides a model (see, there we go again) for building machine learning models that we can expand on.</p>
+<p><br /><b></b></p>
+</div>
+<div id="linear-model" class="section level2">
+<h2>Linear Model</h2>
+<p>Although R includes an <code>lm()</code> function for computing linear model coefficients (and a <code>predict()</code> function for predicting values with that model), let’s write our own linear model based on the ideas above.</p>
+<p>Since we’ll be using this function as a base for other models, we’ll make sure it can produce reasonable predictions in edge cases, such as when <code>length(x) == 0</code> (e.g. if <code>x &lt;- c()</code>), or <code>length(new_x) == 0</code>, or if there is only one distinct <code>x</code> value (making the appropriate slope difficult to determine). Let’s start by handling these cases first; if <code>x</code> has no data, the model function should simply return <code>NA</code> for each entry in <code>new_x</code>.</p>
+<pre class="r"><code>train_lm &lt;- function(x, y) {
+  if(length(x) == 0) {
+    predictor &lt;- function(new_x) {
+      return(rep(NA, length(new_x)))
+    }
+    return(predictor)
+  } 
+  
+  # (train_lm) to be continued ...</code></pre>
+<p>Still working within the <code>train_lm</code> function, if there is only one unique <code>x</code> value, then the slope is <code>0</code> and the intercept is the mean of the <code>y</code> values (slope isn’t well-defined, but we don’t want return an <code>NA</code> result just due to that). If there are more than one unique <code>x</code> value, we can update the slope and intercept based on the convenient formulas <a href="https://en.wikipedia.org/wiki/Simple_linear_regression#Numerical_example">here</a>.</p>
+<p>However, in order to allow for some investigations later, we’re going to do this optionally, based on the status of a global <code>USE_SLOPE</code> variable.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> When <code>USE_SLOPE</code> is <code>FALSE</code>, the predictions will just be the mean of the <code>y</code> values as in the case above.</p>
+<p>Whatever <code>slope</code> and <code>intercept</code> are, the predictor function uses them to produce predictions for a given <code>new_x</code>.</p>
+<pre class="r"><code>  # ... continued (train_lm)
+
+  slope &lt;- 0
+  intercept &lt;- mean(y)
+
+  if(length(unique(x)) &gt; 1 &amp;  USE_SLOPE) {
+    n &lt;- length(x)
+    slope &lt;- (n * sum(x * y) - sum(x) * sum(y)) / 
+             (n * sum(x ^ 2) - sum(x) ^ 2)
+    intercept &lt;- sum(y) / n - slope * sum(x) / n
+  }
+  
+  predictor &lt;- function(new_x) {
+    predictions &lt;- intercept + slope * new_x
+    return(predictions)
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Let’s again visualize the data and results of model predictions. We’ve colored the original points black, the predictions not using a slope term in dark blue, and those using a slope in orange.</p>
+<pre class="r"><code>USE_SLOPE &lt;- FALSE
+model &lt;- train_lm(x1, y1)
+yhat_noslope &lt;- model(x1)
+
+USE_SLOPE &lt;- TRUE
+model &lt;- train_lm(x1, y1)
+yhat_slope &lt;- model(x1)
+
+# a data frame with columns for the original x1 and y1 data, and the predictions
+plot_df &lt;- data.frame(x1, y1, yhat_noslope, yhat_slope)
+
+ggplot(plot_df) +
+  geom_point(aes(x = x1, y = y1)) +
+  geom_point(aes(x = x1, y = yhat_noslope), color = &quot;blue&quot;) +
+  geom_point(aes(x = x1, y = yhat_slope), color = &quot;orange&quot;) +
+  scale_x_continuous(name = &quot;x&quot;) +
+  scale_y_continuous(name = &quot;y&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><br /><b></b></p>
+</div>
+<div id="split-linear-models" class="section level2">
+<h2>Split Linear Models</h2>
+<p>As we alluded to above, more sophisticated models can be built from simpler models by splitting the data into pieces (say two), and building a different model based on each piece. If the data are “nice” then it may well be that each piece is accurately predicted by a simple linear model, whereas all of the data may not be.</p>
+<p>A basic operation, then, is the “split.” Given a training set <code>x</code> and <code>y</code>, we split it into two pieces—which we’ll call “left” and “right”—by picking some <code>threshold</code> for <code>x</code> and putting all entries (both <span class="math inline">\(x\)</span> and corresponding <span class="math inline">\(y\)</span> values) where <code>x &lt;= threshold</code> in the left piece, and all the rest in the other. One basic linear model can then be trained on each piece, and used for making predictions. Presumably, the left model will be better at predicting <code>new_x</code> values that are less than or equal to <code>threshold</code>, and the right model will be better at predicting the rest.</p>
+<p>Thus, the <code>new_x</code> values will need to be similarly split, and the results of the two models will need to be aggregated into a single set of predictions.</p>
+<p>We’ll start with a <code>train_split_lm</code> function taking three parameters: <code>x</code> and <code>y</code> as before, and also a <code>threshold</code> which will be used to split the original <code>x</code> and <code>y</code> into pieces. First though, such a split only makes sense if there are at least two unique <code>x</code> values. If this isn’t the case, we’ll just fall back to using our basic <code>train_lm</code>. In fact, if the number of <code>x</code> values is small (say less than 6), then there’s probably not enough data for a split to be helpful, so we’ll fall back to <code>train_lm</code> in that case as well. Note that this function returns a model function just as the the <code>train_lm</code> function does; in fact in this case it’s just returning the result of <code>train_lm</code> directly.</p>
+<pre class="r"><code>train_split_lm &lt;- function(x, y, threshold) {
+  if(length(unique(x)) &lt; 2 | length(x) &lt; 6) {
+    return(train_lm(x, y))
+  } 
+  
+  # (train_split_lm) to be continued ...</code></pre>
+<p>If there’s enough data to split up, we generate two subsets of <code>x</code> and <code>y</code>: <code>xleft</code> and <code>yleft</code> corresponding to data where <code>x</code> values are less than or equal to <code>threshold</code>, and <code>xright</code> and <code>yright</code> corresponding to the rest. On each of these we train a linear model from above. (Notice that if <code>threshold</code> is equal to or larger than the largest <code>x</code> value, then <code>xright</code> and <code>yright</code> will be empty, hence the need for <code>train_lm</code> to be robust to empty training inputs.)</p>
+<pre class="r"><code>  # ... continued (train_split_lm)
+
+  xleft &lt;- x[x &lt;= threshold]
+  yleft &lt;- y[x &lt;= threshold]
+  model_left &lt;- train_lm(xleft, yleft)
+  
+  xright &lt;- x[x &gt; threshold]
+  yright &lt;- y[x &gt; threshold]
+  model_right &lt;- train_lm(xright, yright)
+  
+  # (train_split_lm) to be continued ...</code></pre>
+<p>The prediction function will make use of these two models to produce a set of predictions. We’ll have both models produce predictions for all values of <code>new_x</code>, but in the final answer we’ll only include the predictions from <code>model_left</code> where <code>new_x</code> values were less than or equal to the threshold, since that is the range of <code>x</code> values that the left model was trained on. Similarly for <code>model_right</code>.</p>
+<pre class="r"><code>  # ... continued (train_split_lm)
+
+  predictor &lt;- function(new_x) {
+    preditions_left &lt;- model_left(new_x)                              # get predictions from left model
+    preditions_right &lt;- model_right(new_x)                            # get predictions from right model
+
+    predictions &lt;- rep(0, length(new_x))                              # an initial set of 0s for final predictions
+    predictions[new_x &lt;= threshold] &lt;- preditions_left[new_x &lt;= threshold]      # set some predictions from left model
+    predictions[new_x &gt; threshold] &lt;- preditions_right[new_x &gt; threshold]       # set other predictions from right model
+    return(predictions)
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Let’s try it by generating some new <code>x</code> and <code>y</code> training data that isn’t so linear, and producing a split model with <code>threshold</code> of 2.</p>
+<pre class="r"><code>x2 &lt;- runif(100, min = 0, max = pi)
+y2 &lt;- 5 * sin(x2 + 0.3) + rnorm(100, mean = 0, sd = 0.4)
+
+USE_SLOPE &lt;- TRUE
+model &lt;- train_split_lm(x2, y2, threshold = 2)
+yhat &lt;- model(x2)
+
+plot_df &lt;- data.frame(x2, y2, yhat)
+
+ggplot(plot_df) +
+  geom_point(aes(x = x2, y = y2)) +
+  geom_point(aes(x = x2, y = yhat), color = &quot;blue&quot;) +
+  scale_x_continuous(name = &quot;x&quot;) +
+  scale_y_continuous(name = &quot;y&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>There’s a discontinuity where the two models meet at <span class="math inline">\(x = 2\)</span>, where the predictions for <code>x</code> values left of the split come from the left model, and the rest come from the right model.</p>
+<p>The next step is to find the <em>best</em> splitting threshold, where we’ll define “best” to mean “minimizes prediction error for the training data.” More explicitly, we say a split is good if the resulting split model produces <code>yhat</code> predictions that are similar overall to the actual <code>y</code> values.</p>
+<p>There are lots of potential ways to measure prediction error, including the sum of absolute error (abbreviated SAE, mathematically <span class="math inline">\(\sum_{i}|y_i - \hat{y}_i|\)</span>, or in code <code>sum(y - yhat)</code>), sum of squared error (SSE, <span class="math inline">\(\sum_{i}(y_i - \hat{y}_i)^2\)</span>, <code>sum((y - yhat) ^ 2)</code>), or even maximum absolute error (<span class="math inline">\(\max_i|y_i - \hat{y}_i|\)</span>, <code>max(abs(y - yhat))</code>). We’ll use the ever-popular SSE function, though there is some rather beautiful math relating both SAE and SSE to a common gradient-descent process (which is discussed in the <a href="https://explained.ai/gradient-boosting/index.html">article</a> mentioned above).</p>
+<pre class="r"><code>sse &lt;- function(y, yhat) {
+  error &lt;- y - yhat
+  sum_sq_error &lt;- sum(error ^ 2)
+  return(sum_sq_error)
+}</code></pre>
+<p>Now we can compute the SSE by comparing the true <code>y</code> values to the predicted <code>yhat</code> values.</p>
+<pre class="r"><code>print(sse(y2, yhat))</code></pre>
+<pre><code>## [1] 32.30874</code></pre>
+<p>The optimal splitting <code>threshold</code> will be the one that generates a model minimizing this value. We needn’t check an infinite number of possible thresholds though: if we suppose that <code>x</code> is sorted, then any <code>threshold</code> in between two neighboring <code>x</code> values will produce the same SSE value. (Consider that the error value above wouldn’t have changed with any <code>threshold</code> resulting in the same data split.) So, we only need to check each unique <code>x</code> value as a possible threshold.</p>
+<p>Let’s write a function that considers each potential threshold (from the set of unique <code>x</code> values), computes the error produced by creating a split model with that threshold, and keeps track of the best threshold seen before returning it. We use a small local helper function <code>threshold_to_error</code> to compute the error for a threshold by building a model and testing it.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<pre class="r"><code>compute_optimal_split &lt;- function(x, y) {
+  
+  threshold_to_error &lt;- function(t) {
+    model &lt;- train_split_lm(x, y, t)
+    error &lt;- sse(y, model(x))            # we want the SSE of the model&#39;s predictions compared to the actual values
+    return(error) 
+  }
+  
+  best_threshold &lt;- Inf
+  best_error &lt;- Inf
+  # look at each potential threshold; if it produces a smaller error, store it
+  for(threshold in unique(x)) {
+    error &lt;- threshold_to_error(threshold)
+    if(error &lt; best_error) {
+      best_error &lt;- error
+      best_threshold &lt;- threshold
+    }
+  }
+  
+  return(best_threshold)
+}</code></pre>
+<p>Now we can write a <code>train_optimal_split_lm</code> that combines the two functions above to produce an optimal split-model. First it determines the best threshold, then it gets a model using that threshold and returns it.</p>
+<pre class="r"><code>train_optimal_split_lm &lt;- function(x, y) {
+  best_threshold &lt;- compute_optimal_split(x, y)
+  model &lt;- train_split_lm(x, y, best_threshold)
+  return(model)
+}</code></pre>
+<p>Let’s try it on our data from above.</p>
+<pre class="r"><code>USE_SLOPE &lt;- TRUE
+model &lt;- train_optimal_split_lm(x2, y2)
+yhat &lt;- model(x2)
+
+plot_df &lt;- data.frame(x2, y2, yhat) 
+
+ggplot(plot_df) + 
+  geom_point(aes(x = x2, y = y2)) + 
+  geom_point(aes(x = x2, y = yhat), color = &quot;blue&quot;) +
+  scale_x_continuous(name = &quot;x&quot;) +
+  scale_y_continuous(name = &quot;y&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Looks like the best split, the one that minimizes the overall SSE error, is found at around <span class="math inline">\(x = 1.6\)</span>.</p>
+<p><br /><b></b></p>
+</div>
+<div id="multiple-variables-regression-trees" class="section level2">
+<h2>Multiple Variables, Regression Trees</h2>
+<p>Our next task is to predict <code>y</code> values from multiple input vectors <code>x1</code>, <code>x2</code>, etc. Consider this small example of a data frame with <code>x1</code> and <code>x2</code> columns, and a dependent <code>y</code> vector with some complicated relationship to <code>x1</code> and <code>x2</code>.</p>
+<pre class="r"><code>x1_values &lt;- seq(-1, 2, length.out = 30)
+x2_values &lt;- seq(-0.5, 2.5, length.out = 30)
+
+# data frame of predictor variables; all combinations of x1_values and x2_values
+df_x &lt;- expand.grid(x1 = x1_values, x2 = x2_values)
+
+# the y response vector depends on both
+y &lt;- cos(0.8*df_x$x1 + 0.2*df_x$x2) ^ 3 + cos(df_x$x2) ^ 3
+
+# we&#39;ll center the y vector to a mean of 0 for illustration
+y &lt;- y - mean(y)
+
+# a data frame of x1, x2, and y
+train_data &lt;- data.frame(df_x, y)
+
+ggplot(train_data) +
+  geom_tile(aes(x = x1, y = x2, fill = y, color = y)) +
+  geom_contour(aes(x = x1, y = x2, z = y), bins = 10) + 
+  coord_equal() + 
+  scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
+  scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) </code></pre>
+<p><img src="figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre class="r"><code>print(head(train_data))</code></pre>
+<pre><code>##           x1   x2         y
+## 1 -1.0000000 -0.5 0.1298706
+## 2 -0.8965517 -0.5 0.2100254
+## 3 -0.7931034 -0.5 0.2984929
+## 4 -0.6896552 -0.5 0.3922154
+## 5 -0.5862069 -0.5 0.4876052
+## 6 -0.4827586 -0.5 0.5807501</code></pre>
+<p>In order to predict the <code>y</code> values, we’ll need a training function that can work with dataframe inputs. Let’s start small with a <code>train_df_index_base</code>–this function will take a <code>df_x</code> containing columns of predictor variables, a <code>y</code> vector as before, and an <code>index</code> parameter. All this function will do is extract the specified index<sup>th</sup> column (calling it <code>x_i</code>) and build a linear model on it from above, ignoring all the other columns.</p>
+<p>We have to be careful though: the predictor function should <em>also</em> take a dataframe input, but to run the model it needs to also extract the new index<sup>th</sup> column and predict on that.</p>
+<pre class="r"><code>train_df_index_base &lt;- function(df_x, y, index) {
+  x_i &lt;- df_x[, index]
+  model &lt;- train_lm(x_i, y)
+  
+  predictor &lt;- function(new_df_x) {
+    new_x_i &lt;- new_df_x[, index]
+    return(model(new_x_i))
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Now we can work on the heart of the regression-tree algorithm: find a column and corresponding threshold that splits the dataset into two similar parts, do the split, and train models on each subset. All in all very similar to the splitting above, except now we’ve got multiple column options to consider splitting with.</p>
+<p>In the next figure we suppose <code>x3</code> is the best column to split on, and we’ve sorted the table and <code>y</code> values according to this column for illustration. To find a good splitting point we can use our <code>compute_optimal_split</code> function on that column and the <code>y</code> values. Then, rather than just splitting that column (and the <code>y</code> data) into left and right pieces, we split the <em>entire dataset</em>. Note that this leaves <code>x3</code> as a column in each piece, allowing for future potential splits on that column again!</p>
+<p>Note that even if we know <code>x3</code> is the right column to split on, using <code>compute_optimal_split</code> on <code>x3</code> alone might not compute the optimal split point <em>for the whole dataframe</em>. It may be that some other threshold will allow the “left” and “right” models to perform even better, depending on what they decide to do with their own data. Finding such a “globally-optimal” split would require considering all possible combinations of split points, of which there are far, far too many. Still, finding a good splitting column and a good “local” split works well in practice.</p>
+<center>
+<img width="80%" src="https://i.imgur.com/yjfv3lp.png" />
+</center>
+<p>Let’s suppose that we do know the best column to split on (specified by an <code>index</code> variable), and we wish to implement the above in a <code>train_df_index</code> function. We’ll start by defining the function parameters and computing the best split point for the specified column.</p>
+<p>As with <code>train_split_lm</code>, if the number of unique entries in <code>x_i</code> is too few, then splitting doesn’t make sense and we just call <code>train_df_index_base</code>. (Not <code>train_lm</code>, because our prediction function must take a dataframe input, rather than a vector; <code>train_df_index_base</code> handles this conversion.) Otherwise, we’ll compute the best threshold for the identified column.</p>
+<pre class="r"><code>train_df_index &lt;- function(df_x, y, index) {
+  x_i &lt;- df_x[, index]
+  if(length(unique(x_i)) &lt; 2 | length(x_i) &lt; 6) {
+    return(train_df_index_base(df_x, y, index))
+  } 
+  
+  threshold &lt;- compute_optimal_split(x_i, y)
+  
+  # (train_df_index) to be continued ...</code></pre>
+<p>Next we’ll extract the “left” and “right” datasets; for <code>left_df_x</code> we want all rows where the <code>x_i</code> entries are less than the threshold.</p>
+<pre class="r"><code>  # ... continued (train_df_index)
+
+  left_df_x &lt;- df_x[x_i &lt;= threshold, ]
+  left_y &lt;- y[x_i &lt;= threshold]
+  
+  right_df_x &lt;- df_x[x_i &gt; threshold, ]
+  right_y &lt;- y[x_i &gt; threshold]
+  
+  # (train_df_index) to be continued ...</code></pre>
+<p>Now we need to train two models, <code>model_left</code> and <code>model_right</code>, on these two datasets. However, we have an issue–we don’t know which column will be best to split these on, nor do we have a function that determines this. Let’s defer to our future selves to figure that one out:</p>
+<pre class="r"><code>  # ... continued (train_df_index)
+
+  # TODO: write a train_df function that computes the best index/column to split on and does so
+  model_left &lt;- train_df(left_df_x, left_y)
+  model_right &lt;- train_df(right_df_x, right_y)
+  
+  # (train_df_index) to be continued ...</code></pre>
+<p>Assuming we manage to figure that out, we’ll have two models that we can use for prediction, so we can write our predictor function and return it. Given a <code>new_df_x</code> it generates predictions from both <code>model_left</code> and <code>model_right</code>, and uses the index and computed threshold to determine which model should be consulted for which predictions (since <code>model_left</code> was only trained on data where the index<sup>th</sup> column was less than <code>threshold</code>, we should only pay attention to its predictions where that is true as well).</p>
+<pre class="r"><code>  # ... continued (train_df_index)
+
+  predictor &lt;- function(new_df_x) {
+    predictions_left &lt;- model_left(new_df_x)         # have model_left predict for all new inputs
+    predictions_right &lt;- model_right(new_df_x)       # have model_right predict for all new inputs
+
+    new_x_i &lt;- new_df_x[, index]                     # grab the index&#39;th column
+    
+    predictions &lt;- rep(0, length(new_x_i))
+    predictions[new_x_i &lt;= threshold] &lt;- predictions_left[new_x_i &lt;= threshold]
+    predictions[new_x_i &gt; threshold] &lt;- predictions_right[new_x_i &gt; threshold]
+    return(predictions)
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Let’s turn our attention to our TODO. We need to create a <code>train_df</code> function that figures out which column index is the best to split on. From there it can just call <code>train_df_index</code>. This is also the function that we’ll call to analyze data, since <em>a-priori</em> we won’t know which column is the best first choice.</p>
+<p>How do we compute the best column to split on? We just train an <code>train_optimal_split_lm</code> on each column, and keep the one with the lowest error. As with choosing a threshold, this will identify a good column to split on, but not necessarily the best overall; some other column choice might actually produce better results (again depending what the <code>model_left</code> and <code>model_right</code> built by <code>train_df_index</code> do with their pieces), but this strategy is efficient and works well in practice.</p>
+<pre class="r"><code>train_df &lt;- function(df_x, y) {
+  # helper function:
+  # given a column x (vector), train an optimal split on just that column and 
+  # return the SSE error (ignoring other columns)
+  error_func &lt;- function(x) {
+    model &lt;- train_optimal_split_lm(x, y)
+    return(sse(y, model(x)))
+  } 
+  
+  best_index &lt;- Inf
+  best_error &lt;- Inf
+  
+  # check each column&#39;s SSE (via the error_func() helper function)
+  # and note the best-performing one
+  for(index in 1:ncol(df_x)) {
+    x_i &lt;- df_x[ , index]       # grab index&#39;th column
+    error &lt;- error_func(x_i)    # how good is it by itself?
+    if(error &lt; best_error) {    
+      best_index &lt;- index
+      best_error &lt;- error
+    }
+  }
+
+  return(train_df_index(df_x, y, best_index))
+}</code></pre>
+<p>We are <em>so</em> close. Notice that <code>train_df</code> calls <code>train_df_index</code>, which in turn calls <code>train_df</code> (twice), which in turn calls <code>train_df_index</code>, and so on. Eventually one of two things will happen: either the datasets will be split small enough that <code>train_df_index</code> doesn’t call <code>train_df</code> but instead “bottoms out” and calls <code>train_df_index_base</code>, or we’ll get an infinite recursion error (also known as a stack overflow error, produced by a chain of functions calling other functions and not returning before we run out of memory). The latter shouldn’t happen, if we’ve been careful to ensure that each split reduces the number of rows in each piece, getting closer to bottoming out each time.</p>
+<p>Still, it would be wise to limit how many times this process can occur. We can do so by adding a <code>depth</code> parameter to these functions; if <code>depth</code> is 0 then <code>train_df_index</code> will bottom out no matter how many rows are left. (Note that if <code>depth = 0</code> then no splits will be performed, because <code>train_df_index_base</code> simply calls <code>train_lm</code>.)</p>
+<pre class="r"><code>train_df_index &lt;- function(df_x, y, index, depth) {     # new depth parmaeter
+  x_i &lt;- df_x[, index]
+  if(length(unique(x_i)) &lt; 2 | length(x_i) &lt; 6 | depth == 0) {    # if it&#39;s 0, use just that column
+    return(train_df_index_base(df_x, y, index))
+  } 
+  
+  # (train_df_index) to be continued ...</code></pre>
+<p>When <code>train_df_index</code> calls <code>train_df</code>, it will pass the depth information along but reduced by 1, thereby making each call to <code>train_df_index</code> one step closer to ending the chains of calls.</p>
+<pre class="r"><code>  # ... continued (train_df_index)
+
+  model_left &lt;- train_df(left_df_x, left_y, depth - 1)      # pass depth along, decreased
+  model_right &lt;- train_df(right_df_x, right_y, depth - 1)   # pass depth along, decreased
+  
+  # (train_df_index) to be continued ...</code></pre>
+<p>This means our <code>train_df</code> will also need a <code>depth</code> parameter, which we’ll default to 0, but which the user can set higher to perform splits-on-splits-on-splits.</p>
+<pre class="r"><code>train_df &lt;- function(df_x, y, depth = 0) {             # what depth do you want to train to?
+  
+  # ...
+  # yada yada yada
+  # ...
+  
+  return(train_df_index(df_x, y, best_index, depth))   # pass it along
+}</code></pre>
+<p>Whew! Before we explore this, let’s see what happens when we try to predict our earlier <code>y</code> values with <code>depth = 1</code> (allowing a single split on one of the columns), using both <code>USE_SLOPE &lt;- TRUE</code> and <code>USE_SLOPE &lt;- FALSE</code>. This plot shows the model predictions for the various values of <code>x1</code> and <code>x2</code>, as well as the original <code>y</code> data in the contour plot.</p>
+<pre class="r"><code># generate predictions without allowing slope
+USE_SLOPE &lt;- FALSE
+model_noslope &lt;- train_df(df_x, y, depth = 1)
+yhat_noslope &lt;- model_noslope(df_x)
+
+# and using slope
+USE_SLOPE &lt;- TRUE
+model_slope &lt;- train_df(df_x, y, depth = 1)
+yhat_slope &lt;- model_slope(df_x)
+
+# data frame with columns for x1, x2, y, yhat_noslope, and yhat_slope
+all_data &lt;- data.frame(df_x, y, yhat_noslope, yhat_slope)
+# gather it for proper plotting
+all_data_toplot &lt;- tidyr::gather(all_data, &quot;model_type&quot;, &quot;yhat&quot;, yhat_noslope, yhat_slope)
+
+ggplot(all_data_toplot) +
+  geom_tile(aes(x = x1, y = x2, fill = yhat, color = yhat)) +
+  geom_contour(aes(x = x1, y = x2, z = y), bins = 10) + 
+  coord_equal() + 
+  scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
+  scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
+  facet_grid(. ~ model_type)</code></pre>
+<p><img src="figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p>Both models have decided to split on the <code>x2</code> column, but while the no-slope-allowed model found the best split at approximately 0.8 (with predictions on each side being the mean of the <code>y</code> values in that region), the slope-allowed model found it’s best split around 0.5, with a decreasing linear model over <code>x1</code> to the right (of the split, so the top half of the plot), and a different decreasing linear model on <code>x1</code> to the left (bottom).</p>
+<p>The slope-allowed model produces slightly more accurate predictions overall, as illustrated here by plotting the <em>differences</em> between these predictions and the actual <code>y</code> values (using a different color-scale to emphasize that we’re looking at the difference).</p>
+<pre class="r"><code>ggplot(all_data_toplot) +
+  geom_tile(aes(x = x1, y = x2, fill = yhat - y, color = yhat - y)) +
+  geom_contour(aes(x = x1, y = x2, z = y), bins = 10) + 
+  coord_equal() + 
+  scale_fill_gradient2(low = &quot;darkred&quot;, high = &quot;darkblue&quot;) +
+  scale_color_gradient2(low = &quot;darkred&quot;, high = &quot;darkblue&quot;) +
+  facet_grid(. ~ model_type)</code></pre>
+<p><img src="figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>Nevertheless, the behavior of our model is better illustrated with <code>USE_SLOPE &lt;- FALSE</code>. Here’s a plot disallowing slopes, but with increasing depth values.</p>
+<p><img src="figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p>Now this is interesting. The <code>depth = 0</code> model makes no splits, and so predicts just the average of all <code>y</code> values for any input <code>x1</code> and <code>x2</code>. For <code>depth = 1</code>, the first split is on <code>x2</code> at about 0.8 as above; this leaves a subset of data for the left model (bottom), and for the right model (top). At the next depth level (<code>depth = 2</code>), the left (bottom) model has decided to split its <code>x1</code> column at about 0.75, but the right (top) model splits at about 0.5. Each of these four subsets are independently split at the next allowed depth for the <code>depth = 3</code> panel, and so on. For each subset, the model chooses the best column to split on, and the best point to split, which naturally tends to divide the areas into regions of similarity (without splits) and rapid change (where splits are likely to occur). Here’s the difference plot for <code>depth = 5</code> with and without slope.</p>
+<p><img src="figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<div id="discrete-columns" class="section level3">
+<h3>Discrete Columns?</h3>
+<p>Our <code>train_df</code> models capture the basic idea of regression trees: consider potential columns to split on, split the data into pieces based on some criteria, and train a model on each piece. When making predictions, we split the new data in a similar way before predicting (or, as we’ve done here, combine the predictions afterward).<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>Regression trees are a type of decision tree, where the identified thresholds and columns produce a branching decision-making process for each input example (hence the names “left”, “right”, and “depth”).</p>
+<!-- <center><img width="100%" src="https://i.imgur.com/tkreePz.png" /></center> -->
+<center>
+<img width="100%" src="home/regression_trees_files/decision_trees.png" />
+</center>
+<p>So far our method works only with columns storing numeric values. What if some columns were discrete, with values such as <code>&quot;r&quot;</code>, <code>&quot;s&quot;</code>, and <code>&quot;l&quot;</code>? The same general strategy applies: we would consider splitting the data into two or more pieces based on this column, train a model on each piece, and utilize their predictions on <code>new_df_x</code> data.</p>
+<p>One way to perform such a split is to identify the most-homogeneous group and split that out. Future splits can then worry about the other piece.</p>
+<center>
+<img width="70%" src="https://imgur.com/nLdAnWf.png" />
+</center>
+<p>Alternatively, one could split into multiple pieces and train a different model on each piece. Note that any dataset with only a single entry for a column (such as in “left” above and “l”, “r”, “s” below) wouldn’t further split on that column, because there’s no improvement to be gained compared to splitting on some other column.</p>
+<center>
+<img width="70%" src="https://imgur.com/KsLEjbe.png" />
+</center>
+<p>We’re not going to implement either of these solutions here. The former would be interesting, in that it would encourage us to generalize the notion of “binary split” to handle both discrete and continuous variables, but this would add yet another level of abstraction. The latter is certainly doable, but fairly tedious.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<p><br /><b></b></p>
+</div>
+</div>
+<div id="bootstrap-aggregating-bagging" class="section level2">
+<h2>Bootstrap Aggregating (Bagging)</h2>
+<p>Thus far we’ve only tried to predict non-noisy <code>y</code> data. In real datasets some noise is common, and ideally our model won’t be negatively affected. Let’s generate a <code>ynoised</code> version of the original <code>y</code> data and plot the results, but leave the contours representing the original <code>y</code> data.</p>
+<pre class="r"><code>ynoised &lt;- y + rnorm(length(y), mean = 0, sd = 0.5)
+
+all_data_toplot &lt;- data.frame(df_x, y, ynoised)   # dataframe with columns x1, x2, y, ynoised
+
+ggplot(all_data_toplot) +
+  geom_tile(aes(x = x1, y = x2, fill = ynoised, color = ynoised)) +
+  geom_contour(aes(x = x1, y = x2, z = y), bins = 10) + 
+  coord_equal() + 
+  scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
+  scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;)</code></pre>
+<p><img src="figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>Now let’s see what happens if we train models of increasing depths as we did above on this noisier data.</p>
+<p><img src="figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p>Ideally, our model would capture the underlying trend in the data, but not the specific set of noise on top. Based on the above plot, it seems the <code>depth = 8</code> model provides a good balance of representing the underlying trend accurately while not producing noisy predictions. The <code>depth = 2</code> model is under-trained, or “underfit” to the training data, while the <code>depth = 20</code> model is <em>overfit</em>. Overfitting is a major challenge in machine learning because most methods (like regression trees) are subject to overfitting, and avoiding it is tricky business.</p>
+<p>There are a few ways we could avoid overfitting with our trees. Many of these have to do with the “stopping criteria” for producing a split. Currently we stop splitting dataframes when either the number of training rows is small, or depth is 0 (<code>length(unique(x_i)) &lt; 2 | length(x_i) &lt; 6 | depth == 0</code> in <code>train_df_index</code>). If <code>depth</code> is large, then we are likely to continue to split the until we stop because there’s only a few datapoints to train on–as a result, the noise present in those datapoints affects the models significantly. Additional or alternative stopping criteria might be when the standard deviation of <code>y</code> is below some threshold, or the SSE for a basic linear model is below some threshold.</p>
+<p>Overfitting is often a model-size problem, where the “size” of something like our regression trees is how many nodes are in the decision tree (about <span class="math inline">\(2^{depth}\)</span> for our trees). If we wanted the code itself to determine what the correct depth is, we could incorporate model-size into the error calculation–perhaps we add to a model’s SSE an amount related to the number of splits it uses to make predictions. This idea–limiting the number of parameters or “size” of a model to avoid overfitting–is known as regularization.</p>
+<p>Bootstrap Aggregating, or Bagging, is another method to avoid overfitting. We start by writing a function that can produce a “bootstrap sample” of the training data, randomly selected with replacement. It’s common to generate bootstrap samples of the same size as the original data, so if the original <code>df_x</code> and <code>y</code> have <span class="math inline">\(n\)</span> entries, then the sample will also have <span class="math inline">\(n\)</span> entries. Our function will return a list with a new, randomly sampled version of <code>df_x</code> and <code>y</code>.</p>
+<pre class="r"><code>get_bootstrap_sample &lt;- function(df_x, y) {
+  n &lt;- length(y)
+  sample_indices &lt;- sample(1:n, size = n, replace = TRUE)  # sample the potential indices with replacement
+  sample_df_x &lt;- df_x[sample_indices, ]                    # grab from the df_x data those rows
+  sample_y &lt;- y[sample_indices]                            # and from the y data those entries
+  return(list(sample_df_x, sample_y))
+}</code></pre>
+<p>Due to sampling with replacement, some original datapoints won’t be present at all, and some will be present multiple times. If we generate multiple such samples, we can train a different model on each. Because the samples are generated with replacement their statistical properties should be similar to the original data, but individual datapoints will only be available to some models. To generate predictions, we just average (aggregate) the predictions from all of these models.</p>
+<p>Our <code>train_df_bootstrap</code> function will take the same parameters as <code>train_df</code>, and an additional <code>num_bootstraps</code> parameter. The first task is to generate a list of models, each trained on a different bootstrap of <code>df_x</code> and <code>y</code>.</p>
+<pre class="r"><code>train_df_bootstrap &lt;- function(df_x, y, depth = 0, num_bootstraps = 1) {
+  models_list &lt;- as.list(rep(NA, num_bootstraps))       # a list of length num_bootstraps (will be a list of models)
+
+  for(i in 1:num_bootstraps) {
+    bootstrap &lt;- get_bootstrap_sample(df_x, y)          # generate bootstrap and pull out sampled df_x and y
+    bootstrap_df_x &lt;- bootstrap[[1]]
+    bootstrap_y &lt;- bootstrap[[2]]
+    
+    model &lt;- train_df(bootstrap_df_x, bootstrap_y, depth)   # train a model
+    models_list[[i]] &lt;- model                               # store it in the list
+  }
+  
+  # (train_df_bootstrap) to be continued ...</code></pre>
+<p>The predictor function will need to collect predictions for <code>new_df_x</code> from each of the models, which it will store in a matrix with each prediction vector as a column. For aggregating the predictions (averaging the columns), we use <code>apply</code> which calls a given function (<code>mean</code> in this case) over each row (<code>MARGIN = 1</code>) to produce the aggregated predictions vector.</p>
+<pre class="r"><code>  # ... continued (train_df_bootstrap)
+
+  predictor &lt;- function(new_df_x) {
+    all_predictions &lt;- matrix(0, nrow = nrow(new_df_x), ncol = num_bootstraps)  # num_predictions X num_models
+    
+    for(i in 1:num_bootstraps) {
+      model &lt;- models_list[[i]]                    # get i&#39;th model
+      model_predictions &lt;- model(new_df_x)
+      all_predictions[, i] &lt;- model_predictions    # store predictions in i&#39;th column
+    }
+    
+    predictions &lt;- apply(all_predictions, MARGIN = 1, mean) # average columns
+    return(predictions)
+  }
+  
+  return(predictor)
+}</code></pre>
+<p>Let’s see how the predictions look for a few different values of <code>depth</code> and <code>num_bootstraps</code>.</p>
+<p><img src="figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p>This looks like an improvement: with larger numbers of bootstrapped models much of the noise of the predictions is washed out. The aggregated <code>depth = 5</code> (and even <code>depth = 2</code>) models also provide smoother gradations in their predictions.</p>
+<p>An interesting feature of bootstrap aggregating is that we can consider the diversity of the bootstrapped models’ predictions. Here’s the same figure, except instead of using <code>mean</code> to aggregate the predictions, we use <code>sd</code> to compute the standard deviation of predictions. With <code>num_bootstraps = 1</code> the standard deviation is undefined, but for larger numbers of bootstraps the standard deviation is larger where the model “regions” meet. These correspond to areas near split points, which can vary depending on the random subset of data chosen by the various bootstrap models.</p>
+<p><img src="figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><br /><b></b></p>
+</div>
+<div id="wrapup" class="section level2">
+<h2>Wrapup</h2>
+<p>As the footnotes note, this little machine-learning framework is far from efficient. (The thought of a <code>dplyr</code>- or <code>split()</code>-based method is intriguing, I wish I’d thought of it earlier!) Still, I think it’s a fun exploration of “modeling” and machine-learning in a functional paradigm. This is far from novel: the creation of lisp in the 1950’s is <a href="https://towardsdatascience.com/history-of-ai-484a86fc16ef">tightly coupled</a> with early AI research, and a fair amount of modern ML work happens in languages like <a href="https://blog.bigml.com/2013/06/21/clojure-based-machine-learning/">clojure</a>.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> Joel Grus explores similar very cool things in <a href="https://www.youtube.com/watch?v=ThS4juptJjQ">Python</a>.</p>
+<p>The recursive modeling used by our regression trees is similar to the ensemble-based modeling of bootstrap aggregating: a regression tree model confers with two sub-models (unless it didn’t split, in which case it confers with a basic <code>train_lm</code> model), while a bootstrap aggregated model combines predictions from <code>num_bootstraps</code> sub-models. Next time, we’ll see that both random forests and gradient-boosting machines (GBMs) can be described in the same way!</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Shhh, don’t tell anyone. The alternative would be to give <code>train_lm</code> a <code>use_slope</code> parameter, but then all functions that depend on <code>train_lm</code> will also need a <code>use_slope</code> parameter to pass on, even though this is the only function where we’ll want to adjust this behavior.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I’m using a for-loop here for clarity, though some may find a more functional alternative preferable: <code>thresholds &lt;- unique(x); errors &lt;- lapply(thresholds, error_func); best_threshold &lt;- thresholds[[which.min(errors)]]</code>. This version doesn’t handle empty <code>x</code> vectors well, so would also need an explicit check for this. I’m not worried about the for-loop being slow because it isn’t appending to any vector or list. Nevertheless, many of the techniques used in this post are <em>not</em> particularly fast. Libraries like <a href="https://cran.r-project.org/web/packages/tree/index.html">tree</a> and <a href="https://xgboost.readthedocs.io/en/latest/R-package/xgboostPresentation.html">xgboost</a> are much better for real-life data analysis.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>This prediction-combining strategy fits our formulation well, but is very inefficient because we end up making lots of predictions on all of the data, while only keeping a few. Similarly, training the models in this way isn’t efficient either, since there are lots of copies of the original data floating around (consider that even within a single call to <code>train_df_index</code> we make two copies, one for the data in <code>df_x</code> and one for the data across <code>left_df_x</code> and <code>right_df_x</code>).<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>This is largely because we’re insisting on returning <code>yhat</code> predictions in corresponding order of <code>df_x</code> input rows. An alternative would be to remove this restriction and recursively break data into logical groups via <code>dplyr</code> or <code>split()</code>. These would also be more efficient, with fewer copies of data being made.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Have you seen <a href="https://js.tensorflow.org/">tensorflow.js</a>? Check out Daniel Shiffman’s deep learning-in-the-browser <a href="https://www.youtube.com/user/shiffman">videos</a>.<a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
