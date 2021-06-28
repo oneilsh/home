@@ -1,5 +1,5 @@
 ---
-banner: "/post/regression_trees_files/three_depths.png"
+banner: "home/regression_trees_files/three_depths.png"
 title: Regression Trees & Bagging (more functional R)
 author: Shawn T. O'Neil
 date: '2019-02-05'
@@ -788,7 +788,7 @@ Our `train_df` models capture the basic idea of regression trees: consider poten
 Regression trees are a type of decision tree, where the identified thresholds and columns produce a branching decision-making process for each input example (hence the names "left", "right", and "depth"). 
 
 <!-- <center><img width="100%" src="https://i.imgur.com/tkreePz.png" /></center> -->
-<center><img width="100%" src="/post/regression_trees_files/decision_trees.png" /></center>
+<center><img width="100%" src="home/regression_trees_files/decision_trees.png" /></center>
 
 
 So far our method works only with columns storing numeric values. What if some columns were discrete, with values such as `"r"`, `"s"`, and `"l"`? The same general strategy applies: we would consider splitting the data into two or more pieces based on this column, train a model on each piece, and utilize their predictions on `new_df_x` data. 

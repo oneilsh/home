@@ -54,7 +54,7 @@
   
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="/home" id="logo">
+      <a href="/home/" id="logo">
           
           <i class="logo" style="background-image: url('/home/css/images/logo.png')"></i>
           
@@ -91,7 +91,7 @@
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="/home" />
+              <input type="hidden" name="sitesearch" value="/home/" />
          </form>
         </div>
     </div>
@@ -122,7 +122,7 @@
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="/home" />
+          <input type="hidden" name="sitesearch" value="/home/" />
           </form>
         </td>
       </tr>
@@ -242,11 +242,14 @@
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
+        <a href="/home/tidytensor/" itemprop="url">
+            <img src="/home/tidytensor/tidytensor_banner.png" class="article-banner">
+        
         </a>
         <header class="article-header">
-    <a href="/home/post/">
+    <a href="/home/tidytensor/">
     <h1 class="article-title" itemprop="name">
-        Posts
+        TidyTensor - More Fun with Deep Learning
     </h1>
     </a>
     <div class="article-meta">
@@ -256,31 +259,1020 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2019-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2019</time>
             &middot;
-            0
+            387
             words
             &middot;
-            0
+            2
             minute read
         </div>
         
         
+            
+            
+        
 
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/programming">programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/r">r</a>
+                
+                
+            </div>
+            
         
     </div>
 </header>
 
         <div class="article-entry" itemprop="articleBody">
             <p>
-                
+                TidyTensor is an R package for inspecting and manipulating tensors (multidimensional arrays). i It provides an improved print() function for summarizing structure, named tensors, conversion to data frames, and high-level manipulation functions. Designed to complement the excellent keras package, functionality is layered on top of base R types.
+TidyTensor was inspired by a workshop I taught in deep learning with R, and a desire to explain and explore tensors in a more intuitive way.
             </p>
             <p class="article-more-link">
-                <a href="/home/post/">
+                <a href="/home/tidytensor/">
                     Read more
                 </a>
             </p>
         </div>
         <footer class="article-footer">
-    <a data-url="/home/post/" data-id="" class="article-share-link">
+    <a data-url="/home/tidytensor/" data-id="1e701c77bbf1027132a5ef79a308d7d7" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/colette-patricia-oneil/" itemprop="url">
+            <img src="/home/colette_four_months/banner.jpg" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/colette-patricia-oneil/">
+    <h1 class="article-title" itemprop="name">
+        Colette Patricia O&#39;Neil
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-06-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2019</time>
+            &middot;
+            10
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/art">Art</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/photography">Photography</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Meet our daughter, Colette Patricia O&rsquo;Neil, born March 5, 2019!
+               
+            </p>
+            <p class="article-more-link">
+                <a href="/home/colette-patricia-oneil/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/colette-patricia-oneil/" data-id="ad8ae11fe862e2c2ff18ccbae95dca71" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/homelab/" itemprop="url">
+            <img src="/home/homelab/banner.png" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/homelab/">
+    <h1 class="article-title" itemprop="name">
+        Homelab
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-05-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2019</time>
+            &middot;
+            116
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/diy">diy</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/infrastructure">infrastructure</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Sometimes you just get tired of paying AWS &amp; Digital Ocean. A quick sketch of my homelab, inspired by the good folks at r/homelab.
+The main goal of the project was to enable the quick creation of Virtual Machines (or containers), accessible by subdomain such as project1.mydomain.net, project2.mydomain.net, etc., all under a single dynamic IP address. I managed to make it work pretty well, with a little help from NGINX for reverse proxying, pfsense for local DNS and routing, ddclient for dynamic DNS, Proxmox for hypervisor management, and freeNAS for shared storage.
+            </p>
+            <p class="article-more-link">
+                <a href="/home/homelab/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/homelab/" data-id="3cceb86787e544da6f7af52da565d354" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/regression-trees-pt2/" itemprop="url">
+            <img src="/regression_trees_pt2/decision_tree_crop.png" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/regression-trees-pt2/">
+    <h1 class="article-title" itemprop="name">
+        Random Forests &amp; Gradient Boosting
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-03-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2019</time>
+            &middot;
+            6141
+            words
+            &middot;
+            29
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/programming">programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/r">r</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/theory">theory</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                In an earlier post we considered machine learning “models” as functions producting predictions from data, and training models to be the production of these functions with higher-order functions. From there we built regression trees–models created recursively by determining 1) a splitting column (column 1 or 2 in this case), and 2) a good value in that column to split the dataset on. At each split, we find a column and value that produces two relatively homogenous sets of y values (in the sense that the values in each y subset can be well-predicted from the column values).
+            </p>
+            <p class="article-more-link">
+                <a href="/home/regression-trees-pt2/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/regression-trees-pt2/" data-id="0b5897e1526ec9bfc85c20bf855acc13" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/regression-trees/" itemprop="url">
+            <img src="/home/home/regression_trees_files/three_depths.png" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/regression-trees/">
+    <h1 class="article-title" itemprop="name">
+        Regression Trees &amp; Bagging (more functional R)
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
+            &middot;
+            6272
+            words
+            &middot;
+            30
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/programming">programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/r">r</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/theory">theory</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/machine-learning">machine learning</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                I recently ran across this excellent article explaining gradient boosting in the context of regression trees. The article concludes by describing how the technique implements a gradient-descent process, but what I find most fascinating is the concept of “functional modeling”–building machine learning models from other models as building blocks.
+This post explores that idea by implementing regression trees in base R (with a little visualization help from ggplot2, dplyr, and tidyr) with functional programming concepts, including a technique called bootstrap aggregating.
+            </p>
+            <p class="article-more-link">
+                <a href="/home/regression-trees/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/regression-trees/" data-id="fb8e6c53fd7653cc16728fffe0799173" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/autodifferentation-and-functional-operators-in-r/" itemprop="url">
+            <img src="/home/home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/autodifferentation-and-functional-operators-in-r/">
+    <h1 class="article-title" itemprop="name">
+        Automatic Differentiation &amp; Functional Operators in R
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
+            &middot;
+            4103
+            words
+            &middot;
+            20
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/programming">programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/r">r</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/theory">theory</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/deep-learning">deep learning</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
+First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.
+            </p>
+            <p class="article-more-link">
+                <a href="/home/autodifferentation-and-functional-operators-in-r/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/autodifferentation-and-functional-operators-in-r/" data-id="0da4bac0b4f73a1b82dcc5e596bae4e3" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/bio/about/" itemprop="url">
+            <img src="/home/bio_about/banner.jpg" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/bio/about/">
+    <h1 class="article-title" itemprop="name">
+        Bio/About
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/adventures">Adventures</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Work My CV.
+I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
+Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray &amp; white).
+            </p>
+            <p class="article-more-link">
+                <a href="/home/bio/about/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/bio/about/" data-id="dc1d8ccd1eaf56825bbeef4005ada227" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/home/bio/recursion-cs-and-bioinformatics-in-r/" itemprop="url">
+            <img src="/home/biorecursion/banner.jpg" class="article-banner">
+        
+        </a>
+        <header class="article-header">
+    <a href="/home/bio/recursion-cs-and-bioinformatics-in-r/">
+    <h1 class="article-title" itemprop="name">
+        Bio/Recursion: CS and Bioinformatics in R
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/home/tags/programming">Programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/home/tags/writing">Writing</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                This book is based on a workshop I taught a few times at OSU, meant to introduce computer science theory to biologists.
+Digital version available online at Leanpub.
+Also available in print at Amazon.
+It introduces topics in programming, computer science, and bioinformatics via examples in the R programming language. While often associated with statistics, Bio/Recursion employs R’s algorithmic capabilities to implement and visualize several fascinating methods, ranging from DNA alignment to drawing fractal trees.
+            </p>
+            <p class="article-more-link">
+                <a href="/home/bio/recursion-cs-and-bioinformatics-in-r/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/home/bio/recursion-cs-and-bioinformatics-in-r/" data-id="ec6fd8629c1ee64ebb80cd8a1aaa9408" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
@@ -357,6 +1349,13 @@
 
 
 <nav id="page-nav">
+
+    
+    
+        <a class="extend next" rel="next" href="/home/page/2/">
+            Next »
+        </a>
+    
 
 </nav>
 
@@ -530,7 +1529,7 @@
                 <div class="item-thumbnail">
                     <a href="/home/regression-trees/" class="thumbnail">
                     
-                        <span style="background-image:url(/post/regression_trees_files/three_depths.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/home/home/regression_trees_files/three_depths.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -549,7 +1548,7 @@
                 <div class="item-thumbnail">
                     <a href="/home/autodifferentation-and-functional-operators-in-r/" class="thumbnail">
                     
-                        <span style="background-image:url(/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/home/home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
                     
                     </a>
                 </div>

@@ -59,7 +59,7 @@ This post explores that idea by implementing regression trees in base R (with a 
   
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="/home" id="logo">
+      <a href="/home/" id="logo">
           
           <i class="logo" style="background-image: url('/home/css/images/logo.png')"></i>
           
@@ -96,7 +96,7 @@ This post explores that idea by implementing regression trees in base R (with a 
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="/home" />
+              <input type="hidden" name="sitesearch" value="/home/" />
          </form>
         </div>
     </div>
@@ -127,7 +127,7 @@ This post explores that idea by implementing regression trees in base R (with a 
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="/home" />
+          <input type="hidden" name="sitesearch" value="/home/" />
           </form>
         </td>
       </tr>
@@ -245,7 +245,7 @@ This post explores that idea by implementing regression trees in base R (with a 
     <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
-            <img src="/post/regression_trees_files/three_depths.png" class="article-banner">
+            <img src="/home/home/regression_trees_files/three_depths.png" class="article-banner">
         
 
         <header class="article-header">
@@ -325,7 +325,7 @@ ggplot(plot_df) +
   geom_point(aes(x = x1, y = y1)) +
   scale_x_continuous(name = &quot;x&quot;) +
   scale_y_continuous(name = &quot;y&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>If a model is a function, and training a model produces that function from known <code>x</code> and <code>y</code> data, a training function might have this general form:</p>
 <pre class="r"><code>train_model &lt;- function(x, y) { 
   
@@ -382,7 +382,7 @@ ggplot(plot_df) +
   geom_point(aes(x = x1, y = yhat), color = &quot;blue&quot;) +
   scale_x_continuous(name = &quot;x&quot;) +
   scale_y_continuous(name = &quot;y&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>As machine learning algorithms go, this is pretty basic. But it provides a model (see, there we go again) for building machine learning models that we can expand on.</p>
 <p><br /><b></b></p>
 </div>
@@ -439,7 +439,7 @@ ggplot(plot_df) +
   geom_point(aes(x = x1, y = yhat_slope), color = &quot;orange&quot;) +
   scale_x_continuous(name = &quot;x&quot;) +
   scale_y_continuous(name = &quot;y&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p><br /><b></b></p>
 </div>
 <div id="split-linear-models" class="section level2">
@@ -496,7 +496,7 @@ ggplot(plot_df) +
   geom_point(aes(x = x2, y = yhat), color = &quot;blue&quot;) +
   scale_x_continuous(name = &quot;x&quot;) +
   scale_y_continuous(name = &quot;y&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>There’s a discontinuity where the two models meet at <span class="math inline">\(x = 2\)</span>, where the predictions for <code>x</code> values left of the split come from the left model, and the rest come from the right model.</p>
 <p>The next step is to find the <em>best</em> splitting threshold, where we’ll define “best” to mean “minimizes prediction error for the training data.” More explicitly, we say a split is good if the resulting split model produces <code>yhat</code> predictions that are similar overall to the actual <code>y</code> values.</p>
 <p>There are lots of potential ways to measure prediction error, including the sum of absolute error (abbreviated SAE, mathematically <span class="math inline">\(\sum_{i}|y_i - \hat{y}_i|\)</span>, or in code <code>sum(y - yhat)</code>), sum of squared error (SSE, <span class="math inline">\(\sum_{i}(y_i - \hat{y}_i)^2\)</span>, <code>sum((y - yhat) ^ 2)</code>), or even maximum absolute error (<span class="math inline">\(\max_i|y_i - \hat{y}_i|\)</span>, <code>max(abs(y - yhat))</code>). We’ll use the ever-popular SSE function, though there is some rather beautiful math relating both SAE and SSE to a common gradient-descent process (which is discussed in the <a href="https://explained.ai/gradient-boosting/index.html">article</a> mentioned above).</p>
@@ -549,7 +549,7 @@ ggplot(plot_df) +
   geom_point(aes(x = x2, y = yhat), color = &quot;blue&quot;) +
   scale_x_continuous(name = &quot;x&quot;) +
   scale_y_continuous(name = &quot;y&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>Looks like the best split, the one that minimizes the overall SSE error, is found at around <span class="math inline">\(x = 1.6\)</span>.</p>
 <p><br /><b></b></p>
 </div>
@@ -577,7 +577,7 @@ ggplot(train_data) +
   coord_equal() + 
   scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
   scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) </code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <pre class="r"><code>print(head(train_data))</code></pre>
 <pre><code>##           x1   x2         y
 ## 1 -1.0000000 -0.5 0.1298706
@@ -726,7 +726,7 @@ ggplot(all_data_toplot) +
   scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
   scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
   facet_grid(. ~ model_type)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>Both models have decided to split on the <code>x2</code> column, but while the no-slope-allowed model found the best split at approximately 0.8 (with predictions on each side being the mean of the <code>y</code> values in that region), the slope-allowed model found it’s best split around 0.5, with a decreasing linear model over <code>x1</code> to the right (of the split, so the top half of the plot), and a different decreasing linear model on <code>x1</code> to the left (bottom).</p>
 <p>The slope-allowed model produces slightly more accurate predictions overall, as illustrated here by plotting the <em>differences</em> between these predictions and the actual <code>y</code> values (using a different color-scale to emphasize that we’re looking at the difference).</p>
 <pre class="r"><code>ggplot(all_data_toplot) +
@@ -736,18 +736,18 @@ ggplot(all_data_toplot) +
   scale_fill_gradient2(low = &quot;darkred&quot;, high = &quot;darkblue&quot;) +
   scale_color_gradient2(low = &quot;darkred&quot;, high = &quot;darkblue&quot;) +
   facet_grid(. ~ model_type)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p>Nevertheless, the behavior of our model is better illustrated with <code>USE_SLOPE &lt;- FALSE</code>. Here’s a plot disallowing slopes, but with increasing depth values.</p>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p>Now this is interesting. The <code>depth = 0</code> model makes no splits, and so predicts just the average of all <code>y</code> values for any input <code>x1</code> and <code>x2</code>. For <code>depth = 1</code>, the first split is on <code>x2</code> at about 0.8 as above; this leaves a subset of data for the left model (bottom), and for the right model (top). At the next depth level (<code>depth = 2</code>), the left (bottom) model has decided to split its <code>x1</code> column at about 0.75, but the right (top) model splits at about 0.5. Each of these four subsets are independently split at the next allowed depth for the <code>depth = 3</code> panel, and so on. For each subset, the model chooses the best column to split on, and the best point to split, which naturally tends to divide the areas into regions of similarity (without splits) and rapid change (where splits are likely to occur). Here’s the difference plot for <code>depth = 5</code> with and without slope.</p>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <div id="discrete-columns" class="section level3">
 <h3>Discrete Columns?</h3>
 <p>Our <code>train_df</code> models capture the basic idea of regression trees: consider potential columns to split on, split the data into pieces based on some criteria, and train a model on each piece. When making predictions, we split the new data in a similar way before predicting (or, as we’ve done here, combine the predictions afterward).<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
 <p>Regression trees are a type of decision tree, where the identified thresholds and columns produce a branching decision-making process for each input example (hence the names “left”, “right”, and “depth”).</p>
 <!-- <center><img width="100%" src="https://i.imgur.com/tkreePz.png" /></center> -->
 <center>
-<img width="100%" src="/post/regression_trees_files/decision_trees.png" />
+<img width="100%" src="home/regression_trees_files/decision_trees.png" />
 </center>
 <p>So far our method works only with columns storing numeric values. What if some columns were discrete, with values such as <code>&quot;r&quot;</code>, <code>&quot;s&quot;</code>, and <code>&quot;l&quot;</code>? The same general strategy applies: we would consider splitting the data into two or more pieces based on this column, train a model on each piece, and utilize their predictions on <code>new_df_x</code> data.</p>
 <p>One way to perform such a split is to identify the most-homogeneous group and split that out. Future splits can then worry about the other piece.</p>
@@ -775,9 +775,9 @@ ggplot(all_data_toplot) +
   coord_equal() + 
   scale_fill_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;) +
   scale_color_gradient2(low = &quot;purple4&quot;, high = &quot;orange3&quot;)</code></pre>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <p>Now let’s see what happens if we train models of increasing depths as we did above on this noisier data.</p>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p>Ideally, our model would capture the underlying trend in the data, but not the specific set of noise on top. Based on the above plot, it seems the <code>depth = 8</code> model provides a good balance of representing the underlying trend accurately while not producing noisy predictions. The <code>depth = 2</code> model is under-trained, or “underfit” to the training data, while the <code>depth = 20</code> model is <em>overfit</em>. Overfitting is a major challenge in machine learning because most methods (like regression trees) are subject to overfitting, and avoiding it is tricky business.</p>
 <p>There are a few ways we could avoid overfitting with our trees. Many of these have to do with the “stopping criteria” for producing a split. Currently we stop splitting dataframes when either the number of training rows is small, or depth is 0 (<code>length(unique(x_i)) &lt; 2 | length(x_i) &lt; 6 | depth == 0</code> in <code>train_df_index</code>). If <code>depth</code> is large, then we are likely to continue to split the until we stop because there’s only a few datapoints to train on–as a result, the noise present in those datapoints affects the models significantly. Additional or alternative stopping criteria might be when the standard deviation of <code>y</code> is below some threshold, or the SSE for a basic linear model is below some threshold.</p>
 <p>Overfitting is often a model-size problem, where the “size” of something like our regression trees is how many nodes are in the decision tree (about <span class="math inline">\(2^{depth}\)</span> for our trees). If we wanted the code itself to determine what the correct depth is, we could incorporate model-size into the error calculation–perhaps we add to a model’s SSE an amount related to the number of splits it uses to make predictions. This idea–limiting the number of parameters or “size” of a model to avoid overfitting–is known as regularization.</p>
@@ -823,10 +823,10 @@ ggplot(all_data_toplot) +
   return(predictor)
 }</code></pre>
 <p>Let’s see how the predictions look for a few different values of <code>depth</code> and <code>num_bootstraps</code>.</p>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>This looks like an improvement: with larger numbers of bootstrapped models much of the noise of the predictions is washed out. The aggregated <code>depth = 5</code> (and even <code>depth = 2</code>) models also provide smoother gradations in their predictions.</p>
 <p>An interesting feature of bootstrap aggregating is that we can consider the diversity of the bootstrapped models’ predictions. Here’s the same figure, except instead of using <code>mean</code> to aggregate the predictions, we use <code>sd</code> to compute the standard deviation of predictions. With <code>num_bootstraps = 1</code> the standard deviation is undefined, but for larger numbers of bootstraps the standard deviation is larger where the model “regions” meet. These correspond to areas near split points, which can vary depending on the random subset of data chosen by the various bootstrap models.</p>
-<p><img src="/post/regression_trees_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="home/regression_trees_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <p><br /><b></b></p>
 </div>
 <div id="wrapup" class="section level2">
@@ -1115,7 +1115,7 @@ ggplot(all_data_toplot) +
                 <div class="item-thumbnail">
                     <a href="/home/regression-trees/" class="thumbnail">
                     
-                        <span style="background-image:url(/post/regression_trees_files/three_depths.png)" alt="Regression Trees &amp; Bagging (more functional R)" class="thumbnail-image"></span>
+                        <span style="background-image:url(/home/home/regression_trees_files/three_depths.png)" alt="Regression Trees &amp; Bagging (more functional R)" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1134,7 +1134,7 @@ ggplot(all_data_toplot) +
                 <div class="item-thumbnail">
                     <a href="/home/autodifferentation-and-functional-operators-in-r/" class="thumbnail">
                     
-                        <span style="background-image:url(/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="Regression Trees &amp; Bagging (more functional R)" class="thumbnail-image"></span>
+                        <span style="background-image:url(/home/home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png)" alt="Regression Trees &amp; Bagging (more functional R)" class="thumbnail-image"></span>
                     
                     </a>
                 </div>

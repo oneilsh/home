@@ -1,5 +1,5 @@
 ---
-banner: "/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png"
+banner: "home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png"
 title: Automatic Differentiation & Functional Operators in R
 author: Shawn T. O'Neil
 date: '2018-08-08'
@@ -13,7 +13,7 @@ tags:
 ---
 
 ```{r echo=FALSE, eval=FALSE}
-cp content/post/2018-07-25-autodifferntation-and-functional-operators-in-r.* ~/Documents/projects/hugo/quickstart/content/post/ && cp -r static/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/ ~/Documents/projects/hugo/quickstart/static/post/
+cp contenthome/2018-07-25-autodifferntation-and-functional-operators-in-r.* ~/Documents/projects/hugo/quickstart/content/post/ && cp -r static/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/ ~/Documents/projects/hugo/quickstart/static/post/
 ```
 
 

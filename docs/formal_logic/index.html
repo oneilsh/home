@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Formal Logic &middot; Shawn T. O&#39;Neil</title>
+    <meta name="generator" content="Hugo 0.84.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="/formal_logic/"/>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/current_highlight.css"> 
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Formal Logic" />
+<meta property="og:description" content="I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
+ Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/formal_logic/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2005-03-19T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2005-03-19T00:00:00&#43;00:00" />
+
+
+    
+    <meta itemprop="name" content="Formal Logic">
+<meta itemprop="description" content="I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
+ Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  "><meta itemprop="datePublished" content="2005-03-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2005-03-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="55">
+<meta itemprop="keywords" content="Philosophy,Writing,Class," />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Formal Logic"/>
+<meta name="twitter:description" content="I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
+ Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  "/>
+<meta name="twitter:site" content="@shawntoneil"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo">
+          
+          <i class="logo" style="background-image: url('/css/images/logo.png')"></i>
+          
+          <span class="site-title">Shawn T. O&#39;Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/aboutme/">Bio/About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/aboutme/">Bio/About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="/css/images/avatar.png">
+      
+      <h2 id="name">Shawn T. O&#39;Neil</h2>
+      <h3 id="title">Creations, excursions, pictures, words, and colors.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        0
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          19
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="//vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="/logic/logic_banner.png" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="/formal_logic/">
+    <h1 class="article-title" itemprop="name">
+        Formal Logic
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/philosophy">Philosophy</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/writing">Writing</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/class">Class</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>I also studied formal logic, under the direction of the amazing <a href="https://www.nmu.edu/mathandcomputerscience/emeritus-faculty">Don Faust</a>. I still recommend the book <a href="https://www.amazon.com/Mathematical-Logic-Dover-Books-Mathematics/dp/0486264041">What Is Mathematical Logic</a> for a good (but dense) overview of the topic. These are just some proofs I worked out.</p>
+<ul>
+<li><a href="/logic/lemstar2.pdf">Proof of deduction theorem</a></li>
+<li><a href="/logic/dedthm.pdf">Proof of a lemma used in proof of Completeness: Soundness implies Completeness</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="/formal_logic/" data-id="efc6642fb5e205c6d8f27cd444561d0c" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="/cs446/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">CS446, Computer Graphics</div>
+    </a>
+    
+
+    
+    <a href="/learning_ai/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CCSE60171 Artificial Intelligence, Learning to Play Games</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
+        
+        
+        <a href="/tags/art" style="font-size: 12px;">art</a>
+        
+        
+        <a href="/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="/tags/diy" style="font-size: 12px;">diy</a>
+        
+        
+        <a href="/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="/tags/hiking" style="font-size: 12px;">hiking</a>
+        
+        
+        <a href="/tags/infrastructure" style="font-size: 12px;">infrastructure</a>
+        
+        
+        <a href="/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="/tags/r" style="font-size: 12px;">r</a>
+        
+        
+        <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        ALL
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021
+      Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/r.min.js"></script>
+
+
+
+<script>
+hljs.initHighlightingOnLoad();
+hljs.configure({languages: []});
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+var sc_project=505825; 
+var sc_invisible=1; 
+var sc_security=""; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/505825/0//1/" alt="Web Analytics
+Made Easy - StatCounter"></a></div></noscript>
+
+
+
+
+</body>
+</html>

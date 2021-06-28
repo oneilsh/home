@@ -1,5 +1,5 @@
 ---
-banner: "/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png"
+banner: "home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-24-1.png"
 title: Automatic Differentiation & Functional Operators in R
 author: Shawn T. O'Neil
 date: '2018-08-08'
@@ -142,7 +142,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>So cool.</p>
 </div>
 <div id="addition-and-subtraction" class="section level4">
@@ -186,7 +186,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Let’s get <code>%-%</code> out of the way while we’re at it.</p>
 <pre class="r"><code>`%-%` &lt;- function(f, g) {
   func &lt;- function(x) {
@@ -220,7 +220,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>And <code>%/%</code>, based on <span class="math inline">\((f/g)&#39; = (f&#39; g - g&#39;f)/(g^2)\)</span>.</p>
 <pre class="r"><code>`%/%` &lt;- function(f, g) {
   func &lt;- function(x) {
@@ -254,7 +254,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>By the way, footnote readers know that we made a mistake in the definition of <code>mycos</code> earlier, in that <code>d(mycos)</code> should be <code>const(-1) %*% mysin</code> rather than just <code>mysin</code>. Now that we can work with constants like <code>-1</code> we can finally fix it:</p>
 <pre class="r"><code>attr(mycos, &quot;getderiv&quot;) &lt;- function() {return(const(-1) %*% mysin)}</code></pre>
 <p>We still can’t quite compute <span class="math inline">\(\frac{d}{dx}2x\)</span> because we don’t yet have a way to represent <span class="math inline">\(x\)</span>; all we have to work with are functions, and now constants (as functions). Much like our <code>const()</code> function though, we can treat <span class="math inline">\(x\)</span> like a function: one that just returns its input, with a derivative of <code>const(1)</code>.</p>
@@ -274,7 +274,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="composition" class="section level4">
 <h4>Composition</h4>
@@ -299,7 +299,7 @@ df_toplot &lt;- gather(df, ytype, value, -x)
 p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 <div id="power-rules" class="section level4">
 <h4>Power Rules</h4>
@@ -337,7 +337,7 @@ p &lt;- ggplot() +
   geom_line(data = df_toplot, aes(x = x, y = value, color = ytype)) 
 plot(p)</code></pre>
 <pre><code>## Warning: Removed 16 rows containing missing values (geom_path).</code></pre>
-<p><img src="/post/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="home/2018-07-25-autodifferntation-and-functional-operators-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>When <span class="math inline">\(f(x)\)</span> is negative the derivative isn’t defined according to the generalized power rule, because the logarithm isn’t defined for negative numbers. The general power rule would work, but can only accept a <code>const()</code> as the power.</p>
 <p>Speaking of logarithms and exponents, here’s <span class="math inline">\(e^x\)</span>, which is its own derivative:</p>
 <pre class="r"><code># this one is too dang easy ;)
