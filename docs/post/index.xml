@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Shawn T. O&#39;Neil</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TidyTensor - More Fun with Deep Learning</title>
+      <link>/tidytensor/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tidytensor/</guid>
+      <description>TidyTensor is an R package for inspecting and manipulating tensors (multidimensional arrays). i It provides an improved print() function for summarizing structure, named tensors, conversion to data frames, and high-level manipulation functions. Designed to complement the excellent keras package, functionality is layered on top of base R types.
+TidyTensor was inspired by a workshop I taught in deep learning with R, and a desire to explain and explore tensors in a more intuitive way.</description>
+    </item>
+    
+    <item>
+      <title>Colette Patricia O&#39;Neil</title>
+      <link>/colette-patricia-oneil/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/colette-patricia-oneil/</guid>
+      <description>Meet our daughter, Colette Patricia O&amp;rsquo;Neil, born March 5, 2019! test
+               </description>
+    </item>
+    
+    <item>
+      <title>Homelab</title>
+      <link>/homelab/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/homelab/</guid>
+      <description>Sometimes you just get tired of paying AWS &amp;amp; Digital Ocean. A quick sketch of my homelab, inspired by the good folks at r/homelab.
+The main goal of the project was to enable the quick creation of Virtual Machines (or containers), accessible by subdomain such as project1.mydomain.net, project2.mydomain.net, etc., all under a single dynamic IP address. I managed to make it work pretty well, with a little help from NGINX for reverse proxying, pfsense for local DNS and routing, ddclient for dynamic DNS, Proxmox for hypervisor management, and freeNAS for shared storage.</description>
+    </item>
+    
+    <item>
+      <title>Random Forests &amp; Gradient Boosting</title>
+      <link>/regression-trees-pt2/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/regression-trees-pt2/</guid>
+      <description>In an earlier post we considered machine learning “models” as functions producting predictions from data, and training models to be the production of these functions with higher-order functions. From there we built regression trees–models created recursively by determining 1) a splitting column (column 1 or 2 in this case), and 2) a good value in that column to split the dataset on. At each split, we find a column and value that produces two relatively homogenous sets of y values (in the sense that the values in each y subset can be well-predicted from the column values).</description>
+    </item>
+    
+    <item>
+      <title>Regression Trees &amp; Bagging (more functional R)</title>
+      <link>/regression-trees/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/regression-trees/</guid>
+      <description>I recently ran across this excellent article explaining gradient boosting in the context of regression trees. The article concludes by describing how the technique implements a gradient-descent process, but what I find most fascinating is the concept of “functional modeling”–building machine learning models from other models as building blocks.
+This post explores that idea by implementing regression trees in base R (with a little visualization help from ggplot2, dplyr, and tidyr) with functional programming concepts, including a technique called bootstrap aggregating.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Differentiation &amp; Functional Operators in R</title>
+      <link>/autodifferentation-and-functional-operators-in-r/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/autodifferentation-and-functional-operators-in-r/</guid>
+      <description>I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
+First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.</description>
+    </item>
+    
+    <item>
+      <title>Bio</title>
+      <link>/bio/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/bio/</guid>
+      <description>Work My CV.
+I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
+Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray &amp;amp; white).</description>
+    </item>
+    
+    <item>
+      <title>Bio/Recursion: CS and Bioinformatics in R</title>
+      <link>/bio/recursion-cs-and-bioinformatics-in-r/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/bio/recursion-cs-and-bioinformatics-in-r/</guid>
+      <description>This book is based on a workshop I taught a few times at OSU, meant to introduce computer science theory to biologists.
+Digital version available online at Leanpub.
+Also available in print at Amazon.
+It introduces topics in programming, computer science, and bioinformatics via examples in the R programming language. While often associated with statistics, Bio/Recursion employs R’s algorithmic capabilities to implement and visualize several fascinating methods, ranging from DNA alignment to drawing fractal trees.</description>
+    </item>
+    
+    <item>
+      <title>A Primer for Computational Biology</title>
+      <link>/a-primer-for-computational-biology/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/a-primer-for-computational-biology/</guid>
+      <description>Read Online at Open Oregon State (Open-Access &amp;amp; Free!)
+Or order a copy from Amazon or OSU Press. (Scribble in the margins!)
+This Open-Access textbook was a collaboration with Open Oregon State and OSU Press. It aims to provide life scientists and students the skills necessary for research in a data-rich world. The text covers accessing and using remote servers via the command-line, writing programs and pipelines for data analysis, and provides useful vocabulary for interdisciplinary work.</description>
+    </item>
+    
+    <item>
+      <title>3D Printing &amp; Modeling, Online Tools</title>
+      <link>/3d-printing-modeling-online-tools/</link>
+      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/3d-printing-modeling-online-tools/</guid>
+      <description>I’ve been teaching an evening class at the Oregon State University Craft Center in “3D modeling and printing.” I don’t know a ton about this topic, to be honest. But I know a little more than I did a year ago, and it was hard-earned knowledge. Why not share it?
+At OSU it seems like I can’t walk out the door without bumping into a 3d printer (and students and faculty get access to them), but I found very little in-person information about how to do basic 3d design.</description>
+    </item>
+    
+    <item>
+      <title>Rstackdeque</title>
+      <link>/rstackdeque/</link>
+      <pubDate>Sun, 12 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/rstackdeque/</guid>
+      <description>I&amp;rsquo;m (usually) a fan of the R programming language, though in a few ways it lacks features computer scientists expect. For example, R lacks many data structures provided by high-level languages, such as trees, queues, and stacks. This is somewhat complicated by R&amp;rsquo;s functional nature&amp;ndash;R programmers expect data structures to be &amp;ldquo;persistent,&amp;rdquo; such that previous versions of the structure are available even after insertions or deletions. Fortunately, data structures in purely-functional languages (generally not R) is a topic of past and ongoing research, spurred initially by Chris Okasaki&amp;rsquo;s excellent Purely Functional Data Structures.</description>
+    </item>
+    
+    <item>
+      <title>Stained Glass</title>
+      <link>/stained-glass/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/stained-glass/</guid>
+      <description>These were made between 2012 and 2015, some at a studio in Marquette, MI, and some at the Notre Dame Glass Club.
+                 </description>
+    </item>
+    
+    <item>
+      <title>Functional Parameterized L-System</title>
+      <link>/functional-parameterized-l-system/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/functional-parameterized-l-system/</guid>
+      <description>There&amp;rsquo;s a pretty cool app called Codea, which is a programming IDE similar processing.org, but in Lua, on the iPad.
+Lua supports first-class functions, so I played around with designing a parameterized L-System which builds sentences as lists of closures.
+  </description>
+    </item>
+    
+    <item>
+      <title>Hiking South Sister Photos</title>
+      <link>/hiking-south-sister-photos/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hiking-south-sister-photos/</guid>
+      <description>I don&amp;rsquo;t know what made me think it would be a good idea to lug my heavy camera up to the top of South Sister to see the sunrise, but the photos at least turned out ok. Many thanks to Nathan Brown for organizing the trip.
+                                 </description>
+    </item>
+    
+    <item>
+      <title>Climate Change Adaptation</title>
+      <link>/climate-change-adaptation/</link>
+      <pubDate>Sun, 27 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/climate-change-adaptation/</guid>
+      <description>Climate change is likely to have profound impacts on ecological systems, but in some important cases we&amp;rsquo;re still a long way from understanding exactly what those impacts might be. For instance, it has been posited that under warming, species in the northern hemisphere will be enhanced at their northern range edge (where presumably species are fitness-limited, and hence range-limited, by the cooler temperatures). Rather, recent research indicates that individual populations of some species may be locally adapted to their climatic environment, such that even these peripheral populations may decline with warming as they have developed an equilibrium with their environment.</description>
+    </item>
+    
+    <item>
+      <title>Steve Harvey Appearance</title>
+      <link>/steve-harvey-appearance/</link>
+      <pubDate>Sat, 05 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/steve-harvey-appearance/</guid>
+      <description>So, I was on TV once. My wife had contacted the Steve Harvey show suggesting I could use a wardrobe makeover. It was quite a surprise to me&amp;ndash;we flew to Chicago for filming just a few days after I learned anything about it!
+It was a ton of fun, and the Steve Harvey crew and show was a great experience. (And I got some nice clothes out of it.)
+  </description>
+    </item>
+    
+    <item>
+      <title>Marble Making Timelapse</title>
+      <link>/marble-making-timelapse/</link>
+      <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/marble-making-timelapse/</guid>
+      <description>A timelapse video of me making a marble at the Oregon State University Craft Center. Fun fact: the title logo in the video is the result of a custom processing.org program.
+  </description>
+    </item>
+    
+    <item>
+      <title>Topology aware file distribution</title>
+      <link>/topology-aware-file-distribution/</link>
+      <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/topology-aware-file-distribution/</guid>
+      <description>Distributing large data files to all the nodes on a computing network is an important problem in large-scale scientific computing. We developed a more accurate mathematical model for this problem, and although we&amp;rsquo;ve shown minimum-time distribution to be NP-Hard (construction above), we&amp;rsquo;ve also developed a logarithmic approximation solution.
+This paper was initially presented at COCOON 2011, and later invited for submission to the Journal of Combinatorial Optimization. Thanks Michael Kowalczyk, NMU alum and current Prof, for the pic of me presenting!</description>
+    </item>
+    
+    <item>
+      <title>Music Wheel</title>
+      <link>/music-wheel/</link>
+      <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/music-wheel/</guid>
+      <description>&lt;p&gt;Back in my day, the word &amp;ldquo;theory&amp;rdquo; meant something. So, in all my attempts to learn music theory, I was stymied by suggestions of memorizing seemingly unrelated collections of patterns, facts, and rediculous nomenclature. With dedication, books, wiki pages, and a good instructor (Ed Dee of Corvallis), though, I was able to make some progress. To help, I wrote a little program for exploring scales, notes, chords, and temperament.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Timelapse Thing</title>
+      <link>/timelapse-thing/</link>
+      <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/timelapse-thing/</guid>
+      <description>&lt;p&gt;TimelapseThing is a Python script that includes a number of tools for working with timelapse image series (in JPG format). It can be used to deflicker images (if some images in the series are mildy under- or over-exposed), merge a series of JPGs into a video, batch crop and resize, expand a series into a longer series, and lighten/darken/median merge using a sliding window approach (see below) for artistic effect and artifact removal (such as someone walking across your timelapse and getting caught in a frame). The heavy lifting is done using ImageMagick&amp;rsquo;s convert tool, and ffmpeg for video creation, so these tools are required.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Glass Beads</title>
+      <link>/glass-beads/</link>
+      <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/glass-beads/</guid>
+      <description>Work in borosilicate glass, mostly done between 2011 and 2013 at the University of Notre Dame Glass Club.
+                   </description>
+    </item>
+    
+    <item>
+      <title>Transcriptomics</title>
+      <link>/transcriptomics/</link>
+      <pubDate>Mon, 04 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/transcriptomics/</guid>
+      <description>Assessing the quality and completeness of transcriptome assemblies is a challenge. For this problem, we developed a measure of gene assembly known as the &amp;ldquo;ortholog hit ratio.&amp;rdquo; First we associate each assembled gene with its closest match in a related organism. Then we compare the length of the matching region to the total length of the related gene. (Comparing the length of only the matching region ignores untranslated regions on the ends that are not considered part of the gene.</description>
+    </item>
+    
+    <item>
+      <title>A Statistical Analysis of Nerf Blasters and Darts</title>
+      <link>/a-statistical-analysis-of-nerf-blasters-and-darts/</link>
+      <pubDate>Mon, 06 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/a-statistical-analysis-of-nerf-blasters-and-darts/</guid>
+      <description>&lt;p&gt;By Shawn O&amp;rsquo;Neil and Katie Drueen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Algorithmic Haplotyping</title>
+      <link>/algorithmic-haplotyping/</link>
+      <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/algorithmic-haplotyping/</guid>
+      <description>When working with sequencing datasets of ecological interest, an interesting problem is how to tease out the genetic diversity present in the population being sequenced. Usually, assembly software simply aligns the short read sequences, and determines the consensus sequence based on the majority vote of each position. However, we may wish to seperately assemble each haplotype (version) of each gene.
+We formulate this as a graph problem, where short reads that overlap are considered nodes in a graph that share an edge if they should go in different haplotypes.</description>
+    </item>
+    
+    <item>
+      <title>Neil and Anne-Marie Wedding Photos</title>
+      <link>/neil-and-anne-marie-wedding-photos/</link>
+      <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/neil-and-anne-marie-wedding-photos/</guid>
+      <description>Some extended family got married in Jamaica, I did some photography for them.
+                   </description>
+    </item>
+    
+    <item>
+      <title>Misc. Small Java</title>
+      <link>/misc.-small-java/</link>
+      <pubDate>Tue, 21 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/misc.-small-java/</guid>
+      <description>&lt;p&gt;A few fun things I don&amp;rsquo;t want to lose.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSE60416 System Interface Design, Microsoft Surface</title>
+      <link>/cse60416-system-interface-design-microsoft-surface/</link>
+      <pubDate>Thu, 17 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/cse60416-system-interface-design-microsoft-surface/</guid>
+      <description>I did this project with Mike Olson, a Notre Dame graduate student. (He&amp;rsquo;s narrating the video.)
+We studied the proper design of user interfaces in this class. Although we mostly focused on graphical interfaces, we also learned how to interface with motion-based systems such as the Nintendo Wii remote and Balance Board.
+For our final project, we wanted to design an interactive browser for the Microsoft Surface, a multitouch based coffeetable like device.</description>
+    </item>
+    
+    <item>
+      <title>CSE60317 Online Algorithms For Computational Finance</title>
+      <link>/cse60317-online-algorithms-for-computational-finance/</link>
+      <pubDate>Sun, 16 Nov 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/cse60317-online-algorithms-for-computational-finance/</guid>
+      <description>This class was very interesting; we studied some of the basics of online algorithms as well as some applications to computational finance. Perhaps the most intriguing parts (for someone already familiar with online algorithms) were what we learned about classic computational finance, such as Black-Scholes-Merton.
+This &amp;ldquo;project&amp;rdquo; is a review of the main result of an interesting paper, entitled &amp;ldquo;Making Decisions in the Face of Uncertainty: How to Pick a Winner Almost Every Time,&amp;rdquo; by Awerbuch et al.</description>
+    </item>
+    
+    <item>
+      <title>CSE60647 Data Mining, Predicting on Slashdot</title>
+      <link>/cse60647-data-mining-predicting-on-slashdot/</link>
+      <pubDate>Sat, 05 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/cse60647-data-mining-predicting-on-slashdot/</guid>
+      <description>Much of the research I performed during my Master&amp;rsquo;s was on the newsvendor problem, which deals with attempting to guess the demand for short-lived products so as to maximize profits. Unfortunately, data about newspaper sales is tough to come by. So, why not use an online equivalent? This project aims at predicting the number of comments a Slashdot story will generate given text which appears in the summary.
+However, since we are interested in looking at the number of comments as a demand for a product to be sold, we don&amp;rsquo;t stop there.</description>
+    </item>
+    
+    <item>
+      <title>Online Learning and the Newsvendor Problem</title>
+      <link>/online-learning-and-the-newsvendor-problem/</link>
+      <pubDate>Sat, 19 Jan 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/online-learning-and-the-newsvendor-problem/</guid>
+      <description>Machine learning methods and inventory management were a focus in my Master&amp;rsquo;s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
+Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases.</description>
+    </item>
+    
+    <item>
+      <title>CSE60622 Cryptography. BobCash</title>
+      <link>/cse60622-cryptography.-bobcash/</link>
+      <pubDate>Sat, 20 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/cse60622-cryptography.-bobcash/</guid>
+      <description>This was a project I did for Cryptography, which implemented a digital cash scheme as a web service. The idea behind digital cash is that, well, it&amp;rsquo;s digital cash. Which means, it&amp;rsquo;s a digital object which has value and can be traded/spent, but is also anonymous. This is accomplished via digital signatures. Alice, who has money in the bank, sends the bank an string of random letters and an amount to withdraw.</description>
+    </item>
+    
+    <item>
+      <title>CCSE60171 Artificial Intelligence, Learning to Play Games</title>
+      <link>/ccse60171-artificial-intelligence-learning-to-play-games/</link>
+      <pubDate>Fri, 06 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/ccse60171-artificial-intelligence-learning-to-play-games/</guid>
+      <description>I did this project with Allison Regier. It&amp;rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
+We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function.</description>
+    </item>
+    
+    <item>
+      <title>Formal Logic</title>
+      <link>/formal-logic/</link>
+      <pubDate>Sat, 19 Mar 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/formal-logic/</guid>
+      <description>I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
+ Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  </description>
+    </item>
+    
+    <item>
+      <title>CS446, Computer Graphics</title>
+      <link>/cs446-computer-graphics/</link>
+      <pubDate>Fri, 18 Mar 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/cs446-computer-graphics/</guid>
+      <description>&lt;p&gt;Some code from a very cool computer graphics class, mostly in Java.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CS422, Algorithms</title>
+      <link>/cs422-algorithms/</link>
+      <pubDate>Tue, 23 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/cs422-algorithms/</guid>
+      <description>&lt;p&gt;Just a few things from my undergrad algs class.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CS322, Principles of Programming Languages</title>
+      <link>/cs322-principles-of-programming-languages/</link>
+      <pubDate>Thu, 23 Sep 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/cs322-principles-of-programming-languages/</guid>
+      <description>&lt;p&gt;I really enjoyed the survey of programming topics and paradigms this class offered.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Epistemology</title>
+      <link>/epistemology/</link>
+      <pubDate>Fri, 20 Aug 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/epistemology/</guid>
+      <description>I took a Theory of Knowledge class as an undergraduate, and thoroughly enjoyed it. To this day I&amp;rsquo;m surprised how much epistemology is to be found at the intersection of science and engineering.
+ Three Principles of Cartesian Epistemology Gettier&amp;rsquo;s Second Counterexample The Nature of Sense Data Unger&amp;rsquo;s Defense of Scepticism Goldman&amp;rsquo;s Causal Chains Dretske&amp;rsquo;s Epistemic Operators Quine&amp;rsquo;s Naturalization and Kim&amp;rsquo;s Response  </description>
+    </item>
+    
+    <item>
+      <title>CS228, Network Programming</title>
+      <link>/cs228-network-programming/</link>
+      <pubDate>Sun, 05 Oct 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/cs228-network-programming/</guid>
+      <description>&lt;p&gt;Once upon a time, I knew how to use Unix sockets.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gainclone Amplifier</title>
+      <link>/gainclone-amplifier/</link>
+      <pubDate>Wed, 18 Jun 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/gainclone-amplifier/</guid>
+      <description>This one was a long time in the making. The case is cherry, the face plate and knobs are copper. The left knob is input select, center volume, and the right knob is a rotary dimmer switch for the (incandescent) backlight on the volume knob. Sounds absolutely beautiful, looks just as good, with more coats of polyurethane than I kept track of! Thanks to all of the people at diyaudio.com, especially BrianGT, who made the PCB boards I used, and to my then landlord Steve who let me use his shop.</description>
+    </item>
+    
+    <item>
+      <title>CS222, Data Structures</title>
+      <link>/cs222-data-structures/</link>
+      <pubDate>Sat, 17 May 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/cs222-data-structures/</guid>
+      <description>&lt;p&gt;Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cellular Automata</title>
+      <link>/cellular-automata/</link>
+      <pubDate>Mon, 14 Apr 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/cellular-automata/</guid>
+      <description>&lt;p&gt;In my earlier programming career, I was very interested in cellular automata and Braitenberg vehicles. I wrote a couple of object-oriented Java packages to explore their behavior. These are Java applets, one should be able to run them with &lt;code&gt;appletviewer PanelApplet.html&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Headphone Amp</title>
+      <link>/headphone-amp/</link>
+      <pubDate>Tue, 07 Jan 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/headphone-amp/</guid>
+      <description>The second iteration of the headphone amp was the same internal design, packed into a slightly smaller, sleeker container. This one has a much more solid feel to it. It&amp;rsquo;s based on Chu Moy&amp;rsquo;s design; I checked the first iteration using a scope and it checks out nice, no clipping and the input/output resistances are good (100k in, theoretical 0 out.)
+       </description>
+    </item>
+    
+    <item>
+      <title>CS122</title>
+      <link>/cs122/</link>
+      <pubDate>Thu, 24 Oct 2002 00:00:00 +0000</pubDate>
+      
+      <guid>/cs122/</guid>
+      <description>&lt;p&gt;A few old code files from my undergraduate CS122 class; these are all written as Java applets (as was the fashion at the time), so I&amp;rsquo;m just making the code available. They do still run though (thanks Java!)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
