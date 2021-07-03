@@ -1,39 +1,33 @@
-baseurl = "/"
+baseurl = "https://example.org/"
 languageCode = "en-us"
-title = "Shawn T. O'Neil"
+title = "Icarus"
 # Enable comments by entering your Disqus shortname
-# disqusShortname = "spf13"
+disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 # Define the number of posts per page
-paginate = 8
+paginate = 10
 footnotereturnlinkcontents = "↩"
 theme = "hugo-icarus"
 # Comment the themesDir option if you use this theme in production
-#themesDir = "../.."
-PygmentsCodeFences = true
-pygmentsUseClassic=true
+themesDir = "../.."
 
-publishDir = "docs"
-
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-    #post = "/:year-:month-:day-:slug"
-    post = "/:slug"
+    post = "/:year/:month/:day/:slug"
 
 
 [params]
     # Tell me who you are
-    author = "Shawn T. O'Neil"
-    bio = "Creations, excursions, pictures, words, and colors."
-    location = "Corvallis, OR"
+    author = "John Doe"
+    bio = "Blogger - Programmer - Gopher"
+    location = "Earth"
     site_description = ""
-    copyright  = "Copyright Shawn T. O'Neil 2018. Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
+    copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](https://github.com/ppoffice)."
     avatar = "css/images/avatar.png"
     # Enter your email address to display your Gravatar icon in the profile. If not set the theme
     # will fallback to the avatar.
-    #gravatar = "you@example.com"
+    gravatar = "you@example.com"
     logo = "css/images/logo.png"
     disable_mathjax = false # set to true to disable MathJax
 
@@ -41,12 +35,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     mainSections = ["post"]
 
     # Format dates with Go's time formatting
-    date_format = "January, 2006"
+    date_format = "2006-01-02"
 
     # Add custom assets with their paths relative to the static folder
 	custom_css = []
 	custom_js  = []
-
 
 # Create custom menu entries by defining a label and a link for
 # them. Since you can also link posts, you've the option the
@@ -64,21 +57,21 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     label  = "Tags"
     link   = "tags/"
 
-#[[params.menu]]
-#    before = false
-#    label  = "Categories"
-#    link   = "categories/"
+[[params.menu]]
+    before = false
+    label  = "Categories"
+    link   = "categories/"
 
 # Enter a link for the follow button on the left
-#[params.profile]
-#    follow_button = "https://github.com/oneilsh"
+[params.profile]
+    follow_button = "https://github.com/gohugoio"
 
 
 [social]
 # Add your social network accounts to the profile section on the left
 # by entering your username. The links to your account will be
 # created automatically.
-    github          = "oneilsh"
+    github          = "gohugoio"
     gitlab          = ""
     bitbucket       = ""
     jsfiddle        = ""
@@ -87,29 +80,29 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     dribbble        = ""
     deviantart      = ""
     behance         = ""
-    flickr          = "oneilsh"
+    flickr          = ""
     instagram       = ""
     youtube         = ""
-    vimeo           = "user18695315"
+    vimeo           = ""
     vine            = ""
     medium          = ""
     wordpress       = ""
     tumblr          = ""
     xing            = ""
-    linkedin        = "shawn-o-neil-b85244a8"
+    linkedin        = ""
     slideshare      = ""
     stackoverflow   = ""
     reddit          = ""
     pinterest       = ""
     googleplus      = ""
-    facebook        = "oneilsh"
+    facebook        = ""
     facebook_admin  = ""
     twitter_domain  = ""
-    twitter         = "shawntoneil"
+    twitter         = "gohugoio"
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
-    tag_cloud = true
     recent_articles = true
-    #categories = true
-    #tags = true
+    categories = true
+    tags = true
+    tag_cloud = true
