@@ -11,7 +11,7 @@
     <div style="padding: 0 .2em">
       <img
         class="pure-img-responsive"
-        src="{{ $.Site.BaseURL }}/{{ index $items 1 }}"
+        src="{{ index $items 1 }}"
         alt="{{ if ge $itemCount 3 }}{{ index $items 2 }}{{ else }}{{ "" }}{{ end }}">
     </div>
   </div>
