@@ -23,7 +23,7 @@
     <loc>/tags/art/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/colette-patricia-oneil/</loc>
+    <loc>/colette_four_months/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/photography/</loc>
@@ -38,7 +38,7 @@
     <loc>/tags/infrastructure/</loc>
     <lastmod>2019-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/regression-trees-pt2/</loc>
+    <loc>/regression_trees_pt2/</loc>
     <lastmod>2019-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/theory/</loc>
@@ -47,10 +47,10 @@
     <loc>/tags/machine-learning/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/regression-trees/</loc>
+    <loc>/regression_trees/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/autodifferentation-and-functional-operators-in-r/</loc>
+    <loc>/2018-07-25-autodifferntation-and-functional-operators-in-r/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/deep-learning/</loc>
@@ -59,19 +59,19 @@
     <loc>/tags/adventures/</loc>
     <lastmod>2018-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/bio/</loc>
+    <loc>/aboutme/</loc>
     <lastmod>2018-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/bio/recursion-cs-and-bioinformatics-in-r/</loc>
+    <loc>/biorecursion/</loc>
     <lastmod>2018-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/writing/</loc>
     <lastmod>2018-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/a-primer-for-computational-biology/</loc>
+    <loc>/apcb/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/3d-printing-modeling-online-tools/</loc>
+    <loc>/3d_printing_notes/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/research/</loc>
@@ -86,37 +86,37 @@
     <loc>/stained-glass/</loc>
     <lastmod>2015-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/functional-parameterized-l-system/</loc>
+    <loc>/functional-lsys/</loc>
     <lastmod>2014-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/hiking-south-sister-photos/</loc>
+    <loc>/hiking-south-sister/</loc>
     <lastmod>2014-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/climate-change-adaptation/</loc>
+    <loc>/research-butterflies/</loc>
     <lastmod>2014-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/steve-harvey-appearance/</loc>
+    <loc>/steve-harvey/</loc>
     <lastmod>2014-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/marble-making-timelapse/</loc>
+    <loc>/marble-making/</loc>
     <lastmod>2014-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/topology-aware-file-distribution/</loc>
+    <loc>/research-filedist/</loc>
     <lastmod>2013-11-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/music-wheel/</loc>
+    <loc>/musicwheel/</loc>
     <lastmod>2013-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/timelapse-thing/</loc>
+    <loc>/timelapsething/</loc>
     <lastmod>2013-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/glass-beads/</loc>
     <lastmod>2013-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/transcriptomics/</loc>
+    <loc>/research-transcriptomics/</loc>
     <lastmod>2013-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/a-statistical-analysis-of-nerf-blasters-and-darts/</loc>
+    <loc>/nerf/</loc>
     <lastmod>2012-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/data/</loc>
@@ -125,70 +125,70 @@
     <loc>/tags/nerf/</loc>
     <lastmod>2012-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/algorithmic-haplotyping/</loc>
+    <loc>/research-haplotyping/</loc>
     <lastmod>2012-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/neil-and-anne-marie-wedding-photos/</loc>
+    <loc>/neil-anne-marie-wedding/</loc>
     <lastmod>2010-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/misc.-small-java/</loc>
+    <loc>/miscjava/</loc>
     <lastmod>2010-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/class/</loc>
     <lastmod>2009-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cse60416-system-interface-design-microsoft-surface/</loc>
+    <loc>/microsoft-surface/</loc>
     <lastmod>2009-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cse60317-online-algorithms-for-computational-finance/</loc>
+    <loc>/online_finance/</loc>
     <lastmod>2008-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cse60647-data-mining-predicting-on-slashdot/</loc>
+    <loc>/slashdot_predicting/</loc>
     <lastmod>2008-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/online-learning-and-the-newsvendor-problem/</loc>
+    <loc>/research_alenex/</loc>
     <lastmod>2008-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cse60622-cryptography.-bobcash/</loc>
+    <loc>/bobcash/</loc>
     <lastmod>2007-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/ccse60171-artificial-intelligence-learning-to-play-games/</loc>
+    <loc>/learning_ai/</loc>
     <lastmod>2006-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/formal-logic/</loc>
+    <loc>/formal_logic/</loc>
     <lastmod>2005-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/philosophy/</loc>
     <lastmod>2005-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cs446-computer-graphics/</loc>
+    <loc>/cs446/</loc>
     <lastmod>2005-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cs422-algorithms/</loc>
+    <loc>/undegrad_algorithms/</loc>
     <lastmod>2004-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cs322-principles-of-programming-languages/</loc>
+    <loc>/cs322/</loc>
     <lastmod>2004-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/epistemology/</loc>
     <lastmod>2004-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cs228-network-programming/</loc>
+    <loc>/cs228/</loc>
     <lastmod>2003-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/audio/</loc>
     <lastmod>2003-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/gainclone-amplifier/</loc>
+    <loc>/gainclone/</loc>
     <lastmod>2003-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cs222-data-structures/</loc>
+    <loc>/cs222/</loc>
     <lastmod>2003-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cellular-automata/</loc>
+    <loc>/cellular_automata/</loc>
     <lastmod>2003-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/headphone-amp/</loc>
+    <loc>/headamp2/</loc>
     <lastmod>2003-01-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/cs122/</loc>

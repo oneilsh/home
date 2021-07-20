@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatic Differentiation &amp; Functional Operators in R</title>
-      <link>/autodifferentation-and-functional-operators-in-r/</link>
+      <link>/2018-07-25-autodifferntation-and-functional-operators-in-r/</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/autodifferentation-and-functional-operators-in-r/</guid>
+      <guid>/2018-07-25-autodifferntation-and-functional-operators-in-r/</guid>
       <description>I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
 First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.</description>
     </item>

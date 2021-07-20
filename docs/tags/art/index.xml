@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 29 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/art/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Colette Patricia O&#39;Neil</title>
-      <link>/colette-patricia-oneil/</link>
+      <link>/colette_four_months/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/colette-patricia-oneil/</guid>
+      <guid>/colette_four_months/</guid>
       <description>Meet our daughter, Colette Patricia O&amp;rsquo;Neil, born March 5, 2019! test
                </description>
     </item>
@@ -29,10 +29,10 @@
     
     <item>
       <title>Functional Parameterized L-System</title>
-      <link>/functional-parameterized-l-system/</link>
+      <link>/functional-lsys/</link>
       <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>/functional-parameterized-l-system/</guid>
+      <guid>/functional-lsys/</guid>
       <description>There&amp;rsquo;s a pretty cool app called Codea, which is a programming IDE similar processing.org, but in Lua, on the iPad.
 Lua supports first-class functions, so I played around with designing a parameterized L-System which builds sentences as lists of closures.
   </description>
@@ -40,39 +40,39 @@ Lua supports first-class functions, so I played around with designing a paramete
     
     <item>
       <title>Hiking South Sister Photos</title>
-      <link>/hiking-south-sister-photos/</link>
+      <link>/hiking-south-sister/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hiking-south-sister-photos/</guid>
+      <guid>/hiking-south-sister/</guid>
       <description>I don&amp;rsquo;t know what made me think it would be a good idea to lug my heavy camera up to the top of South Sister to see the sunrise, but the photos at least turned out ok. Many thanks to Nathan Brown for organizing the trip.
                                  </description>
     </item>
     
     <item>
       <title>Marble Making Timelapse</title>
-      <link>/marble-making-timelapse/</link>
+      <link>/marble-making/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/marble-making-timelapse/</guid>
+      <guid>/marble-making/</guid>
       <description>A timelapse video of me making a marble at the Oregon State University Craft Center. Fun fact: the title logo in the video is the result of a custom processing.org program.
   </description>
     </item>
     
     <item>
       <title>Music Wheel</title>
-      <link>/music-wheel/</link>
+      <link>/musicwheel/</link>
       <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>/music-wheel/</guid>
+      <guid>/musicwheel/</guid>
       <description>&lt;p&gt;Back in my day, the word &amp;ldquo;theory&amp;rdquo; meant something. So, in all my attempts to learn music theory, I was stymied by suggestions of memorizing seemingly unrelated collections of patterns, facts, and rediculous nomenclature. With dedication, books, wiki pages, and a good instructor (Ed Dee of Corvallis), though, I was able to make some progress. To help, I wrote a little program for exploring scales, notes, chords, and temperament.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Timelapse Thing</title>
-      <link>/timelapse-thing/</link>
+      <link>/timelapsething/</link>
       <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/timelapse-thing/</guid>
+      <guid>/timelapsething/</guid>
       <description>&lt;p&gt;TimelapseThing is a Python script that includes a number of tools for working with timelapse image series (in JPG format). It can be used to deflicker images (if some images in the series are mildy under- or over-exposed), merge a series of JPGs into a video, batch crop and resize, expand a series into a longer series, and lighten/darken/median merge using a sliding window approach (see below) for artistic effect and artifact removal (such as someone walking across your timelapse and getting caught in a frame). The heavy lifting is done using ImageMagick&amp;rsquo;s convert tool, and ffmpeg for video creation, so these tools are required.&lt;/p&gt;</description>
     </item>
     
@@ -88,10 +88,10 @@ Lua supports first-class functions, so I played around with designing a paramete
     
     <item>
       <title>Neil and Anne-Marie Wedding Photos</title>
-      <link>/neil-and-anne-marie-wedding-photos/</link>
+      <link>/neil-anne-marie-wedding/</link>
       <pubDate>Tue, 21 Dec 2010 00:00:00 +0000</pubDate>
       
-      <guid>/neil-and-anne-marie-wedding-photos/</guid>
+      <guid>/neil-anne-marie-wedding/</guid>
       <description>Some extended family got married in Jamaica, I did some photography for them.
                    </description>
     </item>

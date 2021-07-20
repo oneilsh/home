@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CCSE60171 Artificial Intelligence, Learning to Play Games &middot; Shawn T. O&#39;Neil</title>
+    <meta name="generator" content="Hugo 0.84.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Shawn T. O&#39;Neil">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="/learning_ai/"/>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/monokai.css">
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CCSE60171 Artificial Intelligence, Learning to Play Games" />
+<meta property="og:description" content="I did this project with Allison Regier. It&rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
+We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/learning_ai/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2006-10-06T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2006-10-06T00:00:00&#43;00:00" />
+
+
+    
+    <meta itemprop="name" content="CCSE60171 Artificial Intelligence, Learning to Play Games">
+<meta itemprop="description" content="I did this project with Allison Regier. It&rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
+We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function."><meta itemprop="datePublished" content="2006-10-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2006-10-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="141">
+<meta itemprop="keywords" content="Class,Data,Programming," />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CCSE60171 Artificial Intelligence, Learning to Play Games"/>
+<meta name="twitter:description" content="I did this project with Allison Regier. It&rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
+We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function."/>
+<meta name="twitter:site" content="@shawntoneil"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo">
+          
+          <i class="logo" style="background-image: url('/css/images/logo.png')"></i>
+          
+          <span class="site-title">Shawn T. O&#39;Neil</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/aboutme/">Bio</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="/tags/">Tags</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="/">Home</a></td>
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/aboutme/">Bio</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="/tags/">Tags</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="/css/images/avatar.png">
+      
+      <h2 id="name">Shawn T. O&#39;Neil</h2>
+      <h3 id="title">Creations, excursions, pictures, words, and colors.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Corvallis, OR</span>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        43
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          18
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/oneilsh" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//flickr.com/photos/oneilsh" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a></td>
+
+
+
+
+
+
+
+<td><a href="//vimeo.com/user18695315" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//linkedin.com/in/shawn-o-neil-b85244a8" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/oneilsh" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="//twitter.com/shawntoneil" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="learning_ai/banner.jpg" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="/learning_ai/">
+    <h1 class="article-title" itemprop="name">
+        CCSE60171 Artificial Intelligence, Learning to Play Games
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/class">Class</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/data">Data</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/programming">Programming</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>I did this project with Allison Regier. It&rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.</p>
+<p>We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function. After a game is finished, if the learner lost, it works backwards through the board states visited reducing the preferences by decreasing amounts. Boards are recorded in terms of &ldquo;features,&rdquo; so the learner is generalizable over different board games. As you can see from the presentation, we met with some success.</p>
+<p>Files: <a href="/learning_ai/proposal.pdf">Proposal</a> (pdf) <a href="/learning_ai/pres.pdf">Presentation</a> (pdf).</p>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="/learning_ai/" data-id="e7de4383383ca49723008b7dd1f09e23" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="/formal_logic/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Formal Logic</div>
+    </a>
+    
+
+    
+    <a href="/bobcash/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CSE60622 Cryptography. BobCash</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        ALL
+    </h3>
+    <div class="widget">
+      <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/tidytensor/" class="thumbnail">
+                    
+                        <span style="background-image:url(/tidytensor//images/tidytensor_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/tidytensor/" class="title">TidyTensor - More Fun with Deep Learning</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-08-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/colette_four_months/" class="thumbnail">
+                    
+                        <span style="background-image:url(/colette_four_months//images/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/colette_four_months/" class="title">Colette Patricia O&#39;Neil</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-06-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/homelab/" class="thumbnail">
+                    
+                        <span style="background-image:url(/homelab//images/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/homelab/" class="title">Homelab</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-05-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/regression_trees_pt2/" class="thumbnail">
+                    
+                        <span style="background-image:url(/regression_trees_pt2//images/decision_tree_crop.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression_trees_pt2/" class="title">Random Forests &amp; Gradient Boosting</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-03-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/regression_trees/" class="thumbnail">
+                    
+                        <span style="background-image:url(/regression_trees//images/three_depths.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/regression_trees/" class="title">Regression Trees &amp; Bagging (more functional R)</a></p>
+                    <p class="item-date">
+                        <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/" class="thumbnail">
+                    
+                        <span style="background-image:url(/2018-07-25-autodifferntation-and-functional-operators-in-r//figure-html/unnamed-chunk-24-1.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/" class="title">Automatic Differentiation &amp; Functional Operators in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/aboutme/" class="thumbnail">
+                    
+                        <span style="background-image:url(/aboutme//images/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/aboutme/" class="title">Bio</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-04-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/biorecursion/" class="thumbnail">
+                    
+                        <span style="background-image:url(/biorecursion//images/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/biorecursion/" class="title">Bio/Recursion: CS and Bioinformatics in R</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/apcb/" class="thumbnail">
+                    
+                        <span style="background-image:url(/apcb//images/primer_closed_1200.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/apcb/" class="title">A Primer for Computational Biology</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-02-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2018</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/3d_printing_notes/" class="thumbnail">
+                    
+                        <span style="background-image:url(/3d_printing_notes//images/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/3d_printing_notes/" class="title">3D Printing &amp; Modeling, Online Tools</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2017</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/rstackdeque/" class="thumbnail">
+                    
+                        <span style="background-image:url(/rstackdeque//images/quicksort_vis.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/rstackdeque/" class="title">Rstackdeque</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/stained-glass/" class="thumbnail">
+                    
+                        <span style="background-image:url(/stained-glass//images/candleholder_web.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/stained-glass/" class="title">Stained Glass</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2015</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/functional-lsys/" class="thumbnail">
+                    
+                        <span style="background-image:url(/functional-lsys//images/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/functional-lsys/" class="title">Functional Parameterized L-System</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-10-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/hiking-south-sister/" class="thumbnail">
+                    
+                        <span style="background-image:url(/hiking-south-sister//images/0008.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/hiking-south-sister/" class="title">Hiking South Sister Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/research-butterflies/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research-butterflies//images/vennsPoster.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/research-butterflies/" class="title">Climate Change Adaptation</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/steve-harvey/" class="thumbnail">
+                    
+                        <span style="background-image:url(/steve-harvey//images/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/steve-harvey/" class="title">Steve Harvey Appearance</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/marble-making/" class="thumbnail">
+                    
+                        <span style="background-image:url(/marble-making//images/marble2_web.JPG)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/marble-making/" class="title">Marble Making Timelapse</a></p>
+                    <p class="item-date">
+                        <time datetime="2014-03-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2014</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/research-filedist/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research-filedist//images/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/research-filedist/" class="title">Topology aware file distribution</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/musicwheel/" class="thumbnail">
+                    
+                        <span style="background-image:url(/musicwheel//images/screenshot.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/musicwheel/" class="title">Music Wheel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/timelapsething/" class="thumbnail">
+                    
+                        <span style="background-image:url(/timelapsething//images/gaussian.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/timelapsething/" class="title">Timelapse Thing</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-07-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">July, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/glass-beads/" class="thumbnail">
+                    
+                        <span style="background-image:url(/glass-beads//images/pendants2_web.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/glass-beads/" class="title">Glass Beads</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/research-transcriptomics/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research-transcriptomics//images/ohr.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/research-transcriptomics/" class="title">Transcriptomics</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-02-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2013</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/nerf/" class="thumbnail">
+                    
+                        <span style="background-image:url(/nerf//images/shotsDotplotBlaster.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/nerf/" class="title">A Statistical Analysis of Nerf Blasters and Darts</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/research-haplotyping/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research-haplotyping//images/coloring.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/research-haplotyping/" class="title">Algorithmic Haplotyping</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2012</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/neil-anne-marie-wedding/" class="thumbnail">
+                    
+                        <span style="background-image:url(/neil-anne-marie-wedding//images/0006.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/neil-anne-marie-wedding/" class="title">Neil and Anne-Marie Wedding Photos</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-12-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/miscjava/" class="thumbnail">
+                    
+                        <span style="background-image:url(/miscjava//images/ColorDistance/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/miscjava/" class="title">Misc. Small Java</a></p>
+                    <p class="item-date">
+                        <time datetime="2010-09-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2010</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/microsoft-surface/" class="thumbnail">
+                    
+                        <span style="background-image:url(/microsoft-surface//images/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/microsoft-surface/" class="title">CSE60416 System Interface Design, Microsoft Surface</a></p>
+                    <p class="item-date">
+                        <time datetime="2009-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">December, 2009</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/online_finance/" class="thumbnail">
+                    
+                        <span style="background-image:url(/online_finance//online_finance/prices.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/online_finance/" class="title">CSE60317 Online Algorithms For Computational Finance</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/slashdot_predicting/" class="thumbnail">
+                    
+                        <span style="background-image:url(/slashdot_predicting//slashdot_predicting/fractile.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/slashdot_predicting/" class="title">CSE60647 Data Mining, Predicting on Slashdot</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/research_alenex/" class="thumbnail">
+                    
+                        <span style="background-image:url(/research_alenex//research_alenex/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/research_alenex/" class="title">Online Learning and the Newsvendor Problem</a></p>
+                    <p class="item-date">
+                        <time datetime="2008-01-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2008</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/bobcash/" class="thumbnail">
+                    
+                        <span style="background-image:url(/bobcash//bobcash/banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/bobcash/" class="title">CSE60622 Cryptography. BobCash</a></p>
+                    <p class="item-date">
+                        <time datetime="2007-10-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2007</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/learning_ai/" class="thumbnail">
+                    
+                        <span style="background-image:url(/learning_ai//learning_ai/banner.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/learning_ai/" class="title">CCSE60171 Artificial Intelligence, Learning to Play Games</a></p>
+                    <p class="item-date">
+                        <time datetime="2006-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2006</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/formal_logic/" class="thumbnail">
+                    
+                        <span style="background-image:url(/formal_logic//logic/logic_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/formal_logic/" class="title">Formal Logic</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cs446/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs446//cs446/Balls1Crop.jpeg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs446/" class="title">CS446, Computer Graphics</a></p>
+                    <p class="item-date">
+                        <time datetime="2005-03-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2005</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/undegrad_algorithms/" class="thumbnail">
+                    
+                        <span style="background-image:url(/undegrad_algorithms//Algorithms/algs_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/undegrad_algorithms/" class="title">CS422, Algorithms</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-11-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">November, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cs322/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs322//322/lisp_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs322/" class="title">CS322, Principles of Programming Languages</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-09-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/epistemology/" class="thumbnail">
+                    
+                        <span style="background-image:url(/epistemology//epistemology/knowledge_quote.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/epistemology/" class="title">Epistemology</a></p>
+                    <p class="item-date">
+                        <time datetime="2004-08-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2004</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cs228/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs228//228/network_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs228/" class="title">CS228, Network Programming</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-10-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/gainclone/" class="thumbnail">
+                    
+                        <span style="background-image:url(/gainclone//gainclone/ampfront_web.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/gainclone/" class="title">Gainclone Amplifier</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cs222/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs222//cs222/avl_tree.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs222/" class="title">CS222, Data Structures</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">May, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cellular_automata/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cellular_automata//CellularAutomata/ca_banner.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cellular_automata/" class="title">Cellular Automata</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/headamp2/" class="thumbnail">
+                    
+                        <span style="background-image:url(/headamp2//headamp2/zippoclosed_web.jpg)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/headamp2/" class="title">Headphone Amp</a></p>
+                    <p class="item-date">
+                        <time datetime="2003-01-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">January, 2003</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/cs122/" class="thumbnail">
+                    
+                        <span style="background-image:url(/cs122//cs122/Queens2/screenshot.png)" alt="CCSE60171 Artificial Intelligence, Learning to Play Games" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/cs122/" class="title">CS122</a></p>
+                    <p class="item-date">
+                        <time datetime="2002-10-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">October, 2002</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
+        
+        
+        <a href="/tags/art" style="font-size: 12px;">art</a>
+        
+        
+        <a href="/tags/audio" style="font-size: 12px;">audio</a>
+        
+        
+        <a href="/tags/class" style="font-size: 12px;">class</a>
+        
+        
+        <a href="/tags/data" style="font-size: 12px;">data</a>
+        
+        
+        <a href="/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="/tags/diy" style="font-size: 12px;">diy</a>
+        
+        
+        <a href="/tags/glass" style="font-size: 12px;">glass</a>
+        
+        
+        <a href="/tags/infrastructure" style="font-size: 12px;">infrastructure</a>
+        
+        
+        <a href="/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="/tags/nerf" style="font-size: 12px;">nerf</a>
+        
+        
+        <a href="/tags/philosophy" style="font-size: 12px;">philosophy</a>
+        
+        
+        <a href="/tags/photography" style="font-size: 12px;">photography</a>
+        
+        
+        <a href="/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="/tags/r" style="font-size: 12px;">r</a>
+        
+        
+        <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/theory" style="font-size: 12px;">theory</a>
+        
+        
+        <a href="/tags/writing" style="font-size: 12px;">writing</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021
+      Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>
