@@ -1,0 +1,30 @@
+This is an application server. It pipes the results of
+unix commands at a shell to the browser. The syntax goes like this:
+
+http://server:port/command
+
+Commands currently allowed are: echo, fortune, and man
+If you want to have options to the commands, you could do
+something like this:
+
+http://server:port/fortune_wisdom
+or
+http://server:port/fortune_-o_drugs
+or
+http://server:port/echo_man_this_rocks
+or
+http://server:port/man_fortune
+(That one gives you fortunes man page, this doesnt work so well though)
+
+There is a limit to how many _ delimited options you can have,
+but its like 20. So don't worry about it.
+
+Oh and you can say 
+http://server:port/fortune_subject
+to get a fortune on a particular subjects. To get a list of these:
+http://server:port/listfortunes
+
+This message is displayed by trying a command of anything other
+than echo, fortune, and man.
+
+Shawn

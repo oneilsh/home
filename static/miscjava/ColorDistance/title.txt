@@ -1,1 +1,0 @@
-Inverse Distance Weighting Color by L(l)-Norm Distance

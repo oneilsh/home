@@ -6,13 +6,13 @@
     <description>Recent content in programming on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TidyTensor - More Fun with Deep Learning</title>
-      <link>/tidytensor/</link>
-      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      <link>/tidytensor-post/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tidytensor/</guid>
+      <guid>/tidytensor-post/</guid>
       <description>TidyTensor is an R package for inspecting and manipulating tensors (multidimensional arrays). i It provides an improved print() function for summarizing structure, named tensors, conversion to data frames, and high-level manipulation functions. Designed to complement the excellent keras package, functionality is layered on top of base R types.
 TidyTensor was inspired by a workshop I taught in deep learning with R, and a desire to explain and explore tensors in a more intuitive way.</description>
     </item>
@@ -176,10 +176,10 @@ For our final project, we wanted to design an interactive browser for the Micros
     
     <item>
       <title>CCSE60171 Artificial Intelligence, Learning to Play Games</title>
-      <link>/learning_ai/</link>
+      <link>/learning-ai/</link>
       <pubDate>Fri, 06 Oct 2006 00:00:00 +0000</pubDate>
       
-      <guid>/learning_ai/</guid>
+      <guid>/learning-ai/</guid>
       <description>I did this project with Allison Regier. It&amp;rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
 We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function.</description>
     </item>
@@ -195,10 +195,10 @@ We asked whether it was possible to write a generic board evaluation function wh
     
     <item>
       <title>CS422, Algorithms</title>
-      <link>/undegrad_algorithms/</link>
+      <link>/cs422/</link>
       <pubDate>Tue, 23 Nov 2004 00:00:00 +0000</pubDate>
       
-      <guid>/undegrad_algorithms/</guid>
+      <guid>/cs422/</guid>
       <description>&lt;p&gt;Just a few things from my undergrad algs class.&lt;/p&gt;</description>
     </item>
     
@@ -231,10 +231,10 @@ We asked whether it was possible to write a generic board evaluation function wh
     
     <item>
       <title>Cellular Automata</title>
-      <link>/cellular_automata/</link>
+      <link>/cellular-automata/</link>
       <pubDate>Mon, 14 Apr 2003 00:00:00 +0000</pubDate>
       
-      <guid>/cellular_automata/</guid>
+      <guid>/cellular-automata/</guid>
       <description>&lt;p&gt;In my earlier programming career, I was very interested in cellular automata and Braitenberg vehicles. I wrote a couple of object-oriented Java packages to explore their behavior. These are Java applets, one should be able to run them with &lt;code&gt;appletviewer PanelApplet.html&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     

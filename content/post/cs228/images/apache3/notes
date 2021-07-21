@@ -1,0 +1,17 @@
+does MSIE occur in the request?
+	int ret = strstr(buf, MSIE);, if ret == 0, didnt find it, else it did and it returns a pointer to the thing
+
+writing logs
+open
+while(1)
+accept fork
+if(kid)
+	fill in the flock struct, with l_type= F_WRLCK
+		l_start = 0;
+		l_len = 999999;
+		l_pid = dont do anything
+		l_whence = SEEK_SET
+	lock the file (fcntl) int fcntl(fd, F_GETLK, (it will unlock when it dies), 
+	seek to end (lseek) lseek(file, 0, ENDorsoemthing);
+	write
+	exit

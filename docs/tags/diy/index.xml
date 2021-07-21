@@ -38,10 +38,10 @@ At OSU it seems like I can’t walk out the door without bumping into a 3d print
     
     <item>
       <title>Headphone Amp</title>
-      <link>/headamp2/</link>
+      <link>/headamp/</link>
       <pubDate>Tue, 07 Jan 2003 00:00:00 +0000</pubDate>
       
-      <guid>/headamp2/</guid>
+      <guid>/headamp/</guid>
       <description>The second iteration of the headphone amp was the same internal design, packed into a slightly smaller, sleeker container. This one has a much more solid feel to it. It&amp;rsquo;s based on Chu Moy&amp;rsquo;s design; I checked the first iteration using a scope and it checks out nice, no clipping and the input/output resistances are good (100k in, theoretical 0 out.)
        </description>
     </item>

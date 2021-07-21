@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/programming/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/r/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tidytensor/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <loc>/tidytensor-post/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/art/</loc>
     <lastmod>2019-06-29T00:00:00+00:00</lastmod>
@@ -140,22 +140,22 @@
     <loc>/microsoft-surface/</loc>
     <lastmod>2009-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/online_finance/</loc>
+    <loc>/online-finance/</loc>
     <lastmod>2008-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/slashdot_predicting/</loc>
+    <loc>/slashdot-predicting/</loc>
     <lastmod>2008-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/research_alenex/</loc>
+    <loc>/research-alenex/</loc>
     <lastmod>2008-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/bobcash/</loc>
     <lastmod>2007-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/learning_ai/</loc>
+    <loc>/learning-ai/</loc>
     <lastmod>2006-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/formal_logic/</loc>
+    <loc>/formal-logic/</loc>
     <lastmod>2005-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/philosophy/</loc>
@@ -164,7 +164,7 @@
     <loc>/cs446/</loc>
     <lastmod>2005-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/undegrad_algorithms/</loc>
+    <loc>/cs422/</loc>
     <lastmod>2004-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/cs322/</loc>
@@ -185,10 +185,10 @@
     <loc>/cs222/</loc>
     <lastmod>2003-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/cellular_automata/</loc>
+    <loc>/cellular-automata/</loc>
     <lastmod>2003-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/headamp2/</loc>
+    <loc>/headamp/</loc>
     <lastmod>2003-01-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/cs122/</loc>

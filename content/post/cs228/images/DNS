@@ -1,0 +1,25 @@
+DNS Domain naim service locaded in ann arbor
+
+two kinds of queries
+	iterative
+		1. who is www.qnx.com?
+		2. they say ask com dude
+		3. who is www. qnx. com
+		4. they say ask qnx
+		5. who is www.qnx.com
+		6. oh, www.qnx.com is 198.194.43.345
+	
+	recursive
+		who is www.qnx.com?
+		1. look in my cache
+		2. if not ask somebody
+			DHCP told me who to ask (nameserver)
+		3. query them
+			they go their root nameserver (13 of these in the world, go the one who is the fastest to you)
+		root nameserver forwards the questions to who controls .com
+		.com forwards the request to who controls qnx
+		qnx gives it to www. controller
+		answers filter back
+			root knows, .com, .org, gov, eu etch
+			.edu knows nmu, mtu, etc
+			nmu knows euclid

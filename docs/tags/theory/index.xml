@@ -67,10 +67,10 @@ We formulate this as a graph problem, where short reads that overlap are conside
     
     <item>
       <title>Online Learning and the Newsvendor Problem</title>
-      <link>/research_alenex/</link>
+      <link>/research-alenex/</link>
       <pubDate>Sat, 19 Jan 2008 00:00:00 +0000</pubDate>
       
-      <guid>/research_alenex/</guid>
+      <guid>/research-alenex/</guid>
       <description>Machine learning methods and inventory management were a focus in my Master&amp;rsquo;s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
 Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases.</description>
     </item>

@@ -56,20 +56,20 @@ We formulate this as a graph problem, where short reads that overlap are conside
     
     <item>
       <title>CSE60647 Data Mining, Predicting on Slashdot</title>
-      <link>/slashdot_predicting/</link>
+      <link>/slashdot-predicting/</link>
       <pubDate>Sat, 05 Apr 2008 00:00:00 +0000</pubDate>
       
-      <guid>/slashdot_predicting/</guid>
+      <guid>/slashdot-predicting/</guid>
       <description>Much of the research I performed during my Master&amp;rsquo;s was on the newsvendor problem, which deals with attempting to guess the demand for short-lived products so as to maximize profits. Unfortunately, data about newspaper sales is tough to come by. So, why not use an online equivalent? This project aims at predicting the number of comments a Slashdot story will generate given text which appears in the summary.
 However, since we are interested in looking at the number of comments as a demand for a product to be sold, we don&amp;rsquo;t stop there.</description>
     </item>
     
     <item>
       <title>Online Learning and the Newsvendor Problem</title>
-      <link>/research_alenex/</link>
+      <link>/research-alenex/</link>
       <pubDate>Sat, 19 Jan 2008 00:00:00 +0000</pubDate>
       
-      <guid>/research_alenex/</guid>
+      <guid>/research-alenex/</guid>
       <description>Machine learning methods and inventory management were a focus in my Master&amp;rsquo;s work. In the newsvendor problem, an amount of product to order must be decided upon periodically for reselling. Ordering too much results in losses due to overstock which must be discarded; too little results in losses due to lost sales.
 Traditional approaches experience a tradeoff in that some methods perform better in some situations, while our machine learning approach performs well consistently, particularly in situations where the demand suddenly increases or decreases.</description>
     </item>

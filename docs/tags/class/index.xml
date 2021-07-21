@@ -20,20 +20,20 @@ For our final project, we wanted to design an interactive browser for the Micros
     
     <item>
       <title>CSE60317 Online Algorithms For Computational Finance</title>
-      <link>/online_finance/</link>
+      <link>/online-finance/</link>
       <pubDate>Sun, 16 Nov 2008 00:00:00 +0000</pubDate>
       
-      <guid>/online_finance/</guid>
+      <guid>/online-finance/</guid>
       <description>This class was very interesting; we studied some of the basics of online algorithms as well as some applications to computational finance. Perhaps the most intriguing parts (for someone already familiar with online algorithms) were what we learned about classic computational finance, such as Black-Scholes-Merton.
 This &amp;ldquo;project&amp;rdquo; is a review of the main result of an interesting paper, entitled &amp;ldquo;Making Decisions in the Face of Uncertainty: How to Pick a Winner Almost Every Time,&amp;rdquo; by Awerbuch et al.</description>
     </item>
     
     <item>
       <title>CSE60647 Data Mining, Predicting on Slashdot</title>
-      <link>/slashdot_predicting/</link>
+      <link>/slashdot-predicting/</link>
       <pubDate>Sat, 05 Apr 2008 00:00:00 +0000</pubDate>
       
-      <guid>/slashdot_predicting/</guid>
+      <guid>/slashdot-predicting/</guid>
       <description>Much of the research I performed during my Master&amp;rsquo;s was on the newsvendor problem, which deals with attempting to guess the demand for short-lived products so as to maximize profits. Unfortunately, data about newspaper sales is tough to come by. So, why not use an online equivalent? This project aims at predicting the number of comments a Slashdot story will generate given text which appears in the summary.
 However, since we are interested in looking at the number of comments as a demand for a product to be sold, we don&amp;rsquo;t stop there.</description>
     </item>
@@ -49,20 +49,20 @@ However, since we are interested in looking at the number of comments as a deman
     
     <item>
       <title>CCSE60171 Artificial Intelligence, Learning to Play Games</title>
-      <link>/learning_ai/</link>
+      <link>/learning-ai/</link>
       <pubDate>Fri, 06 Oct 2006 00:00:00 +0000</pubDate>
       
-      <guid>/learning_ai/</guid>
+      <guid>/learning-ai/</guid>
       <description>I did this project with Allison Regier. It&amp;rsquo;s not too difficult to write a program which uses an exhaustive search to play a game. What this requires, though, is some way to evaluate one board against another to tell which moves to make. Usually such a comparison function is hand written.
 We asked whether it was possible to write a generic board evaluation function which would learn a preference over board states by playing many games, either against itself or a hand coded evaluation function.</description>
     </item>
     
     <item>
       <title>Formal Logic</title>
-      <link>/formal_logic/</link>
+      <link>/formal-logic/</link>
       <pubDate>Sat, 19 Mar 2005 00:00:00 +0000</pubDate>
       
-      <guid>/formal_logic/</guid>
+      <guid>/formal-logic/</guid>
       <description>I also studied formal logic, under the direction of the amazing Don Faust. I still recommend the book What Is Mathematical Logic for a good (but dense) overview of the topic. These are just some proofs I worked out.
  Proof of deduction theorem Proof of a lemma used in proof of Completeness: Soundness implies Completeness  </description>
     </item>
@@ -78,10 +78,10 @@ We asked whether it was possible to write a generic board evaluation function wh
     
     <item>
       <title>CS422, Algorithms</title>
-      <link>/undegrad_algorithms/</link>
+      <link>/cs422/</link>
       <pubDate>Tue, 23 Nov 2004 00:00:00 +0000</pubDate>
       
-      <guid>/undegrad_algorithms/</guid>
+      <guid>/cs422/</guid>
       <description>&lt;p&gt;Just a few things from my undergrad algs class.&lt;/p&gt;</description>
     </item>
     
