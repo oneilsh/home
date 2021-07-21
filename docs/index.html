@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="/css/monokai.css">
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
     
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="Shawn T. O&#39;Neil" />
@@ -146,7 +148,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        43
+        44
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -237,6 +239,142 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/ds-at-osu/" itemprop="url">
+            <img src="/ds-at-osu//images/banner.png" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="/ds-at-osu/">
+    <h1 class="article-title" itemprop="name">
+        DataScience@OSU
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2021-04-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2021</time>
+            &middot;
+            247
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/infrastructure">infrastructure</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                DS@OSU was a project I had the priveledge of co-leading (along with Dr. Robin Pappas) in collaboration with Oregon State UIT. Driven by a broadly recognized need to enable accessible and scalable infrastructure for data science (and related) instruction, we embarked on campus-wide needs assessments, a steering committee, technical and faculty advisory committees, fact-finding sessions with peer institutions, and eventually platform implemention.
+Based on the Zero to JupyterHub kubernetes-based deployment pattern, DS@OSU provides a number of additional custom features:
+            </p>
+            <p class="article-more-link">
+                <a href="/ds-at-osu/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/ds-at-osu/" data-id="8e0e46352e7531a7f966e9a9754a2740" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1223,137 +1361,6 @@ Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/biorecursion/" itemprop="url">
-            <img src="/biorecursion//images/banner.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/biorecursion/">
-    <h1 class="article-title" itemprop="name">
-        Bio/Recursion: CS and Bioinformatics in R
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">Programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/writing">Writing</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                This book is based on a workshop I taught a few times at OSU, meant to introduce computer science theory to biologists.
-Digital version available online at Leanpub.
-Also available in print at Amazon.
-It introduces topics in programming, computer science, and bioinformatics via examples in the R programming language. While often associated with statistics, Bio/Recursion employs R’s algorithmic capabilities to implement and visualize several fascinating methods, ranging from DNA alignment to drawing fractal trees.
-            </p>
-            <p class="article-more-link">
-                <a href="/biorecursion/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/biorecursion/" data-id="a8ab416896db8b225a0019495a7ebaac" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1379,6 +1386,25 @@ It introduces topics in programming, computer science, and bioinformatics via ex
     </h3>
     <div class="widget">
       <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/ds-at-osu/" class="thumbnail">
+                    
+                        <span style="background-image:url(/ds-at-osu//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/ds-at-osu/" class="title">DataScience@OSU</a></p>
+                    <p class="item-date">
+                        <time datetime="2021-04-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2021</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
