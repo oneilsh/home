@@ -62,6 +62,15 @@
     </item>
     
     <item>
+      <title>Adventures</title>
+      <link>/tags/adventures/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/adventures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Art</title>
       <link>/tags/art/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
@@ -112,15 +121,6 @@
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Adventures</title>
-      <link>/tags/adventures/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/adventures/</guid>
       <description></description>
     </item>
     

@@ -37,6 +37,16 @@ TidyTensor was inspired by a workshop I taught in deep learning with R, and a de
     </item>
     
     <item>
+      <title>Bio</title>
+      <link>/aboutme/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/aboutme/</guid>
+      <description>Work My CV.
+I am an Assistant Professor of Research with the Center for Health AI at the University of Colorado Anschutz Medical Campus. In previous years I was a Senior Faculty Research Assistant with the Center for Genome Research and Biocomputing (CGRB, now CQLS) at Oregon State University. I earned my Ph.D./M.S. in 2012/2009 from the University of Notre Dame in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the beautiful Upper Peninsula of Michigan.</description>
+    </item>
+    
+    <item>
       <title>Colette Patricia O&#39;Neil</title>
       <link>/colette_four_months/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
@@ -83,17 +93,6 @@ This post explores that idea by implementing regression trees in base R (with a 
       <guid>/2018-07-25-autodifferntation-and-functional-operators-in-r/</guid>
       <description>I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
 First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.</description>
-    </item>
-    
-    <item>
-      <title>Bio</title>
-      <link>/aboutme/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/aboutme/</guid>
-      <description>Work My CV.
-I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
-Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray &amp;amp; white).</description>
     </item>
     
     <item>

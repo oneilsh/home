@@ -1,7 +1,7 @@
 +++
 banner = "images/banner.jpg"
 categories = []
-date = "2018-04-13"
+date = "2019-08-04"
 description = ""
 images = []
 menu = "main"
@@ -12,14 +12,20 @@ nodateline = true
 
 ### Work
 
-My [CV](images/shawnres_2018_04_13.pdf). 
+My [CV](images/shawnres_2021_08_04.pdf). 
 
-I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
+I am an Assistant Professor of Research with the [Center for Health AI](https://medschool.cuanschutz.edu/ai) at the [University of Colorado Anschutz Medical Campus](https://cuanschutz.edu/). In previous years I was a Senior Faculty Research Assistant with the Center for Genome Research and Biocomputing (CGRB, now [CQLS](https://cqls.oregonstate.edu/)) at Oregon State University. I earned my Ph.D./M.S. in 2012/2009 from the University of Notre Dame in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the beautiful Upper Peninsula of Michigan.
 
 ### Personal
 
-My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray & white). 
+My lovely wife Katie and I live in Corvallis, Oregon, with our two children Max and Colette, and two cats Sterling Cooper and Byron Bojangles IV. 
 
-{{< figure src="images/kate_cats.jpg" width="50%" >}}
+{{< fluid_imgs 
+  "pure-u-1-3|images/kate_colette_july_2021.jpeg| "
+  "pure-u-1-3|images/max_handsome_fair.jpg| "
+  "pure-u-1-3|images/colette_lunchbox_sassy.jpg| "
+>}}
 
-I like wood, glass, photography and digital art, and more recently I've been tinkering with 3d printers, FPV drones, and similar gadgetry. I have a fondness for mathematical logic, hiking, martial arts, nerf blasters, and programming. 
+
+
+I like woodworking, glass, photography and digital art, and more recently I've been tinkering with 3d printers, FPV drones, and similar gadgetry. I have a fondness for mathematical logic, hiking, martial arts, nerf blasters, and programming. 
