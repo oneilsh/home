@@ -71,24 +71,6 @@
     </item>
     
     <item>
-      <title>Art</title>
-      <link>/tags/art/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/art/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Photography</title>
-      <link>/tags/photography/</link>
-      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/photography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DIY</title>
       <link>/tags/diy/</link>
       <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
@@ -134,11 +116,29 @@
     </item>
     
     <item>
+      <title>Art</title>
+      <link>/tags/art/</link>
+      <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Glass</title>
       <link>/tags/glass/</link>
       <pubDate>Wed, 20 May 2015 00:00:00 +0000</pubDate>
       
       <guid>/tags/glass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photography</title>
+      <link>/tags/photography/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/photography/</guid>
       <description></description>
     </item>
     
