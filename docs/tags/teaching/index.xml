@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>teaching on Shawn T. O&#39;Neil</title>
+    <link>/tags/teaching/</link>
+    <description>Recent content in teaching on Shawn T. O&#39;Neil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>National COVID Cohort Collaborative</title>
+      <link>/n3c/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/n3c/</guid>
+      <description>Since starting a new position with the TISLab in early 2020, my primary effort has been as Training Coordinator with the National COVID Cohort Collaborative, or N3C. This truly amazing group of scientists, clinicians, and engineers has accomplished something unique in US healthcare history: sourcing electronic health records from hospital systems and medical centers nationwide (56 and counting) into a single unified database of clinical records related to the COVID-19 pandemic.</description>
+    </item>
+    
+  </channel>
+</rss>

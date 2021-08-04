@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>National COVID Cohort Collaborative</title>
+      <link>/n3c/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/n3c/</guid>
+      <description>Since starting a new position with the TISLab in early 2020, my primary effort has been as Training Coordinator with the National COVID Cohort Collaborative, or N3C. This truly amazing group of scientists, clinicians, and engineers has accomplished something unique in US healthcare history: sourcing electronic health records from hospital systems and medical centers nationwide (56 and counting) into a single unified database of clinical records related to the COVID-19 pandemic.</description>
+    </item>
+    
     <item>
       <title>DataScience@OSU</title>
       <link>/ds-at-osu/</link>
-      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/ds-at-osu/</guid>
       <description>DS@OSU was a project I had the priveledge of co-leading (along with Dr. Robin Pappas) in collaboration with Oregon State UIT. Driven by a broadly recognized need to enable accessible and scalable infrastructure for data science (and related) instruction, we embarked on campus-wide needs assessments, a steering committee, technical and faculty advisory committees, fact-finding sessions with peer institutions, and eventually platform implemention.

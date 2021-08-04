@@ -2,20 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/ds-at-osu/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <loc>/tags/biomedical/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/infrastructure/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/n3c/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/research/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/teaching/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/ds-at-osu/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/programming/</loc>
     <lastmod>2019-09-16T00:00:00+00:00</lastmod>
@@ -76,9 +88,6 @@
   </url><url>
     <loc>/3d_printing_notes/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/research/</loc>
-    <lastmod>2015-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/rstackdeque/</loc>
     <lastmod>2015-07-12T00:00:00+00:00</lastmod>

@@ -148,12 +148,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        44
+        45
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          18
+          20
         
         <span>
             Tags
@@ -239,6 +239,132 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/aboutme/" itemprop="url">
+            <img src="/aboutme//images/banner.jpg" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="/aboutme/">
+    <h1 class="article-title" itemprop="name">
+        Bio
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/adventures">Adventures</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Work My CV.
+I am a Senior Faculty Research Assistant at the Center for Genome Research and Biocomputing at Oregon State University. I earned my Ph.D. in 2012 from the University of Notre Dame, in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the Upper Peninsula of Michigan.
+Personal My lovely wife Katie and I live in Corvallis, Oregon, with our two cats Sterling Cooper (black) and Byron Bojangles IV (gray &amp; white).
+            </p>
+            <p class="article-more-link">
+                <a href="/aboutme/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/aboutme/" data-id="38597eab0a419a21a947a91a9d669909" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1183,145 +1309,6 @@ Lua supports first-class functions, so I played around with designing a paramete
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/research-butterflies/" itemprop="url">
-            <img src="/research-butterflies//images/vennsPoster.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/research-butterflies/">
-    <h1 class="article-title" itemprop="name">
-        Climate Change Adaptation
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
-            &middot;
-            288
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/research">Research</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/programming">Programming</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Climate change is likely to have profound impacts on ecological systems, but in some important cases we&rsquo;re still a long way from understanding exactly what those impacts might be. For instance, it has been posited that under warming, species in the northern hemisphere will be enhanced at their northern range edge (where presumably species are fitness-limited, and hence range-limited, by the cooler temperatures). Rather, recent research indicates that individual populations of some species may be locally adapted to their climatic environment, such that even these peripheral populations may decline with warming as they have developed an equilibrium with their environment.
-            </p>
-            <p class="article-more-link">
-                <a href="/research-butterflies/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/research-butterflies/" data-id="af3181c6c5f36b13a944249f574fd100" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1354,6 +1341,25 @@ Lua supports first-class functions, so I played around with designing a paramete
             
             <li>
                 <div class="item-thumbnail">
+                    <a href="/n3c/" class="thumbnail">
+                    
+                        <span style="background-image:url(/n3c//images/new_hero4.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/n3c/" class="title">National COVID Cohort Collaborative</a></p>
+                    <p class="item-date">
+                        <time datetime="2021-06-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2021</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
                     <a href="/ds-at-osu/" class="thumbnail">
                     
                         <span style="background-image:url(/ds-at-osu//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
@@ -1366,7 +1372,7 @@ Lua supports first-class functions, so I played around with designing a paramete
                     
                     <p class="item-title"><a href="/ds-at-osu/" class="title">DataScience@OSU</a></p>
                     <p class="item-date">
-                        <time datetime="2021-04-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2021</time>
+                        <time datetime="2020-08-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2020</time>
                     </p>
                 </div>
             </li>
@@ -2216,6 +2222,9 @@ Lua supports first-class functions, so I played around with designing a paramete
         <a href="/tags/audio" style="font-size: 12px;">audio</a>
         
         
+        <a href="/tags/biomedical" style="font-size: 12px;">biomedical</a>
+        
+        
         <a href="/tags/class" style="font-size: 12px;">class</a>
         
         
@@ -2253,6 +2262,9 @@ Lua supports first-class functions, so I played around with designing a paramete
         
         
         <a href="/tags/research" style="font-size: 12px;">research</a>
+        
+        
+        <a href="/tags/teaching" style="font-size: 12px;">teaching</a>
         
         
         <a href="/tags/theory" style="font-size: 12px;">theory</a>
@@ -2301,6 +2313,21 @@ MathJax.Hub.Config({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
+
+<script type="text/javascript">
+var sc_project=505825; 
+var sc_invisible=1; 
+var sc_security=""; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/505825/0//1/" alt="Web
+Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
 
 </body>
