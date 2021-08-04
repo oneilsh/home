@@ -2,7 +2,7 @@
 banner: "images/banner.png"
 title: DataScience@OSU
 author: Shawn T. O'Neil
-date: '2021-04-10'
+date: '2020-08-10'
 categories: []
 tags:
   - infrastructure
