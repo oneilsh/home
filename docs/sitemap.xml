@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/ai/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/programming/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/r/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/llm_pubmed_search/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/biomedical/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,16 +35,7 @@
     <loc>/n3c/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/research/</loc>
-    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/teaching/</loc>
@@ -28,12 +43,6 @@
   </url><url>
     <loc>/ds-at-osu/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/programming/</loc>
-    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tidytensor-post/</loc>
     <lastmod>2019-09-16T00:00:00+00:00</lastmod>
@@ -55,9 +64,6 @@
   </url><url>
     <loc>/tags/theory/</loc>
     <lastmod>2019-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/regression_trees/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>

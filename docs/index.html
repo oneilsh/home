@@ -148,12 +148,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        44
+        45
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          20
+          21
         
         <span>
             Tags
@@ -239,6 +239,153 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/llm_pubmed_search/" itemprop="url">
+            <img src="/llm_pubmed_search//llm_pubmed_search.html" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="/llm_pubmed_search/">
+    <h1 class="article-title" itemprop="name">
+        Searching and Summarizing PubMed with LLMs
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2023-03-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2023</time>
+            &middot;
+            127766
+            words
+            &middot;
+            600
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/programming">programming</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/r">r</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/machine-learning">machine learning</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/ai">ai</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                LLM PubMed Search // Pandoc 2.9 adds attributes on both header and div. We remove the former (to // be compatible with the behavior of Pandoc :first-child"); var i, h, a; for (i = 0; i 0) h.removeAttribute(a[0].name); } });  /*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */ !function(e,t){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error("jQuery requires a window with a document");return t(e)}:t(e)}("undefined"!=typeof window?
+            </p>
+            <p class="article-more-link">
+                <a href="/llm_pubmed_search/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/llm_pubmed_search/" data-id="eedebc06b33bc31dbb5d52f6800d93b2" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1219,154 +1366,6 @@ This post explores that idea by implementing regression trees in base R (with a 
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/" itemprop="url">
-            <img src="/2018-07-25-autodifferntation-and-functional-operators-in-r//figure-html/unnamed-chunk-24-1.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/">
-    <h1 class="article-title" itemprop="name">
-        Automatic Differentiation &amp; Functional Operators in R
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-08-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">August, 2018</time>
-            &middot;
-            4103
-            words
-            &middot;
-            20
-            minute read
-        </div>
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/r">r</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/theory">theory</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/deep-learning">deep learning</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I’ve been studying up on deep learning recently (I know, trendy), and I learned something along the way that I think is just incredible.1
-First, a little background: deep learning models are artificial neural networks, represented as potentially thousands of nodes with millions of weighted connections between them. Input numbers are fed in to some nodes on one side, and out pops output numbers from some nodes on the other side, after winding through the nodes and weighted connections.
-            </p>
-            <p class="article-more-link">
-                <a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/2018-07-25-autodifferntation-and-functional-operators-in-r/" data-id="5e5074adfca448ef1e7cd75c6811a023" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1392,6 +1391,25 @@ First, a little background: deep learning models are artificial neural networks,
     </h3>
     <div class="widget">
       <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/llm_pubmed_search/" class="thumbnail">
+                    
+                        <span style="background-image:url(/llm_pubmed_search//llm_pubmed_search.html)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/llm_pubmed_search/" class="title">Searching and Summarizing PubMed with LLMs</a></p>
+                    <p class="item-date">
+                        <time datetime="2023-03-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2023</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -2251,6 +2269,9 @@ First, a little background: deep learning models are artificial neural networks,
         <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
         
         
+        <a href="/tags/ai" style="font-size: 12px;">ai</a>
+        
+        
         <a href="/tags/art" style="font-size: 12px;">art</a>
         
         
@@ -2324,7 +2345,7 @@ First, a little background: deep learning models are artificial neural networks,
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021
+      &copy; 2023
       Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
   </div>

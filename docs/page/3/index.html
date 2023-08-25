@@ -148,12 +148,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        44
+        45
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          20
+          21
         
         <span>
             Tags
@@ -239,6 +239,145 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/research-butterflies/" itemprop="url">
+            <img src="/research-butterflies//images/vennsPoster.jpg" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="/research-butterflies/">
+    <h1 class="article-title" itemprop="name">
+        Climate Change Adaptation
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">April, 2014</time>
+            &middot;
+            288
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/research">Research</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/programming">Programming</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Climate change is likely to have profound impacts on ecological systems, but in some important cases we&rsquo;re still a long way from understanding exactly what those impacts might be. For instance, it has been posited that under warming, species in the northern hemisphere will be enhanced at their northern range edge (where presumably species are fitness-limited, and hence range-limited, by the cooler temperatures). Rather, recent research indicates that individual populations of some species may be locally adapted to their climatic environment, such that even these peripheral populations may decline with warming as they have developed an equilibrium with their environment.
+            </p>
+            <p class="article-more-link">
+                <a href="/research-butterflies/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/research-butterflies/" data-id="af3181c6c5f36b13a944249f574fd100" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1163,134 +1302,6 @@ This paper was initially presented at COCOON 2011, and later invited for submiss
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/nerf/" itemprop="url">
-            <img src="/nerf//images/shotsDotplotBlaster.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/nerf/">
-    <h1 class="article-title" itemprop="name">
-        A Statistical Analysis of Nerf Blasters and Darts
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/data">Data</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/nerf">Nerf</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>By Shawn O&rsquo;Neil and Katie Drueen.</p>
-            </p>
-            <p class="article-more-link">
-                <a href="/nerf/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/nerf/" data-id="7791811155347377e9a65b806943fe67" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1320,6 +1331,25 @@ This paper was initially presented at COCOON 2011, and later invited for submiss
     </h3>
     <div class="widget">
       <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/llm_pubmed_search/" class="thumbnail">
+                    
+                        <span style="background-image:url(/llm_pubmed_search//llm_pubmed_search.html)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/llm_pubmed_search/" class="title">Searching and Summarizing PubMed with LLMs</a></p>
+                    <p class="item-date">
+                        <time datetime="2023-03-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">March, 2023</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -2179,6 +2209,9 @@ This paper was initially presented at COCOON 2011, and later invited for submiss
         <a href="/tags/adventures" style="font-size: 12px;">adventures</a>
         
         
+        <a href="/tags/ai" style="font-size: 12px;">ai</a>
+        
+        
         <a href="/tags/art" style="font-size: 12px;">art</a>
         
         
@@ -2252,7 +2285,7 @@ This paper was initially presented at COCOON 2011, and later invited for submiss
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021
+      &copy; 2023
       Copyright Shawn T. O&rsquo;Neil 2018. Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
   </div>
