@@ -13,7 +13,7 @@
       <pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>/llm_pubmed_search/</guid>
-      <description>LLM PubMed Search // Pandoc 2.9 adds attributes on both header and div. We remove the former (to // be compatible with the behavior of Pandoc :first-child&#34;); var i, h, a; for (i = 0; i 0) h.removeAttribute(a[0].name); } });  /*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */ !function(e,t){&#34;use strict&#34;;&#34;object&#34;==typeof module&amp;&amp;&#34;object&#34;==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error(&#34;jQuery requires a window with a document&#34;);return t(e)}:t(e)}(&#34;undefined&#34;!=typeof window?</description>
+      <description>What if an AI could perform a literature review for you? Here I illustrate using Large Language Models (LLMs) and related technologies for search and summarization. We use OpenAI&#39;s gpt-3.5-turbo (ChatGPT) and gpt-4 models, SentenceTransformers sentence embeddings, and the PubMed API to build a first-pass literature summarizer, that 1) designs an effective search query given a user question, 2) retrieves and indexes matching pubmed abstracts, 3) selects the top-matching abstracts for individual summarization in light of the original question, and 4) summarizes the summaries including references.</description>
     </item>
     
     <item>
