@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>Shawn T. O&#39;Neil</title>
+    <title>Finding Long-COVID: Temporal Topic Modeling EHR Data &middot; Shawn T. O&#39;Neil</title>
     <meta name="generator" content="Hugo 0.84.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,10 +10,7 @@
       <meta name="description" content="">
     
     
-      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Shawn T. O&#39;Neil" />
-      <link href="/index.xml" rel="feed" type="application/rss+xml" title="Shawn T. O&#39;Neil" />
-    
-    <link rel="canonical" href="/"/>
+    <link rel="canonical" href="/topic_modeling_pasc/"/>
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
     <link rel="stylesheet" href="/css/style.css">
@@ -25,18 +22,23 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="Shawn T. O&#39;Neil" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+    <meta property="og:title" content="Finding Long-COVID: Temporal Topic Modeling EHR Data" />
+<meta property="og:description" content="In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/topic_modeling_pasc/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-12T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2023-09-12T00:00:00&#43;00:00" />
 
 
     
-    <meta itemprop="name" content="Shawn T. O&#39;Neil">
-<meta itemprop="description" content="">
+    <meta itemprop="name" content="Finding Long-COVID: Temporal Topic Modeling EHR Data">
+<meta itemprop="description" content="In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection."><meta itemprop="datePublished" content="2023-09-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2023-09-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="522">
+<meta itemprop="keywords" content="research,data,biomedical," />
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Shawn T. O&#39;Neil"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Finding Long-COVID: Temporal Topic Modeling EHR Data"/>
+<meta name="twitter:description" content="In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection."/>
 <meta name="twitter:site" content="@shawntoneil"/>
 
     
@@ -238,24 +240,31 @@
 
     <section id="main">
     
-    
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
-        <a href="/cs228/" itemprop="url">
-            <img src="/cs228//images/network_banner.png" class="article-banner">
+            <img src="images/fig4_banner.png" class="article-banner">
         
-        </a>
 
         <header class="article-header">
-    <a href="/cs228/">
+    <a href="/topic_modeling_pasc/">
     <h1 class="article-title" itemprop="name">
-        CS228, Network Programming
+        Finding Long-COVID: Temporal Topic Modeling EHR Data
     </h1>
     </a>
     <div class="article-meta">
 
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2023-09-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2023</time>
+            &middot;
+            522
+            words
+            &middot;
+            3
+            minute read
+        </div>
         
         
             
@@ -269,139 +278,15 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="/tags/programming">Programming</a>
+                <a class="article-category-link" href="/tags/research">research</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="/tags/class">Class</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>Once upon a time, I knew how to use Unix sockets.</p>
-            </p>
-            <p class="article-more-link">
-                <a href="/cs228/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/cs228/" data-id="ba641577205a48fee4a7eb3f008ad0db" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/gainclone/" itemprop="url">
-            <img src="/gainclone//images/ampfront_web.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/gainclone/">
-    <h1 class="article-title" itemprop="name">
-        Gainclone Amplifier
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/audio">Audio</a>
+                <a class="article-category-link" href="/tags/data">data</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="/tags/diy">DIY</a>
+                <a class="article-category-link" href="/tags/biomedical">biomedical</a>
                 
                 
             </div>
@@ -411,17 +296,23 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>
-                This one was a long time in the making. The case is cherry, the face plate and knobs are copper. The left knob is input select, center volume, and the right knob is a rotary dimmer switch for the (incandescent) backlight on the volume knob. Sounds absolutely beautiful, looks just as good, with more coats of polyurethane than I kept track of! Thanks to all of the people at diyaudio.com, especially BrianGT, who made the PCB boards I used, and to my then landlord Steve who let me use his shop.
-            </p>
-            <p class="article-more-link">
-                <a href="/gainclone/">
-                    Read more
-                </a>
-            </p>
+            <p>In this study, currently available as a <a href="https://www.medrxiv.org/content/10.1101/2023.09.11.23295259v1">preprint</a> awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the <a href="/n3c">N3C</a> database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection.</p>
+<p>A primary goal here was to apply a data-first approach to identifying Long COVID. As of October 2021 there is an ICD-10 diagnosis code for Long COVID, U09.9. However, it is now generally understood that Long COVID (also known as PASC, for Post-Acute Sequelae of SARS-CoV-2 infection) is a complex set of conditions with varying presentations. Might our shifting understanding of this disease be causing us to miss important sub-types? To check, we looked for conditions increased in patients with Long-COVID diagnoses compared to COVID-naïve Control patients over a similar time frame. We also looked at COVID-positive patients without a Long-COVID diagnosis, finding that there are indeed clusters of conditions prevalent post-infection but not associated with U09.9 diagnoses. Fortunately, these seem to fall into two general categories: clusters of generic conditions indicative of unknown symptoms (such as &ldquo;Ill-defined disease&rdquo;), and long-term acute illness (such as persistent pneumonia). Interestingly, we find a signal of reduced healthcare access through the pandemic, which reveals itself as decreased rates of conditions commonly discovered during routine care.</p>
+<figure><img src="images/past_volcano_plot_svg.png"
+         alt="Conditions increased for COVID-19 patients post-infection, for those with a Long-COVID diagnosis (right) and those without (left)" width="100%"/>
+</figure>
+
+<p>Some of my favorite features of this work are provided by the flexibility gained from patient/cluster assignment provided by the LDA model, typically used to identify word clusters (called topics) in collections of documents like journal articles or web pages. LDA assigns each patient (in this case) a probability distribution over clusters, where each cluster is a probability distribution over conditions. We can do this for patient records over defined periods of time as well, allowing a creative methodological innovation of treating each patient/cluster assignment as a binomial trial, which we model by repeated-measures logistic regression. This allows us to see how cluster assignment is influenced by factors such as patient demographics, COVID infection status, and Long-COVID diagnosis.</p>
+<p>Beyond modeling, we can see how patient/cluster assignment trends across other factors, like which site patient data are drawn from. The figure below illustrates that some clusters are not used uniformly by various healthcare organizations. Although we do not know which specific organization each patient comes from (for patient privacy), we do have hints, for example OMOP (PEDSNET) sites in the figure below display distinct trends in cluster usage relating to their pediatric focus.</p>
+<figure><img src="images/topic_data_partner_usage.png"
+         alt="Relative condition cluster usage across data providers." width="100%"/>
+</figure>
+
+<p>Finally, it is worth noting the value of large datasets in unsupervised learning. While most applications of LDA to structured health data to date have found anywhere from 6 to 60 coherent clusters, our modeling of millions of patients and hundreds of millions condition records reveals hundreds of clinically-relevant clusters, including rare diseases and their corresponding symptoms.</p>
+
         </div>
         <footer class="article-footer">
-    <a data-url="/gainclone/" data-id="ab91dc8288bc63a46c7be61cc5e0e00b" class="article-share-link">
+    <a data-url="/topic_modeling_pasc/" data-id="efc93e1649180d13d9df4e4742bac8f0" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
@@ -494,528 +385,23 @@
 </footer>
 
     </div>
-</article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/cs222/" itemprop="url">
-            <img src="/cs222//images/avl_tree.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/cs222/">
-    <h1 class="article-title" itemprop="name">
-        CS222, Data Structures
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">Programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/class">Class</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>Some old code files from my undergraduate CS222 Data Structures class. At the time I was pretty proud of my fully-recursive AVL tree!</p>
-            </p>
-            <p class="article-more-link">
-                <a href="/cs222/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/cs222/" data-id="0755a6f8b1369af08d986297b6000544" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
+    
+<nav id="article-nav">
+    
+    <a href="/llm_pubmed_search/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Searching and Summarizing PubMed with LLMs</div>
     </a>
     
 
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/cellular-automata/" itemprop="url">
-            <img src="/cellular-automata//images/ca_banner.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/cellular-automata/">
-    <h1 class="article-title" itemprop="name">
-        Cellular Automata
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">Programming</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>In my earlier programming career, I was very interested in cellular automata and Braitenberg vehicles. I wrote a couple of object-oriented Java packages to explore their behavior. These are Java applets, one should be able to run them with <code>appletviewer PanelApplet.html</code>.</p>
-            </p>
-            <p class="article-more-link">
-                <a href="/cellular-automata/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/cellular-automata/" data-id="e45cb9248c4cd4f821a114dd6011522d" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
     
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/headamp/" itemprop="url">
-            <img src="/headamp//images/zippoclosed_web.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/headamp/">
-    <h1 class="article-title" itemprop="name">
-        Headphone Amp
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/audio">Audio</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/diy">DIY</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                The second iteration of the headphone amp was the same internal design, packed into a slightly smaller, sleeker container. This one has a much more solid feel to it. It&rsquo;s based on Chu Moy&rsquo;s design; I checked the first iteration using a scope and it checks out nice, no clipping and the input/output resistances are good (100k in, theoretical 0 out.)
-       
-            </p>
-            <p class="article-more-link">
-                <a href="/headamp/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/headamp/" data-id="825c43c62155656cc28d706e9634547b" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/cs122/" itemprop="url">
-            <img src="/cs122//images/Queens2/screenshot.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/cs122/">
-    <h1 class="article-title" itemprop="name">
-        CS122
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">Programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/class">Class</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>A few old code files from my undergraduate CS122 class; these are all written as Java applets (as was the fashion at the time), so I&rsquo;m just making the code available. They do still run though (thanks Java!)</p>
-            </p>
-            <p class="article-more-link">
-                <a href="/cs122/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/cs122/" data-id="dbd59f62284345bb533c95b89568c27a" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-
-<nav id="page-nav">
-
-    
-        <a class="extend prev" rel="prev" href="/page/5/">
-            « Prev
-        </a>
-    
-    
-
 </nav>
+
+
+</article>
 
 
 
@@ -1035,7 +421,7 @@
                 <div class="item-thumbnail">
                     <a href="/topic_modeling_pasc/" class="thumbnail">
                     
-                        <span style="background-image:url(/topic_modeling_pasc//images/fig4_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/topic_modeling_pasc//images/fig4_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1054,7 +440,7 @@
                 <div class="item-thumbnail">
                     <a href="/llm_pubmed_search/" class="thumbnail">
                     
-                        <span style="background-image:url(/llm_pubmed_search//llm_pubmed_search.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/llm_pubmed_search//llm_pubmed_search.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1073,7 +459,7 @@
                 <div class="item-thumbnail">
                     <a href="/n3c/" class="thumbnail">
                     
-                        <span style="background-image:url(/n3c//images/new_hero4.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/n3c//images/new_hero4.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1092,7 +478,7 @@
                 <div class="item-thumbnail">
                     <a href="/ds-at-osu/" class="thumbnail">
                     
-                        <span style="background-image:url(/ds-at-osu//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/ds-at-osu//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1111,7 +497,7 @@
                 <div class="item-thumbnail">
                     <a href="/tidytensor-post/" class="thumbnail">
                     
-                        <span style="background-image:url(/tidytensor-post//images/tidytensor_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/tidytensor-post//images/tidytensor_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1130,7 +516,7 @@
                 <div class="item-thumbnail">
                     <a href="/aboutme/" class="thumbnail">
                     
-                        <span style="background-image:url(/aboutme//images/banner.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/aboutme//images/banner.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1149,7 +535,7 @@
                 <div class="item-thumbnail">
                     <a href="/homelab/" class="thumbnail">
                     
-                        <span style="background-image:url(/homelab//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/homelab//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1168,7 +554,7 @@
                 <div class="item-thumbnail">
                     <a href="/regression_trees_pt2/" class="thumbnail">
                     
-                        <span style="background-image:url(/regression_trees_pt2//images/decision_tree_crop.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/regression_trees_pt2//images/decision_tree_crop.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1187,7 +573,7 @@
                 <div class="item-thumbnail">
                     <a href="/regression_trees/" class="thumbnail">
                     
-                        <span style="background-image:url(/regression_trees//images/three_depths.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/regression_trees//images/three_depths.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1206,7 +592,7 @@
                 <div class="item-thumbnail">
                     <a href="/2018-07-25-autodifferntation-and-functional-operators-in-r/" class="thumbnail">
                     
-                        <span style="background-image:url(/2018-07-25-autodifferntation-and-functional-operators-in-r//figure-html/unnamed-chunk-24-1.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/2018-07-25-autodifferntation-and-functional-operators-in-r//figure-html/unnamed-chunk-24-1.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1225,7 +611,7 @@
                 <div class="item-thumbnail">
                     <a href="/biorecursion/" class="thumbnail">
                     
-                        <span style="background-image:url(/biorecursion//images/banner.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/biorecursion//images/banner.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1244,7 +630,7 @@
                 <div class="item-thumbnail">
                     <a href="/apcb/" class="thumbnail">
                     
-                        <span style="background-image:url(/apcb//images/primer_closed_1200.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/apcb//images/primer_closed_1200.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1263,7 +649,7 @@
                 <div class="item-thumbnail">
                     <a href="/3d_printing_notes/" class="thumbnail">
                     
-                        <span style="background-image:url(/3d_printing_notes//images/banner.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/3d_printing_notes//images/banner.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1282,7 +668,7 @@
                 <div class="item-thumbnail">
                     <a href="/rstackdeque/" class="thumbnail">
                     
-                        <span style="background-image:url(/rstackdeque//images/quicksort_vis.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/rstackdeque//images/quicksort_vis.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1301,7 +687,7 @@
                 <div class="item-thumbnail">
                     <a href="/stained-glass/" class="thumbnail">
                     
-                        <span style="background-image:url(/stained-glass//images/candleholder_web.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/stained-glass//images/candleholder_web.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1320,7 +706,7 @@
                 <div class="item-thumbnail">
                     <a href="/functional-lsys/" class="thumbnail">
                     
-                        <span style="background-image:url(/functional-lsys//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/functional-lsys//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1339,7 +725,7 @@
                 <div class="item-thumbnail">
                     <a href="/hiking-south-sister/" class="thumbnail">
                     
-                        <span style="background-image:url(/hiking-south-sister//images/0008.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/hiking-south-sister//images/0008.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1358,7 +744,7 @@
                 <div class="item-thumbnail">
                     <a href="/research-butterflies/" class="thumbnail">
                     
-                        <span style="background-image:url(/research-butterflies//images/vennsPoster.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/research-butterflies//images/vennsPoster.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1377,7 +763,7 @@
                 <div class="item-thumbnail">
                     <a href="/steve-harvey/" class="thumbnail">
                     
-                        <span style="background-image:url(/steve-harvey//images/banner.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/steve-harvey//images/banner.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1396,7 +782,7 @@
                 <div class="item-thumbnail">
                     <a href="/marble-making/" class="thumbnail">
                     
-                        <span style="background-image:url(/marble-making//images/marble2_web.JPG)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/marble-making//images/marble2_web.JPG)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1415,7 +801,7 @@
                 <div class="item-thumbnail">
                     <a href="/research-filedist/" class="thumbnail">
                     
-                        <span style="background-image:url(/research-filedist//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/research-filedist//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1434,7 +820,7 @@
                 <div class="item-thumbnail">
                     <a href="/musicwheel/" class="thumbnail">
                     
-                        <span style="background-image:url(/musicwheel//images/screenshot.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/musicwheel//images/screenshot.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1453,7 +839,7 @@
                 <div class="item-thumbnail">
                     <a href="/timelapsething/" class="thumbnail">
                     
-                        <span style="background-image:url(/timelapsething//images/gaussian.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/timelapsething//images/gaussian.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1472,7 +858,7 @@
                 <div class="item-thumbnail">
                     <a href="/glass-beads/" class="thumbnail">
                     
-                        <span style="background-image:url(/glass-beads//images/pendants2_web.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/glass-beads//images/pendants2_web.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1491,7 +877,7 @@
                 <div class="item-thumbnail">
                     <a href="/research-transcriptomics/" class="thumbnail">
                     
-                        <span style="background-image:url(/research-transcriptomics//images/ohr.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/research-transcriptomics//images/ohr.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1510,7 +896,7 @@
                 <div class="item-thumbnail">
                     <a href="/nerf/" class="thumbnail">
                     
-                        <span style="background-image:url(/nerf//images/shotsDotplotBlaster.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/nerf//images/shotsDotplotBlaster.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1529,7 +915,7 @@
                 <div class="item-thumbnail">
                     <a href="/research-haplotyping/" class="thumbnail">
                     
-                        <span style="background-image:url(/research-haplotyping//images/coloring.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/research-haplotyping//images/coloring.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1548,7 +934,7 @@
                 <div class="item-thumbnail">
                     <a href="/neil-anne-marie-wedding/" class="thumbnail">
                     
-                        <span style="background-image:url(/neil-anne-marie-wedding//images/0006.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/neil-anne-marie-wedding//images/0006.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1567,7 +953,7 @@
                 <div class="item-thumbnail">
                     <a href="/miscjava/" class="thumbnail">
                     
-                        <span style="background-image:url(/miscjava//images/ColorDistance/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/miscjava//images/ColorDistance/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1586,7 +972,7 @@
                 <div class="item-thumbnail">
                     <a href="/microsoft-surface/" class="thumbnail">
                     
-                        <span style="background-image:url(/microsoft-surface//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/microsoft-surface//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1605,7 +991,7 @@
                 <div class="item-thumbnail">
                     <a href="/online-finance/" class="thumbnail">
                     
-                        <span style="background-image:url(/online-finance//images/prices.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/online-finance//images/prices.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1624,7 +1010,7 @@
                 <div class="item-thumbnail">
                     <a href="/slashdot-predicting/" class="thumbnail">
                     
-                        <span style="background-image:url(/slashdot-predicting//images/fractile.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/slashdot-predicting//images/fractile.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1643,7 +1029,7 @@
                 <div class="item-thumbnail">
                     <a href="/research-alenex/" class="thumbnail">
                     
-                        <span style="background-image:url(/research-alenex//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/research-alenex//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1662,7 +1048,7 @@
                 <div class="item-thumbnail">
                     <a href="/bobcash/" class="thumbnail">
                     
-                        <span style="background-image:url(/bobcash//images/banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/bobcash//images/banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1681,7 +1067,7 @@
                 <div class="item-thumbnail">
                     <a href="/learning-ai/" class="thumbnail">
                     
-                        <span style="background-image:url(/learning-ai//images/banner.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/learning-ai//images/banner.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1700,7 +1086,7 @@
                 <div class="item-thumbnail">
                     <a href="/formal-logic/" class="thumbnail">
                     
-                        <span style="background-image:url(/formal-logic//images/logic_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/formal-logic//images/logic_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1719,7 +1105,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs446/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs446//images/Balls1Crop.jpeg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs446//images/Balls1Crop.jpeg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1738,7 +1124,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs422/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs422//images/algs_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs422//images/algs_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1757,7 +1143,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs322/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs322//images/lisp_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs322//images/lisp_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1776,7 +1162,7 @@
                 <div class="item-thumbnail">
                     <a href="/epistemology/" class="thumbnail">
                     
-                        <span style="background-image:url(/epistemology//images/knowledge_quote.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/epistemology//images/knowledge_quote.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1795,7 +1181,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs228/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs228//images/network_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs228//images/network_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1814,7 +1200,7 @@
                 <div class="item-thumbnail">
                     <a href="/gainclone/" class="thumbnail">
                     
-                        <span style="background-image:url(/gainclone//images/ampfront_web.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/gainclone//images/ampfront_web.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1833,7 +1219,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs222/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs222//images/avl_tree.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs222//images/avl_tree.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1852,7 +1238,7 @@
                 <div class="item-thumbnail">
                     <a href="/cellular-automata/" class="thumbnail">
                     
-                        <span style="background-image:url(/cellular-automata//images/ca_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cellular-automata//images/ca_banner.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1871,7 +1257,7 @@
                 <div class="item-thumbnail">
                     <a href="/headamp/" class="thumbnail">
                     
-                        <span style="background-image:url(/headamp//images/zippoclosed_web.jpg)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/headamp//images/zippoclosed_web.jpg)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1890,7 +1276,7 @@
                 <div class="item-thumbnail">
                     <a href="/cs122/" class="thumbnail">
                     
-                        <span style="background-image:url(/cs122//images/Queens2/screenshot.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                        <span style="background-image:url(/cs122//images/Queens2/screenshot.png)" alt="Finding Long-COVID: Temporal Topic Modeling EHR Data" class="thumbnail-image"></span>
                     
                     </a>
                 </div>

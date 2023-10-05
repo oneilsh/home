@@ -6,7 +6,16 @@
     <description>Recent content in research on Shawn T. O&#39;Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding Long-COVID: Temporal Topic Modeling EHR Data</title>
+      <link>/topic_modeling_pasc/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/topic_modeling_pasc/</guid>
+      <description>In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection.</description>
+    </item>
+    
     <item>
       <title>National COVID Cohort Collaborative</title>
       <link>/n3c/</link>

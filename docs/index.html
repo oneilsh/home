@@ -148,7 +148,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        45
+        46
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -239,6 +239,149 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="/topic_modeling_pasc/" itemprop="url">
+            <img src="/topic_modeling_pasc//images/fig4_banner.png" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="/topic_modeling_pasc/">
+    <h1 class="article-title" itemprop="name">
+        Finding Long-COVID: Temporal Topic Modeling EHR Data
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2023-09-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2023</time>
+            &middot;
+            522
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="/tags/research">research</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/data">data</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="/tags/biomedical">biomedical</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection.
+            </p>
+            <p class="article-more-link">
+                <a href="/topic_modeling_pasc/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="/topic_modeling_pasc/" data-id="efc93e1649180d13d9df4e4742bac8f0" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -408,7 +551,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2021-06-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">June, 2021</time>
             &middot;
-            281
+            315
             words
             &middot;
             2
@@ -851,7 +994,7 @@ TidyTensor was inspired by a workshop I taught in deep learning with R, and a de
         <div class="article-entry" itemprop="articleBody">
             <p>
                 Work My CV.
-I am an Assistant Professor of Research with the Center for Health AI at the University of Colorado Anschutz Medical Campus. In previous years I was a Senior Faculty Research Assistant with the Center for Genome Research and Biocomputing (CGRB, now CQLS) at Oregon State University. I earned my Ph.D./M.S. in 2012/2009 from the University of Notre Dame in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the beautiful Upper Peninsula of Michigan.
+I am an Assistant Professor of Research with the TISLab, Department of Biomedical Informatics, and Center for Health AI at the University of Colorado Anschutz Medical Campus. In previous years I was a Senior Faculty Research Assistant with the Center for Genome Research and Biocomputing (CGRB, now CQLS) at Oregon State University. I earned my Ph.D./M.S. in 2012/2009 from the University of Notre Dame in the Department of Computer Science and Engineering, and my Bachelors in Computer Science from Northern Michigan University in the beautiful Upper Peninsula of Michigan.
             </p>
             <p class="article-more-link">
                 <a href="/aboutme/">
@@ -1218,154 +1361,6 @@ The main goal of the project was to enable the quick creation of Virtual Machine
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="/regression_trees/" itemprop="url">
-            <img src="/regression_trees//images/three_depths.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="/regression_trees/">
-    <h1 class="article-title" itemprop="name">
-        Regression Trees &amp; Bagging (more functional R)
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2019-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">February, 2019</time>
-            &middot;
-            6272
-            words
-            &middot;
-            30
-            minute read
-        </div>
-        
-        
-            
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="/tags/programming">programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/r">r</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/theory">theory</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="/tags/machine-learning">machine learning</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I recently ran across this excellent article explaining gradient boosting in the context of regression trees. The article concludes by describing how the technique implements a gradient-descent process, but what I find most fascinating is the concept of “functional modeling”–building machine learning models from other models as building blocks.
-This post explores that idea by implementing regression trees in base R (with a little visualization help from ggplot2, dplyr, and tidyr) with functional programming concepts, including a technique called bootstrap aggregating.
-            </p>
-            <p class="article-more-link">
-                <a href="/regression_trees/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="/regression_trees/" data-id="edfd7b21fcdc2deeb05d686264cacfda" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1391,6 +1386,25 @@ This post explores that idea by implementing regression trees in base R (with a 
     </h3>
     <div class="widget">
       <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="/topic_modeling_pasc/" class="thumbnail">
+                    
+                        <span style="background-image:url(/topic_modeling_pasc//images/fig4_banner.png)" alt="Shawn T. O&#39;Neil" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    
+                    <p class="item-title"><a href="/topic_modeling_pasc/" class="title">Finding Long-COVID: Temporal Topic Modeling EHR Data</a></p>
+                    <p class="item-date">
+                        <time datetime="2023-09-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2023</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
