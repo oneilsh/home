@@ -34,7 +34,7 @@
     <meta itemprop="name" content="Finding Long-COVID: Temporal Topic Modeling EHR Data">
 <meta itemprop="description" content="In this study, currently available as a preprint awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the N3C database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection."><meta itemprop="datePublished" content="2023-09-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2023-09-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="522">
+<meta itemprop="wordCount" content="460">
 <meta itemprop="keywords" content="research,data,biomedical," />
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Finding Long-COVID: Temporal Topic Modeling EHR Data"/>
@@ -259,7 +259,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2023-09-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">September, 2023</time>
             &middot;
-            522
+            460
             words
             &middot;
             3
@@ -297,7 +297,7 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>In this study, currently available as a <a href="https://www.medrxiv.org/content/10.1101/2023.09.11.23295259v1">preprint</a> awaiting peer-review, I apply an unsupervised learning technique known as Latent Dirichlet Allocation (LDA) to identify condition clusters across millions of patients in the <a href="/n3c">N3C</a> database. Such clusters are not guaranteed to be related to COVID-19, however. To identify those that are, we look at how patients are assigned to clusters before and after COVID-19 infection, integrating the probabilistic nature of LDA and supervised models (repeated-measures logistic regression) to predict how patients will migrate toward or away from a cluster post-infection, moderated by demographic factors such as age, sex, and wave of infection.</p>
-<p>A primary goal here was to apply a data-first approach to identifying Long COVID. As of October 2021 there is an ICD-10 diagnosis code for Long COVID, U09.9. However, it is now generally understood that Long COVID (also known as PASC, for Post-Acute Sequelae of SARS-CoV-2 infection) is a complex set of conditions with varying presentations. Might our shifting understanding of this disease be causing us to miss important sub-types? To check, we looked for conditions increased in patients with Long-COVID diagnoses compared to COVID-naïve Control patients over a similar time frame. We also looked at COVID-positive patients without a Long-COVID diagnosis, finding that there are indeed clusters of conditions prevalent post-infection but not associated with U09.9 diagnoses. Fortunately, these seem to fall into two general categories: clusters of generic conditions indicative of unknown symptoms (such as &ldquo;Ill-defined disease&rdquo;), and long-term acute illness (such as persistent pneumonia). Interestingly, we find a signal of reduced healthcare access through the pandemic, which reveals itself as decreased rates of conditions commonly discovered during routine care.</p>
+<p>A primary goal here was to apply a data-first approach to identifying Long COVID. As of October 2021 there is an ICD-10 diagnosis code for Long COVID, U09.9. However, it is now generally understood that Long COVID (also known as PASC, for Post-Acute Sequelae of SARS-CoV-2 infection) is a complex set of conditions with varying presentations. Might our shifting understanding of this disease be causing us to miss important sub-types? To check, we looked for conditions increased in patients with Long-COVID diagnoses compared to COVID-naïve Control patients over a similar time frame, and in patients with COVID-19 but no Long-COVID diagnosis compared to Controls. (Please see the <a href="https://www.medrxiv.org/content/10.1101/2023.09.11.23295259v1">preprint</a> for details.)</p>
 <figure><img src="images/past_volcano_plot_svg.png"
          alt="Conditions increased for COVID-19 patients post-infection, for those with a Long-COVID diagnosis (right) and those without (left)" width="100%"/>
 </figure>
